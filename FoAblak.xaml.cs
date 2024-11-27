@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Menhely_Projekt
 {
     /// <summary>
-    /// Interaction logic for IndexPage.xaml
+    /// Interaction logic for FoAblak.xaml
     /// </summary>
-    public partial class IndexPage : Page
+    public partial class FoAblak : Window
     {
-        public IndexPage()
+        public FoAblak(int id)
         {
             InitializeComponent();
         }

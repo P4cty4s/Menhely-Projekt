@@ -48,3 +48,53 @@ C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\MainWindow.g.cs
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\MainWindow.baml
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\IndexPage.g.cs
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\IndexPage.baml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\Menhely Projekt.exe.config
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\Menhely Projekt.exe
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\Menhely Projekt.pdb
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\Google.Protobuf.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\MySql.Data.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Buffers.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.IO.Pipelines.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Memory.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\ZstdSharp.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\Google.Protobuf.pdb
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\Google.Protobuf.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\MySql.Data.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Buffers.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.IO.Pipelines.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Memory.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.csproj.AssemblyReference.cache
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\MainWindow.g.cs
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\App.g.cs
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt_MarkupCompile.cache
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt_MarkupCompile.lref
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\MainWindow.baml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.g.resources
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely_Projekt.Properties.Resources.resources
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.csproj.GenerateResource.cache
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.csproj.CoreCompileInputs.cache
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely .8F2D582E.Up2Date
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.exe
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.pdb
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\FoAblak.g.cs
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\FoAblak.baml
