@@ -1,5 +1,4 @@
-﻿using Menhely_Projekt.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,26 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Menhely_Projekt
+namespace Menhely_Projekt.Controls
 {
     /// <summary>
-    /// Interaction logic for FoAblak.xaml
+    /// Interaction logic for NavControl.xaml
     /// </summary>
-    public partial class FoAblak : Window
+    public partial class NavControl : UserControl
     {
-        Controls.NavControl navControl = new Controls.NavControl();
-        public FoAblak(int id)
+        public NavControl()
         {
             InitializeComponent();
-
-            betoltesNav(id);
-        }
-        
-        private void betoltesNav(int _id)
-        {
-            NavFoablak.Username_label.Content = UserDAO.getName(_id);
         }
     }
 }

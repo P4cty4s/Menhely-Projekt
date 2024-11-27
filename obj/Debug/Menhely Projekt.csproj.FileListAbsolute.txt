@@ -98,3 +98,6 @@ C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.exe
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.pdb
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\FoAblak.g.cs
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\FoAblak.baml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\NavControl.g.cs
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\NavControl.baml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\GeneratedInternalTypeHelper.g.cs

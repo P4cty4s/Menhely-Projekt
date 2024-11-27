@@ -11,11 +11,11 @@ namespace Menhely_Projekt
 {
     public static class UserDAO
     {
+        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=zoldmenedek";
         public static int login(string _name,string _password)
         {
             int _id = -1;
 
-            string connectionString = "datasource=localhost;port=3306;username=root;password=;database=zoldmenedek";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -39,6 +39,27 @@ namespace Menhely_Projekt
             
             return _id;
 
+        }
+        public static string getName(int id)
+        {
+            string result = "";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT username FROM users WHERE id = @azonosito";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@azonosito",id);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        reader.Read();
+                        result = reader.GetString(0);
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }

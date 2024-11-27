@@ -21,6 +21,7 @@ namespace Menhely_Projekt
         {
             InitializeComponent();
             
+            
         }
 
         private void btn_login_Click(object sender, RoutedEventArgs e)
@@ -34,6 +35,7 @@ namespace Menhely_Projekt
                 MessageBox.Show("Sikeres bejelentkezés");
                 var FoAblak = new FoAblak(ID);
                 FoAblak.Show();
+                this.Close();
             }
         }
     }

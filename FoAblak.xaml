@@ -3,10 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Menhely_Projekt"
+        xmlns:local="clr-namespace:Menhely_Projekt.Controls"
         mc:Ignorable="d"
-        Title="FoAblak" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Background="Gray"
+        Title="FoAblak" Height="1080" Width="1920"
+        Name="_FoAblak">
+    <DockPanel>
+        <local:NavControl x:Name="NavFoablak">
+        </local:NavControl>
+    </DockPanel>
 </Window>

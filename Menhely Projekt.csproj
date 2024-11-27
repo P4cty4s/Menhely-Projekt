@@ -107,11 +107,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\NavControl.xaml.cs">
+      <DependentUpon>NavControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FoAblak.xaml.cs">
       <DependentUpon>FoAblak.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs" />
     <Compile Include="UserDAO.cs" />
+    <Page Include="Controls\NavControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FoAblak.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
