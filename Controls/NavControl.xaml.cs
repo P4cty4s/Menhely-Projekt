@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using Mysqlx.Crud;
 
 namespace Menhely_Projekt.Controls
 {
@@ -20,9 +22,24 @@ namespace Menhely_Projekt.Controls
     /// </summary>
     public partial class NavControl : UserControl
     {
+        private DispatcherTimer _timer;
         public NavControl()
         {
             InitializeComponent();
+
+            Username_label.Content = UserDAO.getName(MainWindow.ID);
+
+            _timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(1)
+            };
+
+            _timer.Tick += updateTime;
+            _timer.Start();
+        }
+        private void updateTime(object sender, EventArgs e)
+        {
+            Time_label.Content = DateTime.Now.ToString("HH:mm");
         }
     }
 }

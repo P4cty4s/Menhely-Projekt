@@ -20,17 +20,27 @@ namespace Menhely_Projekt
     /// </summary>
     public partial class FoAblak : Window
     {
-        Controls.NavControl navControl = new Controls.NavControl();
+        private NavControl navControl = new NavControl();
         public FoAblak(int id)
         {
             InitializeComponent();
+            db_elrendezes();
 
-            betoltesNav(id);
         }
-        
-        private void betoltesNav(int _id)
+        private void db_elrendezes() 
         {
-            NavFoablak.Username_label.Content = UserDAO.getName(_id);
+            kutyusok_db.Height = this.Height - navControl.Height - 40;
+            kutyusok_db.Width = this.Width - kennel_btn.Width - 30;
+            kutyusok_db.Margin = new Thickness(
+                15+kennel_btn.ActualWidth+20,
+                navControl.ActualHeight+20,
+                15,
+                20
+                );
+            kutyusok_db.HorizontalAlignment = HorizontalAlignment.Center;
+
+        
         }
+
     }
 }

@@ -5,10 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Menhely_Projekt.Controls"
              mc:Ignorable="d">
-        <ToolBar ToolBarTray.IsLocked="True" ToolBar.OverflowMode="Never" Name="NavBar" Width="1920" Height="50" Background="White" VerticalAlignment="Top">
-        <ItemsControl>
-            <Label FontSize="22" Name="Username_label"></Label>
-        </ItemsControl>
+    <ToolBar ToolBarTray.IsLocked="True" ToolBar.OverflowMode="Never" Name="NavBar" Width="1920" Height="50" Background="White" VerticalAlignment="Top">
+        <Label FontSize="22" x:Name="Username_label" HorizontalAlignment="Left"></Label>
+        <Label FontSize="22" x:Name="Time_label" HorizontalAlignment="Right"></Label>
     </ToolBar>
 
 </UserControl>

@@ -17,16 +17,19 @@ namespace Menhely_Projekt
 {
     public partial class MainWindow : Window
     {
+        public static int ID;
         public MainWindow()
         {
             InitializeComponent();
             
+            ID = -1;
             
         }
 
+
         private void btn_login_Click(object sender, RoutedEventArgs e)
         {
-            int ID = UserDAO.login(tb_name.Text, tb_password.Text);
+            ID = UserDAO.login(tb_name.Text, tb_password.Text);
             if (ID == -1)
             {
                 MessageBox.Show("Hibás felhasználónév vagy jelszó");
