@@ -24,23 +24,17 @@ namespace Menhely_Projekt
         public FoAblak(int id)
         {
             InitializeComponent();
-            db_elrendezes();
-
-        }
-        private void db_elrendezes() 
-        {
-            kutyusok_db.Height = this.Height - navControl.Height - 40;
-            kutyusok_db.Width = this.Width - kennel_btn.Width - 30;
+            #region DB_Elrendezes
             kutyusok_db.Margin = new Thickness(
-                15+kennel_btn.ActualWidth+20,
-                navControl.ActualHeight+20,
+                20 + 15 + kennel_btn.ActualWidth,
+                navControl.ActualHeight + 20,
                 15,
                 20
                 );
-            kutyusok_db.HorizontalAlignment = HorizontalAlignment.Center;
+            #endregion
 
-        
+            kutyusok_db.
+
         }
-
     }
 }
