@@ -33,8 +33,6 @@ namespace Menhely_Projekt
                 );
             #endregion
 
-            kutyusok_db.
-
         }
     }
 }

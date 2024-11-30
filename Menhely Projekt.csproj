@@ -113,6 +113,8 @@
     <Compile Include="FoAblak.xaml.cs">
       <DependentUpon>FoAblak.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KutyaDAO.cs" />
+    <Compile Include="Models\Kutya.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="UserDAO.cs" />
     <Page Include="Controls\NavControl.xaml">

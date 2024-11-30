@@ -22,7 +22,11 @@
         <Grid Margin="235,70,15,20">
             <DataGrid x:Name="kutyusok_db">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="">
+                    <DataGridTextColumn Header="Kép"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Név"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Chip szám"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Születés"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Bekerülés"></DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
