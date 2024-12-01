@@ -26,14 +26,6 @@ namespace Menhely_Projekt.Models
         public bool visible { get; set; }
 
         public static List<Kutya> kutyak = new List<Kutya>();
-        public Kutya(MySqlAttributeCollection sor)
-        {
-            
-
-
-
-
-        }
 
     }
 }

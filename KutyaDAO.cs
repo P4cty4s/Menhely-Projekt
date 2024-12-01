@@ -12,9 +12,8 @@ namespace Menhely_Projekt
     {
         private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=zoldmenedek";
 
-        public static List<Kutya> getKutyak()
+        public static void getKutyak()
         {
-            List<Kutya> result = new List<Kutya>();
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
@@ -24,11 +23,30 @@ namespace Menhely_Projekt
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        reader.Read();
+                        while (false)//itt tartok
+                        {
+                            Kutya.kutyak.Add(new Kutya()
+                            {
+                                ID = Convert.ToInt32(reader["id"]),
+                                regSzam = Convert.ToInt32(reader["regszam"]),
+                                nev = reader["nev"].ToString(),
+                                chipSzam = reader["chipszam"].ToString(),
+                                ivar = Convert.ToInt32(reader["ivar"]) == 1 ? true : false,
+                                meret = Convert.ToInt32(reader["meret"]),
+                                szuletes = Convert.ToDateTime(reader["szuletes"]),
+                                bekerules = Convert.ToDateTime(reader["bekerules"]),
+                                ivaros = Convert.ToInt32(reader["ivaros"]) == 1 ? true : false,
+                                telephely = reader["telephely"].ToString(),
+                                foglalt = Convert.ToInt32(reader["foglalt"]) == 1 ? true : false,
+                                kennel = Convert.ToInt32(reader["kennel"]),
+                                indexkepID = Convert.ToInt32(reader["indexkepid"]),
+                                visible = Convert.ToInt32(reader["visible"]) == 1 ? true : false
+                            });
+                            
+                        }
                     }
                 }
             }
-            return result;
         }
 
     }

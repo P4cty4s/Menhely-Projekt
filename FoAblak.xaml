@@ -18,16 +18,9 @@
         <Button x:Name="kennel_btn" Height="50" Width="200" HorizontalAlignment="Left" Margin="15,70,0,0" VerticalAlignment="Top" Content="Kennel"></Button>
         <Button Height="50" Width="200" HorizontalAlignment="Left" Margin="15,140,0,0" VerticalAlignment="Top" Content="Legutóbbi"></Button>
         <Button Height="50" Width="200" HorizontalAlignment="Left" Margin="15,210,0,0" VerticalAlignment="Top" Content="Weboldal módosítások"></Button>
-        <Button Height="50" Width="200" HorizontalAlignment="Left" Margin="15,0,0,40" VerticalAlignment="Bottom" Content="Kijelentkezés"></Button>
+        <Button x:Name="Logout_btn" Height="50" Width="200" HorizontalAlignment="Left" Margin="15,0,0,40" VerticalAlignment="Bottom" Content="Kijelentkezés" Click="Logout_btn_Click"></Button>
         <Grid Margin="235,70,15,20">
-            <DataGrid x:Name="kutyusok_db">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Kép"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Név"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Chip szám"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Születés"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Bekerülés"></DataGridTextColumn>
-                </DataGrid.Columns>
+            <DataGrid x:Name="kutyusok_db" AutoGenerateColumns="True">
             </DataGrid>
         </Grid>
     </Grid>

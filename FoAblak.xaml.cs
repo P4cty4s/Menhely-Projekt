@@ -1,4 +1,5 @@
 ﻿using Menhely_Projekt.Controls;
+using Menhely_Projekt.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,20 @@ namespace Menhely_Projekt
                 20
                 );
             #endregion
+            KutyaDAO.getKutyak();
+            feltoltes();
+        }
+        private void feltoltes()
+        {
+            kutyusok_db.Items.Clear();
+            kutyusok_db.Items.Add(Kutya.kutyak);
+        }
 
+        private void Logout_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }
