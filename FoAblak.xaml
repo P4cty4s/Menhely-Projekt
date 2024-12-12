@@ -8,19 +8,23 @@
         Background="Gray"
         Title="FoAblak"
         x:Name="_FoAblak"
-        Width="auto"
-        Height="auto"
+        Width="1160"
+        Height="559"
         WindowState="Maximized">
     <Grid>
         <DockPanel>
             <local:NavControl Height="50" VerticalAlignment="Top"></local:NavControl>
         </DockPanel>
-        <Button x:Name="kennel_btn" Height="50" Width="200" HorizontalAlignment="Left" Margin="15,70,0,0" VerticalAlignment="Top" Content="Kennel"></Button>
-        <Button Height="50" Width="200" HorizontalAlignment="Left" Margin="15,140,0,0" VerticalAlignment="Top" Content="Legutóbbi"></Button>
-        <Button Height="50" Width="200" HorizontalAlignment="Left" Margin="15,210,0,0" VerticalAlignment="Top" Content="Weboldal módosítások"></Button>
+        <Button x:Name="Reset_btn" Height="50" Width="50" HorizontalAlignment="Left" Margin="165,70,0,40" VerticalAlignment="Top" Content="🔁" FontSize="32" Click="Reset_btn_Click">
+        </Button>
+        <Button x:Name="kennel_btn" Height="50" Width="200" HorizontalAlignment="Left" Margin="15,140,0,0" VerticalAlignment="Top" Content="Kennel"></Button>
+        <Button Height="50" Width="200" HorizontalAlignment="Left" Margin="15,210,0,0" VerticalAlignment="Top" Content="Legutóbbi"></Button>
+        <Button Height="50" Width="200" HorizontalAlignment="Left" Margin="15,280,0,0" VerticalAlignment="Top" Content="Weboldal módosítások"></Button>
         <Button x:Name="Logout_btn" Height="50" Width="200" HorizontalAlignment="Left" Margin="15,0,0,40" VerticalAlignment="Bottom" Content="Kijelentkezés" Click="Logout_btn_Click"></Button>
         <Grid Margin="235,70,15,20">
-            <DataGrid x:Name="kutyusok_db" AutoGenerateColumns="True">
+            <DataGrid x:Name="KutyaDataGrid"
+                      AutoGenerateColumns="True"
+                      CanUserAddRows="False">
             </DataGrid>
         </Grid>
     </Grid>

@@ -23,7 +23,7 @@ namespace Menhely_Projekt
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        while (false)//itt tartok
+                        while (reader.Read())
                         {
                             Kutya.kutyak.Add(new Kutya()
                             {

@@ -26,7 +26,7 @@ namespace Menhely_Projekt
         {
             InitializeComponent();
             #region DB_Elrendezes
-            kutyusok_db.Margin = new Thickness(
+            KutyaDataGrid.Margin = new Thickness(
                 20 + 15 + kennel_btn.ActualWidth,
                 navControl.ActualHeight + 20,
                 15,
@@ -38,8 +38,9 @@ namespace Menhely_Projekt
         }
         private void feltoltes()
         {
-            kutyusok_db.Items.Clear();
-            kutyusok_db.Items.Add(Kutya.kutyak);
+            KutyaDataGrid.ItemsSource = null;
+            KutyaDAO.getKutyak();
+            KutyaDataGrid.ItemsSource = Kutya.kutyak;
         }
 
         private void Logout_btn_Click(object sender, RoutedEventArgs e)
@@ -47,6 +48,12 @@ namespace Menhely_Projekt
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+
+        private void Reset_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Kutya.kutyak.Clear();
+            feltoltes();
         }
     }
 }
