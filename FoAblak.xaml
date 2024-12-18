@@ -11,21 +11,62 @@
         Width="1160"
         Height="559"
         WindowState="Maximized">
-    <Grid>
-        <DockPanel>
-            <local:NavControl Height="50" VerticalAlignment="Top"></local:NavControl>
-        </DockPanel>
-        <Button x:Name="Reset_btn" Height="50" Width="50" HorizontalAlignment="Left" Margin="165,70,0,40" VerticalAlignment="Top" Content="🔁" FontSize="32" Click="Reset_btn_Click">
-        </Button>
-        <Button x:Name="kennel_btn" Height="50" Width="200" HorizontalAlignment="Left" Margin="15,140,0,0" VerticalAlignment="Top" Content="Kennel"></Button>
-        <Button Height="50" Width="200" HorizontalAlignment="Left" Margin="15,210,0,0" VerticalAlignment="Top" Content="Legutóbbi"></Button>
-        <Button Height="50" Width="200" HorizontalAlignment="Left" Margin="15,280,0,0" VerticalAlignment="Top" Content="Weboldal módosítások"></Button>
-        <Button x:Name="Logout_btn" Height="50" Width="200" HorizontalAlignment="Left" Margin="15,0,0,40" VerticalAlignment="Bottom" Content="Kijelentkezés" Click="Logout_btn_Click"></Button>
-        <Grid Margin="235,70,15,20">
-            <DataGrid x:Name="KutyaDataGrid"
-                      AutoGenerateColumns="True"
-                      CanUserAddRows="False">
-            </DataGrid>
+    <DockPanel>
+        <!-- Top Navigation Bar -->
+        <local:NavControl Height="50" DockPanel.Dock="Top" VerticalAlignment="Top" />
+
+        <!-- Main Layout -->
+        <Grid Margin="10">
+            <!-- Define Grid Structure -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <!-- Buttons Panel -->
+                <ColumnDefinition Width="*" />
+                <!-- Main Content (Search Bar and DataGrid) -->
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <!-- Search Bar -->
+                <RowDefinition Height="*" />
+                <!-- DataGrid -->
+            </Grid.RowDefinitions>
+
+            <!-- Buttons Panel -->
+            <StackPanel Grid.Column="0" Grid.Row="1" Background="#E0E0E0" Margin="0,0,10,0">
+                <Button x:Name="Reset_btn" Height="50" Width="200" Content="🔁" FontSize="32"
+                        HorizontalAlignment="Left" Margin="0,10,0,10" Click="Reset_btn_Click" />
+                <Button x:Name="kennel_btn" Height="50" Width="200" Content="Kennel"
+                        HorizontalAlignment="Left" Margin="0,10,0,10" />
+                <Button Height="50" Width="200" Content="Legutóbbi"
+                        HorizontalAlignment="Left" Margin="0,10,0,10" />
+                <Button Height="50" Width="200" Content="Weboldal módosítások"
+                        HorizontalAlignment="Left" Margin="0,10,0,10" />
+                <Button x:Name="Logout_btn" Height="50" Width="200" Content="Kijelentkezés"
+                        HorizontalAlignment="Left" Margin="0,10,0,10" VerticalAlignment="Bottom"
+                        Click="Logout_btn_Click" />
+            </StackPanel>
+
+            <!-- Search Bar -->
+            <Grid Grid.Column="1" Grid.Row="0" Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <!-- ComboBox -->
+                    <ColumnDefinition Width="*" />
+                    <!-- TextBox -->
+                </Grid.ColumnDefinitions>
+                <ComboBox Grid.Column="0" Width="150" Margin="0,0,10,0" x:Name="Kereso_cb" SelectionChanged="Kereso_cb_SelectionChanged"/>
+                <ComboBox x:Name="Options_cb" Grid.Column="1" HorizontalAlignment="Stretch" />
+                <TextBox x:Name="Kereso_tb" Grid.Column="1" HorizontalAlignment="Stretch" KeyUp="Kereso_tb_KeyUp"/>
+            </Grid>
+
+            <!-- DataGrid -->
+            <Grid Grid.Column="1" Grid.Row="1">
+                <DataGrid x:Name="KutyaDataGrid"
+                          AutoGenerateColumns="True"
+                          CanUserAddRows="False"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch" />
+            </Grid>
         </Grid>
-    </Grid>
+    </DockPanel>
 </Window>

@@ -22,25 +22,56 @@ namespace Menhely_Projekt
     public partial class FoAblak : Window
     {
         private NavControl navControl = new NavControl();
+        private static List<Kutya> dataShow = new List<Kutya>();
         public FoAblak(int id)
         {
             InitializeComponent();
-            #region DB_Elrendezes
-            KutyaDataGrid.Margin = new Thickness(
-                20 + 15 + kennel_btn.ActualWidth,
-                navControl.ActualHeight + 20,
-                15,
-                20
-                );
-            #endregion
+            keresoSetup();
             KutyaDAO.getKutyak();
             feltoltes();
         }
+
+        private void keresoSetup()
+        {
+            //Egykutya
+            Kereso_cb.Items.Add("ID");
+            Kereso_cb.Items.Add("regSzam");
+            Kereso_cb.Items.Add("nev");
+            Kereso_cb.Items.Add("chipSzam");
+
+            //Szures
+            Kereso_cb.Items.Add("ivar");
+            Kereso_cb.Items.Add("ivaros");
+            Kereso_cb.Items.Add("telephely");
+            Kereso_cb.Items.Add("foglalt");
+            Kereso_cb.Items.Add("kennel");
+            Kereso_cb.Items.Add("visible");
+
+            //Nemhasznalatos
+            //-Meret
+            //-Szuletes
+            //-Bekerules
+            //-indexkepID
+        }
+
+        private void enableKereso()
+        {
+            Kereso_tb.Visibility = Visibility.Visible;
+            Options_cb.Visibility = Visibility.Collapsed;
+        }
+
+        private void enableOptions()
+        {
+            Options_cb.Visibility= Visibility.Visible;
+            Kereso_tb.Visibility= Visibility.Collapsed;
+        }
+
         private void feltoltes()
         {
             KutyaDataGrid.ItemsSource = null;
             KutyaDAO.getKutyak();
-            KutyaDataGrid.ItemsSource = Kutya.kutyak;
+            dataShow = Kutya.kutyak;
+            KutyaDataGrid.ItemsSource = dataShow;
         }
 
         private void Logout_btn_Click(object sender, RoutedEventArgs e)
@@ -52,8 +83,31 @@ namespace Menhely_Projekt
 
         private void Reset_btn_Click(object sender, RoutedEventArgs e)
         {
-            Kutya.kutyak.Clear();
-            feltoltes();
+            KutyaDataGrid.ItemsSource = dataShow;
+        }
+
+        private void kereses()
+        {
+            switch (Kereso_cb.SelectedItem)
+            {
+                default:
+                    break;
+                case "ID":
+                    enableKereso();
+                    dataShow = KutyaDAO.searchKutya("ID", Kereso_tb.Text);
+                    break;
+            }
+            KutyaDataGrid.ItemsSource = dataShow;
+        }
+
+        private void Kereso_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            kereses();
+        }
+
+        private void Kereso_tb_KeyUp(object sender, KeyEventArgs e)
+        {
+            kereses();
         }
     }
 }
