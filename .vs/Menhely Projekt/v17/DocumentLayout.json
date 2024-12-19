@@ -1,25 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\",
+  "WorkspaceRootPath": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\foablak.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\a projekt\\menhely projekt\\foablak.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:foablak.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\eles c\\menhely-projekt\\foablak.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\foablak.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:foablak.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\kutyadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:kutyadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\models\\kutya.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\kutyadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:kutyadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\models\\kutya.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:models\\kutya.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,47 +30,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 184,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "FoAblak.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\FoAblak.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\FoAblak.xaml.cs",
               "RelativeDocumentMoniker": "FoAblak.xaml.cs",
-              "ToolTip": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\FoAblak.xaml.cs",
+              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\FoAblak.xaml.cs",
               "RelativeToolTip": "FoAblak.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFgAAAAdAAAA",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAwIQAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T10:08:09.399Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "KutyaDAO.cs",
-              "DocumentMoniker": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\KutyaDAO.cs",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\KutyaDAO.cs",
               "RelativeDocumentMoniker": "KutyaDAO.cs",
-              "ToolTip": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\KutyaDAO.cs",
+              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\KutyaDAO.cs",
               "RelativeToolTip": "KutyaDAO.cs",
-              "ViewState": "AQIAADoAAAAAAAAAAAAQwFMAAAAfAAAA",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwFMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T09:58:12.042Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\Models\\User.cs",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T11:23:52.172Z",
               "EditorCaption": ""
@@ -79,11 +75,11 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Kutya.cs",
-              "DocumentMoniker": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\Models\\Kutya.cs",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Models\\Kutya.cs",
               "RelativeDocumentMoniker": "Models\\Kutya.cs",
-              "ToolTip": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\Models\\Kutya.cs",
+              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Models\\Kutya.cs",
               "RelativeToolTip": "Models\\Kutya.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAAAIAAAA",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T11:23:49.375Z",
               "EditorCaption": ""
@@ -92,9 +88,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "FoAblak.xaml",
-              "DocumentMoniker": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\FoAblak.xaml",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\FoAblak.xaml",
               "RelativeDocumentMoniker": "FoAblak.xaml",
-              "ToolTip": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\FoAblak.xaml",
+              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\FoAblak.xaml",
               "RelativeToolTip": "FoAblak.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-12-01T09:15:16.885Z",

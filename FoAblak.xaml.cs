@@ -96,6 +96,48 @@ namespace Menhely_Projekt
                     enableKereso();
                     dataShow = KutyaDAO.searchKutya("ID", Kereso_tb.Text);
                     break;
+                case "regszam":
+                    enableKereso();
+                    dataShow = KutyaDAO.searchKutya("reg", Kereso_tb.Text);
+                    break;
+                case "nev":
+                    enableKereso();
+                    dataShow = KutyaDAO.searchKutya("nev", Kereso_tb.Text);
+                    break;
+                case "chipszam":
+                    enableKereso();
+                    dataShow = KutyaDAO.searchKutya("chipszam", Kereso_tb.Text);
+                    break;
+                //--------
+                case "ivar":
+                    enableOptions();
+                    Options_cb.Items.Clear();
+                    Options_cb.Items.Add("Kan");
+                    Options_cb.Items.Add("Szuka");
+                    dataShow = KutyaDAO.searchKutya("ivar", Options_cb.SelectedItem == "Kan" ? "1" : "0");
+                    break;
+                case "ivaros":
+                    enableOptions();
+                    Options_cb.Items.Clear();
+                    Options_cb.Items.Add("Ivaros");
+                    Options_cb.Items.Add("Ivartalan");
+                    dataShow = KutyaDAO.searchKutya("ivaros", Options_cb.SelectedItem == "ivaros" ? "1" : "0");
+                    break;
+                case "telephely":
+                    enableOptions();
+                    Options_cb.Items.Clear();
+                    if (Options_cb.Items.Count == 0)
+                    {
+                        foreach (var item in Kutya.kutyak.Select(q=>q.telephely).Distinct())
+                        {
+                            Options_cb.Items.Add(item);
+                        }
+                    }
+                    if (Options_cb.SelectedItem != null)
+                    {
+                    dataShow = KutyaDAO.searchKutya("telephely", Options_cb.SelectedItem.ToString());
+                    }
+                    break;
             }
             KutyaDataGrid.ItemsSource = dataShow;
         }
@@ -106,6 +148,11 @@ namespace Menhely_Projekt
         }
 
         private void Kereso_tb_KeyUp(object sender, KeyEventArgs e)
+        {
+            kereses();
+        }
+
+        private void Options_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             kereses();
         }

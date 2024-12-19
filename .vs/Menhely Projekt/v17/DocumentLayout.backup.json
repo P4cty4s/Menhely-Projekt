@@ -11,20 +11,16 @@
       "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:foablak.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\a projekt\\menhely projekt\\kutyadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\kutyadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:kutyadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\models\\kutya.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:models\\kutya.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,7 +40,7 @@
               "RelativeDocumentMoniker": "FoAblak.xaml.cs",
               "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\FoAblak.xaml.cs",
               "RelativeToolTip": "FoAblak.xaml.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAmwDgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAwIQAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T10:08:09.399Z",
               "EditorCaption": ""
@@ -57,7 +53,7 @@
               "RelativeDocumentMoniker": "KutyaDAO.cs",
               "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\KutyaDAO.cs",
               "RelativeToolTip": "KutyaDAO.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAQwBoAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwFMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T09:58:12.042Z",
               "EditorCaption": ""
@@ -65,13 +61,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-12T09:32:19.196Z",
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:23:52.172Z",
               "EditorCaption": ""
             },
             {
@@ -82,22 +79,9 @@
               "RelativeDocumentMoniker": "Models\\Kutya.cs",
               "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Models\\Kutya.cs",
               "RelativeToolTip": "Models\\Kutya.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T11:23:49.375Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:23:52.172Z",
               "EditorCaption": ""
             },
             {
