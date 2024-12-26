@@ -45,7 +45,7 @@ namespace Menhely_Projekt
             Kereso_cb.Items.Add("telephely");
             Kereso_cb.Items.Add("foglalt");
             Kereso_cb.Items.Add("kennel");
-            Kereso_cb.Items.Add("visible");
+            Kereso_cb.Items.Add("Látható");
 
             //Nemhasznalatos
             //-Meret
@@ -96,46 +96,47 @@ namespace Menhely_Projekt
                     enableKereso();
                     dataShow = KutyaDAO.searchKutya("ID", Kereso_tb.Text);
                     break;
-                case "regszam":
+                case "regSzam":
                     enableKereso();
-                    dataShow = KutyaDAO.searchKutya("reg", Kereso_tb.Text);
+                    dataShow = KutyaDAO.searchKutya("regszam", Kereso_tb.Text);
                     break;
                 case "nev":
                     enableKereso();
                     dataShow = KutyaDAO.searchKutya("nev", Kereso_tb.Text);
                     break;
-                case "chipszam":
+                case "chipSzam":
                     enableKereso();
                     dataShow = KutyaDAO.searchKutya("chipszam", Kereso_tb.Text);
                     break;
                 //--------
                 case "ivar":
-                    enableOptions();
-                    Options_cb.Items.Clear();
-                    Options_cb.Items.Add("Kan");
-                    Options_cb.Items.Add("Szuka");
                     dataShow = KutyaDAO.searchKutya("ivar", Options_cb.SelectedItem == "Kan" ? "1" : "0");
                     break;
                 case "ivaros":
-                    enableOptions();
-                    Options_cb.Items.Clear();
-                    Options_cb.Items.Add("Ivaros");
-                    Options_cb.Items.Add("Ivartalan");
-                    dataShow = KutyaDAO.searchKutya("ivaros", Options_cb.SelectedItem == "ivaros" ? "1" : "0");
+                    dataShow = KutyaDAO.searchKutya("ivaros", Options_cb.SelectedItem == "Ivaros" ? "1" : "0");
                     break;
                 case "telephely":
-                    enableOptions();
-                    Options_cb.Items.Clear();
-                    if (Options_cb.Items.Count == 0)
-                    {
-                        foreach (var item in Kutya.kutyak.Select(q=>q.telephely).Distinct())
-                        {
-                            Options_cb.Items.Add(item);
-                        }
-                    }
                     if (Options_cb.SelectedItem != null)
                     {
                     dataShow = KutyaDAO.searchKutya("telephely", Options_cb.SelectedItem.ToString());
+                    }
+                    break;
+                case "foglalt":
+                    if (Options_cb.SelectedItem != null)
+                    {
+                        dataShow = KutyaDAO.searchKutya("foglalt", Options_cb.SelectedItem == "Foglalt" ? "1" : "0");
+                    }
+                    break;
+                case "kennel":
+                    if (Options_cb.SelectedItem != null)
+                    {
+                        dataShow = KutyaDAO.searchKutya("kennel", Options_cb.SelectedItem.ToString());
+                    }
+                    break;
+                case "Látható":
+                    if (Options_cb.SelectedItem != null)
+                    {
+                        dataShow = KutyaDAO.searchKutya("visible", Options_cb.SelectedItem == "Látható" ? "1" : "0");
                     }
                     break;
             }
@@ -144,6 +145,8 @@ namespace Menhely_Projekt
 
         private void Kereso_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Options_cb.Items.Clear();
+            optionsBetoltes();
             kereses();
         }
 
@@ -155,6 +158,51 @@ namespace Menhely_Projekt
         private void Options_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             kereses();
+        }
+
+        private void optionsBetoltes()
+        {
+            switch (Kereso_cb.SelectedItem)
+            {
+                default:
+                    break;
+                case "ivar":
+                    enableOptions();
+                    Options_cb.Items.Add("Kan");
+                    Options_cb.Items.Add("Szuka");
+                    break;
+                case "ivaros":
+                    enableOptions();
+                    Options_cb.Items.Add("Ivaros");
+                    Options_cb.Items.Add("Ivartalan");
+                    break;
+                case "telephely":
+                    enableOptions();
+                    if (Options_cb.Items.Count == 0)
+                    {
+                        foreach (var item in Kutya.kutyak.Select(q => q.telephely).Distinct())
+                        {
+                            Options_cb.Items.Add(item);
+                        }
+                    }
+                    break;
+                case "foglalt":
+                    enableOptions();
+                    Options_cb.Items.Add("Foglalt");
+                    Options_cb.Items.Add("Szabad");
+                    break;
+                case "kennel":
+                    enableOptions();
+                    foreach (var item in Kutya.kutyak.Select(q => q.kennel).Distinct())
+                    {
+                        Options_cb.Items.Add(item);
+                    }
+                    break;
+                case "Látható":
+                    Options_cb.Items.Add("Látható");
+                    Options_cb.Items.Add("Láthatatlan");
+                    break;
+            }
         }
     }
 }
