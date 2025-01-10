@@ -8,8 +8,8 @@
         Background="Gray"
         Title="FoAblak"
         x:Name="_FoAblak"
-        Width="1160"
-        Height="559"
+        Width="1920"
+        Height="1080"
         WindowState="Maximized">
     <DockPanel>
         <!-- Top Navigation Bar -->
@@ -35,14 +35,19 @@
             <StackPanel Grid.Column="0" Grid.Row="1" Background="#E0E0E0" Margin="0,0,10,0">
                 <Button x:Name="Reset_btn" Height="50" Width="200" Content="🔁" FontSize="32"
                         HorizontalAlignment="Left" Margin="20,10,0,10" Click="Reset_btn_Click" />
-                <Button x:Name="kennel_btn" Height="50" Width="200" Content="Kennel"
+                
+                <Button x:Name="ModifyKutya_btn" Height="50" Width="200" Content="Kutya Módosítása"
                         HorizontalAlignment="Left" Margin="20,10,0,10" />
-                <Button Height="50" Width="200" Content="Legutóbbi"
-                        HorizontalAlignment="Left" Margin="20,10,0,10" />
-                <Button Height="50" Width="200" Content="Weboldal módosítások"
-                        HorizontalAlignment="Left" Margin="20,10,0,10" />
+
                 <Button x:Name="AddKutya_btn" Height="50" Width="200" Content="Új kutya hozzáadása"
+                        HorizontalAlignment="Left" Margin="20,10,0,10" />
+                
+                <Button x:Name="Kennel_btn" Height="50" Width="200" Content="Kennelek kezelése"
+                        HorizontalAlignment="Left" Margin="20,10,0,10" />
+
+                <Button x:Name="History_btn" Height="50" Width="200" Content="Legutóbbi módosítások"
                         HorizontalAlignment="Left" Margin="20,10,0,10" VerticalAlignment="Bottom"/>
+
                 <Button x:Name="Logout_btn" Height="50" Width="200" Content="Kijelentkezés"
                         HorizontalAlignment="Left" Margin="20,10,0,10" VerticalAlignment="Bottom"
                         Click="Logout_btn_Click" />
