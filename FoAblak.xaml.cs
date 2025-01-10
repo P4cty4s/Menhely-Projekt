@@ -62,6 +62,7 @@ namespace Menhely_Projekt
 
         private void enableOptions()
         {
+            Options_cb.Items.Clear();
             Options_cb.Visibility= Visibility.Visible;
             Kereso_tb.Visibility= Visibility.Collapsed;
         }
@@ -145,7 +146,6 @@ namespace Menhely_Projekt
 
         private void Kereso_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Options_cb.Items.Clear();
             optionsBetoltes();
             kereses();
         }
@@ -162,6 +162,7 @@ namespace Menhely_Projekt
 
         private void optionsBetoltes()
         {
+            enableOptions();
             switch (Kereso_cb.SelectedItem)
             {
                 default:

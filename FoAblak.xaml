@@ -67,7 +67,8 @@
                           AutoGenerateColumns="True"
                           CanUserAddRows="False"
                           HorizontalAlignment="Stretch"
-                          VerticalAlignment="Stretch" />
+                          VerticalAlignment="Stretch"
+                          IsReadOnly="True"/>
             </Grid>
         </Grid>
     </DockPanel>
