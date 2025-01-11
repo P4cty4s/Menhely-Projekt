@@ -37,7 +37,7 @@
                         HorizontalAlignment="Left" Margin="20,10,0,10" Click="Reset_btn_Click" />
                 
                 <Button x:Name="ModifyKutya_btn" Height="50" Width="200" Content="Kutya Módosítása"
-                        HorizontalAlignment="Left" Margin="20,10,0,10" />
+                        HorizontalAlignment="Left" Margin="20,10,0,10" Click="ModifyKutya_btn_Click"/>
 
                 <Button x:Name="AddKutya_btn" Height="50" Width="200" Content="Új kutya hozzáadása"
                         HorizontalAlignment="Left" Margin="20,10,0,10" />

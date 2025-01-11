@@ -1,5 +1,6 @@
 ﻿using Menhely_Projekt.Controls;
 using Menhely_Projekt.Models;
+using Mysqlx.Cursor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,40 @@ namespace Menhely_Projekt
             feltoltes();
         }
 
+        private void feltoltes()
+        {
+            KutyaDataGrid.ItemsSource = null;
+            KutyaDAO.getKutyak();
+            dataShow = Kutya.kutyak;
+            KutyaDataGrid.ItemsSource = dataShow;
+        }
+
+        private void Logout_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void Reset_btn_Click(object sender, RoutedEventArgs e)
+        {
+            KutyaDataGrid.ItemsSource = dataShow;
+        }
+        #region Keresés
+
+        private void enableOptions()
+        {
+            Options_cb.Items.Clear();
+            Options_cb.Visibility= Visibility.Visible;
+            Kereso_tb.Visibility= Visibility.Collapsed;
+        }
+
+        private void enableKereso()
+        {
+            Kereso_tb.Visibility = Visibility.Visible;
+            Options_cb.Visibility = Visibility.Collapsed;
+        }
+
         private void keresoSetup()
         {
             //Egykutya
@@ -52,39 +87,6 @@ namespace Menhely_Projekt
             //-Szuletes
             //-Bekerules
             //-indexkepID
-        }
-
-        private void enableKereso()
-        {
-            Kereso_tb.Visibility = Visibility.Visible;
-            Options_cb.Visibility = Visibility.Collapsed;
-        }
-
-        private void enableOptions()
-        {
-            Options_cb.Items.Clear();
-            Options_cb.Visibility= Visibility.Visible;
-            Kereso_tb.Visibility= Visibility.Collapsed;
-        }
-
-        private void feltoltes()
-        {
-            KutyaDataGrid.ItemsSource = null;
-            KutyaDAO.getKutyak();
-            dataShow = Kutya.kutyak;
-            KutyaDataGrid.ItemsSource = dataShow;
-        }
-
-        private void Logout_btn_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
-        }
-
-        private void Reset_btn_Click(object sender, RoutedEventArgs e)
-        {
-            KutyaDataGrid.ItemsSource = dataShow;
         }
 
         private void kereses()
@@ -203,6 +205,21 @@ namespace Menhely_Projekt
                     Options_cb.Items.Add("Látható");
                     Options_cb.Items.Add("Láthatatlan");
                     break;
+            }
+        }
+
+        #endregion
+
+        private void ModifyKutya_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (KutyaDataGrid.SelectedItem != null)
+            {
+                Kutya target = KutyaDataGrid.SelectedItem as Kutya;
+                ModifyWindow modifyWindow = new ModifyWindow(target.ID);
+                modifyWindow.Show();
+            } else
+            {
+                MessageBox.Show("Válassz kutyát a módosításhoz.");
             }
         }
     }

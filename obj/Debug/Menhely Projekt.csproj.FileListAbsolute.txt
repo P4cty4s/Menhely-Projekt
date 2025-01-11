@@ -46,6 +46,11 @@ C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\bin\Debug\System.Threading.Tasks.Ex
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Menhely .8F2D582E.Up2Date
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\MainWindow.g.cs
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\MainWindow.baml
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\NavControl.g.cs
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\FoAblak.g.cs
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\NavControl.baml
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\FoAblak.baml
 C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\Menhely Projekt.exe.config
 C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\Menhely Projekt.exe
 C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\Menhely Projekt.pdb
@@ -82,10 +87,15 @@ C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.csproj.AssemblyReference.cache
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\NavControl.g.cs
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\FoAblak.g.cs
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\MainWindow.g.cs
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\App.g.cs
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt_MarkupCompile.cache
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt_MarkupCompile.lref
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\NavControl.baml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\FoAblak.baml
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\MainWindow.baml
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.g.resources
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely_Projekt.Properties.Resources.resources
@@ -94,13 +104,5 @@ C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.csproj.CoreC
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely .8F2D582E.Up2Date
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.exe
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.pdb
-C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\FoAblak.g.cs
-C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\FoAblak.baml
-C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\NavControl.g.cs
-C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\NavControl.baml
-C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\NavControl.g.cs
-C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\FoAblak.g.cs
-C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\NavControl.baml
-C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\FoAblak.baml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\ModifyWindow.g.cs
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\ModifyWindow.baml
