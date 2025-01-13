@@ -106,3 +106,5 @@ C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.exe
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Menhely Projekt.pdb
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\ModifyWindow.g.cs
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\ModifyWindow.baml
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\ModifyWindow.g.cs
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\ModifyWindow.baml

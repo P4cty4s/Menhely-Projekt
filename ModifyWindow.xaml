@@ -37,7 +37,7 @@
             <ComboBox x:Name="ivar_cb" Margin="0,5,0,10" />
 
             <Label Content="Méret:" />
-            <ComboBox x:Name="meret_cb" Margin="0,5,0,10" />
+            <TextBox x:Name="meret_tb" Margin="0,5,0,10" />
 
             <Label Content="Születési Dátum:" />
             <DatePicker x:Name="szuletes_dp" Margin="0,5,0,10" />
@@ -61,8 +61,8 @@
 
             <Label Content="Foglalt állapot:" />
             <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                <RadioButton GroupName="foglalt_rb" Content="Szabad" />
-                <RadioButton GroupName="foglalt_rb" Content="Foglalt" Margin="10,0,0,0" />
+                <RadioButton x:Name="szabad_rb" GroupName="foglalt_rbs" Content="Szabad" />
+                <RadioButton x:Name="foglalt_rb" GroupName="foglalt_rbs" Content="Foglalt" Margin="10,0,0,0" />
             </StackPanel>
 
             <Label Content="Kennel:" />
@@ -73,8 +73,8 @@
 
             <Label Content="Láthatóság:" />
             <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                <RadioButton GroupName="visible_rb" Content="Látható" />
-                <RadioButton GroupName="visible_rb" Content="Láthatatlan" Margin="10,0,0,0" />
+                <RadioButton x:Name="visible_rb" GroupName="visible_rbs" Content="Látható" />
+                <RadioButton x:Name="invisible_rb" GroupName="visible_rbs" Content="Láthatatlan" Margin="10,0,0,0" />
             </StackPanel>
         </StackPanel>
 
