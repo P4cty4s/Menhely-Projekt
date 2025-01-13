@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Menhely_Projekt
 {
@@ -17,6 +18,7 @@ namespace Menhely_Projekt
 
         public static void getKutyak()
         {
+            Kutya.kutyak.Clear();
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
@@ -133,6 +135,61 @@ namespace Menhely_Projekt
             }
 
             return target;
+        }
+
+        public static void updateKutya(Kutya infok)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = @"
+                UPDATE kutyak
+                SET 
+                    regSzam = @regSzam,
+                    nev = @nev,
+                    chipSzam = @chipSzam,
+                    ivar = @ivar,
+                    meret = @meret,
+                    szuletes = @szuletes,
+                    bekerules = @bekerules,
+                    ivaros = @ivaros,
+                    telephely = @telephely,
+                    foglalt = @foglalt,
+                    kennel = @kennel,
+                    indexkepID = @indexkepID,
+                    visible = @visible
+                WHERE ID = @ID;
+            ";
+                using (MySqlCommand cmd = new MySqlCommand(query,connection))
+                {
+                    cmd.Parameters.AddWithValue("@ID", infok.ID);
+                    cmd.Parameters.AddWithValue("@regSzam", infok.regSzam);
+                    cmd.Parameters.AddWithValue("@nev", infok.nev);
+                    cmd.Parameters.AddWithValue("@chipSzam", infok.chipSzam);
+                    cmd.Parameters.AddWithValue("@ivar", infok.ivar);
+                    cmd.Parameters.AddWithValue("@meret", infok.meret);
+                    cmd.Parameters.AddWithValue("@szuletes", infok  .szuletes);
+                    cmd.Parameters.AddWithValue("@bekerules", infok.bekerules);
+                    cmd.Parameters.AddWithValue("@ivaros", infok.ivaros);
+                    cmd.Parameters.AddWithValue("@telephely", infok .telephely);
+                    cmd.Parameters.AddWithValue("@foglalt", infok.foglalt);
+                    cmd.Parameters.AddWithValue("@kennel", infok.kennel);
+                    cmd.Parameters.AddWithValue("@indexkepID", infok.indexkepID);
+                    cmd.Parameters.AddWithValue("@visible", infok.visible);
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Sikeres mentés!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Valami hiba történt: {ex.Message}");
+                    }
+
+                }
+            }
         }
 
     }

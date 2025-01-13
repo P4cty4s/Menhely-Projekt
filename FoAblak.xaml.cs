@@ -49,7 +49,7 @@ namespace Menhely_Projekt
 
         private void Reset_btn_Click(object sender, RoutedEventArgs e)
         {
-            KutyaDataGrid.ItemsSource = dataShow;
+            feltoltes();
         }
         #region Keresés
 
@@ -220,6 +220,23 @@ namespace Menhely_Projekt
             } else
             {
                 MessageBox.Show("Válassz kutyát a módosításhoz.");
+            }
+        }
+
+        private void KutyaDataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            // Check if the column is bound to a DateTime property
+            if (e.PropertyType == typeof(DateTime))
+            {
+                // Apply a StringFormat to display only the date part
+                var column = e.Column as DataGridTextColumn;
+                if (column != null)
+                {
+                    column.Binding = new Binding(e.PropertyName)
+                    {
+                        StringFormat = "yyyy-MM-dd"  // Format the DateTime to show only the date
+                    };
+                }
             }
         }
     }

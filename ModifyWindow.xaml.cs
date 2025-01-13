@@ -20,9 +20,12 @@ namespace Menhely_Projekt
     /// </summary>
     public partial class ModifyWindow : Window
     {
+        Kutya alany = new Kutya();
         public ModifyWindow(int ID)
         {
             InitializeComponent();
+
+            alany = KutyaDAO.egyKutya(ID);
 
             betoltes(KutyaDAO.egyKutya(ID));
         }
@@ -93,6 +96,40 @@ namespace Menhely_Projekt
                 visible_rb.IsChecked = true;
             }
 
+        }
+
+        private void save_btn_Click(object sender, RoutedEventArgs e)
+        {
+            
+            alany.ID = int.Parse(id_tb.Text);
+
+            alany.regSzam = int.Parse(regisztraciosSzam_tb.Text);
+
+            alany.nev = nev_tb.Text;
+
+            alany.chipSzam = chipSzam_tb.Text;
+
+            alany.ivar = ivar_cb.SelectedItem == "Kan";
+
+            alany.meret = int.Parse(meret_tb.Text);
+
+            alany.szuletes = DateTime.Parse(szuletes_dp.Text);
+
+            alany.bekerules = DateTime.Parse(bekerules_dp.Text);
+
+            alany.ivaros = ivaros_cb.SelectedItem == "Ivaros";
+
+            alany.telephely = telephely_cb.Text;
+
+            alany.foglalt = foglalt_rb.IsChecked == true;
+
+            alany.kennel = int.Parse(kennel_cb.Text);
+
+            alany.indexkepID = int.Parse(indexkepID_tb.Text);
+
+            alany.visible = visible_rb.IsChecked == true;
+
+            KutyaDAO.updateKutya(alany);
         }
     }
 }

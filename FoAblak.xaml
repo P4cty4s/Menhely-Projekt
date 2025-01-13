@@ -73,7 +73,9 @@
                           CanUserAddRows="False"
                           HorizontalAlignment="Stretch"
                           VerticalAlignment="Stretch"
-                          IsReadOnly="True"/>
+                          IsReadOnly="True" AutoGeneratingColumn="KutyaDataGrid_AutoGeneratingColumn">
+                          
+                </DataGrid>
             </Grid>
         </Grid>
     </DockPanel>
