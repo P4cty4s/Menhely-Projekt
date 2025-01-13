@@ -1,0 +1,84 @@
+﻿<Window x:Class="Menhely_Projekt.newKutya"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Menhely_Projekt"
+        mc:Ignorable="d"
+        Title="ModifyWindow" Height="800" Width="700">
+    <Grid>
+        <!-- Define rows: main content and bottom row for the button -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Define columns: left half for data, right half for profile picture -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Half: Data Fields -->
+        <StackPanel Grid.Column="0" Margin="20">
+            <Label Content="ID:" />
+            <TextBox x:Name="id_tb" IsReadOnly="True" Margin="0,5,0,10" />
+
+            <Label Content="Regisztrációs szám:" />
+            <TextBox x:Name="regisztraciosSzam_tb" Margin="0,5,0,10" />
+
+            <Label Content="Név:" />
+            <TextBox x:Name="nev_tb" Margin="0,5,0,10" />
+
+            <Label Content="Chip Szám:" />
+            <TextBox x:Name="chipSzam_tb" Margin="0,5,0,10" />
+
+            <Label Content="Ivar:" />
+            <ComboBox x:Name="ivar_cb" Margin="0,5,0,10" />
+
+            <Label Content="Méret:" />
+            <TextBox x:Name="meret_tb" Margin="0,5,0,10" />
+
+            <Label Content="Születési Dátum:" />
+            <DatePicker x:Name="szuletes_dp" Margin="0,5,0,10" />
+
+            <Label Content="Bekerülési Dátum:" />
+            <DatePicker x:Name="bekerules_dp" Margin="0,5,0,10" />
+
+            <Label Content="Ivaros?" />
+            <ComboBox x:Name="ivaros_cb" Margin="0,5,0,10" />
+
+            <Label Content="Telephely:" />
+            <ComboBox x:Name="telephely_cb" Margin="0,5,0,10" />
+        </StackPanel>
+
+        <!-- Right Half: Profile Picture and Additional Data -->
+        <StackPanel Grid.Column="1" Margin="20">
+            <!-- Profile Picture -->
+            <Border BorderBrush="Gray" BorderThickness="1" Height="200" Width="200" Margin="0,0,0,10" HorizontalAlignment="Center">
+                <Image x:Name="profilePicture" Stretch="Uniform" />
+            </Border>
+
+            <Label Content="Foglalt állapot:" />
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                <RadioButton x:Name="szabad_rb" GroupName="foglalt_rbs" Content="Szabad" />
+                <RadioButton x:Name="foglalt_rb" GroupName="foglalt_rbs" Content="Foglalt" Margin="10,0,0,0" />
+            </StackPanel>
+
+            <Label Content="Kennel:" />
+            <ComboBox x:Name="kennel_cb" Margin="0,5,0,10" />
+
+            <Label Content="Indexkép ID:" />
+            <TextBox x:Name="indexkepID_tb" Margin="0,5,0,10" />
+
+            <Label Content="Láthatóság:" />
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                <RadioButton x:Name="visible_rb" GroupName="visible_rbs" Content="Látható" />
+                <RadioButton x:Name="invisible_rb" GroupName="visible_rbs" Content="Láthatatlan" Margin="10,0,0,0" />
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Bottom Row: Mentés Button -->
+        <Button x:Name="save_btn" Grid.Row="1" Grid.ColumnSpan="2" Content="Kutya feltöltése" HorizontalAlignment="Center" Margin="10" Padding="10,5" Click="save_btn_Click"/>
+    </Grid>
+</Window>

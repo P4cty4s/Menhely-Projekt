@@ -239,5 +239,11 @@ namespace Menhely_Projekt
                 }
             }
         }
+
+        private void AddKutya_btn_Click(object sender, RoutedEventArgs e)
+        {
+            newKutya create = new newKutya();
+            create.Show();
+        }
     }
 }

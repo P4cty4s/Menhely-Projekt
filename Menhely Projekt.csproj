@@ -119,6 +119,9 @@
     <Compile Include="ModifyWindow.xaml.cs">
       <DependentUpon>ModifyWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="newKutya.xaml.cs">
+      <DependentUpon>newKutya.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserDAO.cs" />
     <Page Include="Controls\NavControl.xaml">
       <SubType>Designer</SubType>
@@ -141,6 +144,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ModifyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="newKutya.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

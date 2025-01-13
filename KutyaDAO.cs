@@ -51,6 +51,7 @@ namespace Menhely_Projekt
                         }
                     }
                 }
+                connection.Close();
             }
         }
         public static List<Kutya> searchKutya(string prop,string value)
@@ -131,9 +132,9 @@ namespace Menhely_Projekt
                     }
 
                 }
-
+                connection.Close();
             }
-
+            
             return target;
         }
 
@@ -187,7 +188,45 @@ namespace Menhely_Projekt
                     {
                         MessageBox.Show($"Valami hiba történt: {ex.Message}");
                     }
+                    connection.Close();
+                }
+            }
+        }
 
+        public static void createKutya(Kutya newKutya)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"INSERT INTO kutyak 
+                    VALUES(id,@regszam,@nev,@chipszam,@ivar,@meret,@szuletes,@bekerules,@ivaros,@telephely,@foglalt,@kennel,@indexkepID,@visible)";
+
+                using (MySqlCommand cmd = new MySqlCommand(query,connection))
+                {
+                    cmd.Parameters.AddWithValue("@ID", newKutya.ID);
+                    cmd.Parameters.AddWithValue("@regSzam", newKutya.regSzam);
+                    cmd.Parameters.AddWithValue("@nev", newKutya.nev);
+                    cmd.Parameters.AddWithValue("@chipSzam", newKutya.chipSzam);
+                    cmd.Parameters.AddWithValue("@ivar", newKutya.ivar);
+                    cmd.Parameters.AddWithValue("@meret", newKutya.meret);
+                    cmd.Parameters.AddWithValue("@szuletes", newKutya.szuletes);
+                    cmd.Parameters.AddWithValue("@bekerules", newKutya.bekerules);
+                    cmd.Parameters.AddWithValue("@ivaros", newKutya.ivaros);
+                    cmd.Parameters.AddWithValue("@telephely", newKutya.telephely);
+                    cmd.Parameters.AddWithValue("@foglalt", newKutya.foglalt);
+                    cmd.Parameters.AddWithValue("@kennel", newKutya.kennel);
+                    cmd.Parameters.AddWithValue("@indexkepID", newKutya.indexkepID);
+                    cmd.Parameters.AddWithValue("@visible", newKutya.visible);
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Sikeres hozzáadás!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Valami hiba történt: {ex.Message}");
+                    }
                 }
             }
         }
