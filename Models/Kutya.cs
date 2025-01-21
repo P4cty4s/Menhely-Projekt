@@ -15,7 +15,7 @@ namespace Menhely_Projekt.Models
         public string nev { get; set; }
         public string chipSzam { get; set; }
         public bool ivar { get; set; }
-        public int meret { get; set; }
+        public string meret { get; set; }
         public DateTime szuletes { get; set; }
         public DateTime bekerules { get; set; }
         public bool ivaros { get; set; }

@@ -111,7 +111,7 @@ namespace Menhely_Projekt
 
             alany.ivar = ivar_cb.SelectedItem == "Kan";
 
-            alany.meret = int.Parse(meret_tb.Text);
+            alany.meret = meret_tb.Text;
 
             alany.szuletes = DateTime.Parse(szuletes_dp.Text);
 

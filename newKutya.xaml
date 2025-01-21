@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Menhely_Projekt"
         mc:Ignorable="d"
-        Title="ModifyWindow" Height="800" Width="700">
+        Title="Új kutya hozzáadása" Height="800" Width="700">
     <Grid>
         <!-- Define rows: main content and bottom row for the button -->
         <Grid.RowDefinitions>
@@ -37,7 +37,7 @@
             <ComboBox x:Name="ivar_cb" Margin="0,5,0,10" />
 
             <Label Content="Méret:" />
-            <TextBox x:Name="meret_tb" Margin="0,5,0,10" />
+            <ComboBox x:Name="meret_cb" Margin="0,5,0,10" />
 
             <Label Content="Születési Dátum:" />
             <DatePicker x:Name="szuletes_dp" Margin="0,5,0,10" />

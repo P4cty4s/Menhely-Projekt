@@ -37,7 +37,7 @@ namespace Menhely_Projekt
                                 nev = reader["nev"].ToString(),
                                 chipSzam = reader["chipszam"].ToString(),
                                 ivar = Convert.ToInt32(reader["ivar"]) == 1 ? true : false,
-                                meret = Convert.ToInt32(reader["meret"]),
+                                meret = reader["meret"].ToString(),
                                 szuletes = Convert.ToDateTime(reader["szuletes"]),
                                 bekerules = Convert.ToDateTime(reader["bekerules"]),
                                 ivaros = Convert.ToInt32(reader["ivaros"]) == 1 ? true : false,
@@ -77,7 +77,7 @@ namespace Menhely_Projekt
                                 nev = reader["nev"].ToString(),
                                 chipSzam = reader["chipszam"].ToString(),
                                 ivar = Convert.ToInt32(reader["ivar"]) == 1 ? true : false,
-                                meret = Convert.ToInt32(reader["meret"]),
+                                meret = reader["meret"].ToString(),
                                 szuletes = Convert.ToDateTime(reader["szuletes"]),
                                 bekerules = Convert.ToDateTime(reader["bekerules"]),
                                 ivaros = Convert.ToInt32(reader["ivaros"]) == 1 ? true : false,
@@ -118,7 +118,7 @@ namespace Menhely_Projekt
                             nev = reader["nev"].ToString(),
                             chipSzam = reader["chipszam"].ToString(),
                             ivar = Convert.ToInt32(reader["ivar"]) == 1 ? true : false,
-                            meret = Convert.ToInt32(reader["meret"]),
+                            meret = reader["meret"].ToString(),
                             szuletes = Convert.ToDateTime(reader["szuletes"]),
                             bekerules = Convert.ToDateTime(reader["bekerules"]),
                             ivaros = Convert.ToInt32(reader["ivaros"]) == 1 ? true : false,
@@ -198,15 +198,16 @@ namespace Menhely_Projekt
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                string query = @"INSERT INTO kutyak 
-                    VALUES(id,@regszam,@nev,@chipszam,@ivar,@meret,@szuletes,@bekerules,@ivaros,@telephely,@foglalt,@kennel,@indexkepID,@visible)";
+                string query = @"
+        INSERT INTO kutyak (id, regszam, nev, chipszam, ivar, meret, szuletes, bekerules, ivaros, telephely, foglalt, kennel, indexkepID, visible)
+        VALUES (@id, @regszam, @nev, @chipszam, @ivar, @meret, @szuletes, @bekerules, @ivaros, @telephely, @foglalt, @kennel, @indexkepID, @visible)";
 
-                using (MySqlCommand cmd = new MySqlCommand(query,connection))
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
-                    cmd.Parameters.AddWithValue("@ID", newKutya.ID);
-                    cmd.Parameters.AddWithValue("@regSzam", newKutya.regSzam);
+                    cmd.Parameters.AddWithValue("@id", newKutya.ID);
+                    cmd.Parameters.AddWithValue("@regszam", newKutya.regSzam);
                     cmd.Parameters.AddWithValue("@nev", newKutya.nev);
-                    cmd.Parameters.AddWithValue("@chipSzam", newKutya.chipSzam);
+                    cmd.Parameters.AddWithValue("@chipszam", newKutya.chipSzam);
                     cmd.Parameters.AddWithValue("@ivar", newKutya.ivar);
                     cmd.Parameters.AddWithValue("@meret", newKutya.meret);
                     cmd.Parameters.AddWithValue("@szuletes", newKutya.szuletes);
@@ -229,6 +230,7 @@ namespace Menhely_Projekt
                     }
                 }
             }
+
         }
 
     }

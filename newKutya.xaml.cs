@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,14 +25,34 @@ namespace Menhely_Projekt
         {
             InitializeComponent();
             betoltes();
-            buildKutya();
+            
         }
 
         private Kutya buildKutya()
         {
             Kutya result = new Kutya();
 
-            
+            try
+            {
+                result.ID = 0;
+                result.regSzam = int.Parse(regisztraciosSzam_tb.Text);
+                result.nev = nev_tb.Text;
+                result.chipSzam = chipSzam_tb.Text;
+                result.ivar = ivar_cb.SelectedItem.ToString() == "Kan";
+                result.meret = meret_cb.SelectedItem.ToString();
+                result.szuletes = DateTime.Parse(szuletes_dp.Text);
+                result.bekerules = DateTime.Parse(bekerules_dp.Text);
+                result.ivaros = ivaros_cb.SelectedItem.ToString() == "Ivaros";
+                result.telephely = telephely_cb.SelectedItem.ToString();
+                result.foglalt = foglalt_rb.IsChecked == true;
+                result.kennel = int.Parse(kennel_cb.SelectedItem.ToString());
+                result.indexkepID = int.Parse(indexkepID_tb.Text);
+                result.visible = visible_rb.IsChecked == true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Minden mezőt ki kell tölteni!");
+            }
 
             return result;
         }
@@ -67,6 +88,11 @@ namespace Menhely_Projekt
             ivaros_cb.Items.Add("Ivaros");
             ivaros_cb.Items.Add("Ivartalan");
 
+            meret_cb.Items.Add("Kicsi");
+            meret_cb.Items.Add("Közepes");
+            meret_cb.Items.Add("Nagy");
+            meret_cb.Items.Add("Kölyök");
+
             kennel_cb.Items.Clear();
             foreach (var item in Kutya.kutyak.Select(q => q.kennel).Distinct())
             {
@@ -77,7 +103,9 @@ namespace Menhely_Projekt
 
         private void save_btn_Click(object sender, RoutedEventArgs e)
         {
+            Kutya target = buildKutya();
 
+            KutyaDAO.createKutya(target);
         }
     }
 }
