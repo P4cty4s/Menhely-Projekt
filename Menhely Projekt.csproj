@@ -114,7 +114,9 @@
       <DependentUpon>FoAblak.xaml</DependentUpon>
     </Compile>
     <Compile Include="KutyaDAO.cs" />
+    <Compile Include="Models\Kennel.cs" />
     <Compile Include="Models\Kutya.cs" />
+    <Compile Include="Models\Udvar.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="ModifyWindow.xaml.cs">
       <DependentUpon>ModifyWindow.xaml</DependentUpon>

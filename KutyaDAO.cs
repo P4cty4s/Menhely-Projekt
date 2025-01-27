@@ -226,7 +226,7 @@ namespace Menhely_Projekt
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Valami hiba történt: {ex.Message}");
+                        MessageBox.Show($"Hiba oka: {ex.Message}");
                     }
                 }
             }

@@ -48,25 +48,12 @@ namespace Menhely_Projekt
                 result.kennel = int.Parse(kennel_cb.SelectedItem.ToString());
                 result.indexkepID = int.Parse(indexkepID_tb.Text);
                 result.visible = visible_rb.IsChecked == true;
+                return result;
             }
             catch (Exception)
             {
                 MessageBox.Show("Minden mezőt ki kell tölteni!");
-            }
-
-            return result;
-        }
-
-        private object checker(object obj)
-        {
-            if (obj != null)
-            {
-                return obj;
-
-            } else 
-            {
-                return MessageBox.Show("Nem lehet egy mező sem üres.");
-            
+                return null;
             }
 
         }
@@ -105,7 +92,11 @@ namespace Menhely_Projekt
         {
             Kutya target = buildKutya();
 
+            if (target != null)
+            {
             KutyaDAO.createKutya(target);
+               
+            }
         }
     }
 }
