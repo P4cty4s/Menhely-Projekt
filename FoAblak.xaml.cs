@@ -22,7 +22,6 @@ namespace Menhely_Projekt
     /// </summary>
     public partial class FoAblak : Window
     {
-        private NavControl navControl = new NavControl();
         private static List<Kutya> dataShow = new List<Kutya>();
         public FoAblak(int id)
         {

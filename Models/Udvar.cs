@@ -15,5 +15,6 @@ namespace Menhely_Projekt.Models
             Id = _id;
             nev = _nev;
         }
+        public static List<Udvar> Udvarok = new List<Udvar>();
     }
 }
