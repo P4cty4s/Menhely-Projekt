@@ -5,11 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Menhely_Projekt.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="1920" d:DesignWidth="1080">
     <DockPanel>
-        <!-- Top Navigation Bar -->
-        <local:NavControl Height="50" DockPanel.Dock="Top" VerticalAlignment="Top" />
-
+        <local:NavControl Height="50" DockPanel.Dock="Top" VerticalAlignment="Top" x:Name="NavBar"/>
         <!-- Main Layout -->
         <Grid Margin="10">
             <!-- Define Grid Structure -->
@@ -38,7 +36,7 @@
                     HorizontalAlignment="Left" Margin="20,10,0,10" Click="AddKutya_btn_Click"/>
 
                 <Button x:Name="Kennel_btn" Height="50" Width="200" Content="Kennelek kezelése"
-                    HorizontalAlignment="Left" Margin="20,10,0,10" />
+                    HorizontalAlignment="Left" Margin="20,10,0,10" Click="Kennel_btn_Click"/>
 
                 <Button x:Name="History_btn" Height="50" Width="200" Content="Legutóbbi módosítások"
                     HorizontalAlignment="Left" Margin="20,10,0,10" VerticalAlignment="Bottom"/>

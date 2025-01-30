@@ -6,8 +6,10 @@
              xmlns:local="clr-namespace:Menhely_Projekt.Controls"
              mc:Ignorable="d">
     <ToolBar ToolBarTray.IsLocked="True" ToolBar.OverflowMode="Never" Name="NavBar" Width="1920" Height="50" Background="White" VerticalAlignment="Top">
+        <!-- Left-pointing button -->
+        <Button Content="⬅" FontSize="18" Width="40" Height="40" HorizontalAlignment="Left" x:Name="Back_btn" Click="Back_btn_Click"/>
+
         <Label FontSize="22" x:Name="Username_label" HorizontalAlignment="Left"></Label>
         <Label FontSize="22" x:Name="Time_label" HorizontalAlignment="Right"></Label>
     </ToolBar>
-
 </UserControl>

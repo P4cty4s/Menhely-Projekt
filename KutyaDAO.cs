@@ -30,24 +30,7 @@ namespace Menhely_Projekt
                     {
                         while (reader.Read())
                         {
-                            Kutya.kutyak.Add(new Kutya()
-                            {
-                                ID = Convert.ToInt32(reader["id"]),
-                                regSzam = Convert.ToInt32(reader["regszam"]),
-                                nev = reader["nev"].ToString(),
-                                chipSzam = reader["chipszam"].ToString(),
-                                ivar = Convert.ToInt32(reader["ivar"]) == 1 ? true : false,
-                                meret = reader["meret"].ToString(),
-                                szuletes = Convert.ToDateTime(reader["szuletes"]),
-                                bekerules = Convert.ToDateTime(reader["bekerules"]),
-                                ivaros = Convert.ToInt32(reader["ivaros"]) == 1 ? true : false,
-                                telephely = reader["telephely"].ToString(),
-                                foglalt = Convert.ToInt32(reader["foglalt"]) == 1 ? true : false,
-                                kennel = Convert.ToInt32(reader["kennel"]),
-                                indexkepID = Convert.ToInt32(reader["indexkepid"]),
-                                visible = Convert.ToInt32(reader["visible"]) == 1 ? true : false
-                            });
-                            
+                            Kutya.kutyak.Add(new Kutya(reader));
                         }
                     }
                 }
@@ -70,23 +53,7 @@ namespace Menhely_Projekt
                     {
                         while (reader.Read())
                         {
-                            result.Add(new Kutya()
-                            {
-                                ID = Convert.ToInt32(reader["id"]),
-                                regSzam = Convert.ToInt32(reader["regszam"]),
-                                nev = reader["nev"].ToString(),
-                                chipSzam = reader["chipszam"].ToString(),
-                                ivar = Convert.ToInt32(reader["ivar"]) == 1 ? true : false,
-                                meret = reader["meret"].ToString(),
-                                szuletes = Convert.ToDateTime(reader["szuletes"]),
-                                bekerules = Convert.ToDateTime(reader["bekerules"]),
-                                ivaros = Convert.ToInt32(reader["ivaros"]) == 1 ? true : false,
-                                telephely = reader["telephely"].ToString(),
-                                foglalt = Convert.ToInt32(reader["foglalt"]) == 1 ? true : false,
-                                kennel = Convert.ToInt32(reader["kennel"]),
-                                indexkepID = Convert.ToInt32(reader["indexkepid"]),
-                                visible = Convert.ToInt32(reader["visible"]) == 1 ? true : false
-                            });
+                            result.Add(new Kutya(reader));
                         }
                     }
 
@@ -111,23 +78,7 @@ namespace Menhely_Projekt
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         reader.Read();
-                        target = new Kutya()
-                        {
-                            ID = Convert.ToInt32(reader["id"]),
-                            regSzam = Convert.ToInt32(reader["regszam"]),
-                            nev = reader["nev"].ToString(),
-                            chipSzam = reader["chipszam"].ToString(),
-                            ivar = Convert.ToInt32(reader["ivar"]) == 1 ? true : false,
-                            meret = reader["meret"].ToString(),
-                            szuletes = Convert.ToDateTime(reader["szuletes"]),
-                            bekerules = Convert.ToDateTime(reader["bekerules"]),
-                            ivaros = Convert.ToInt32(reader["ivaros"]) == 1 ? true : false,
-                            telephely = reader["telephely"].ToString(),
-                            foglalt = Convert.ToInt32(reader["foglalt"]) == 1 ? true : false,
-                            kennel = Convert.ToInt32(reader["kennel"]),
-                            indexkepID = Convert.ToInt32(reader["indexkepid"]),
-                            visible = Convert.ToInt32(reader["visible"]) == 1 ? true : false
-                        };
+                        target = new Kutya(reader);
 
                     }
 
@@ -159,7 +110,8 @@ namespace Menhely_Projekt
                     foglalt = @foglalt,
                     kennel = @kennel,
                     indexkepID = @indexkepID,
-                    visible = @visible
+                    visible = @visible,
+                    status = @status
                 WHERE ID = @ID;
             ";
                 using (MySqlCommand cmd = new MySqlCommand(query,connection))
@@ -178,6 +130,7 @@ namespace Menhely_Projekt
                     cmd.Parameters.AddWithValue("@kennel", infok.kennel);
                     cmd.Parameters.AddWithValue("@indexkepID", infok.indexkepID);
                     cmd.Parameters.AddWithValue("@visible", infok.visible);
+                    cmd.Parameters.AddWithValue("@status",infok.status);
 
                     try
                     {
@@ -199,8 +152,8 @@ namespace Menhely_Projekt
             {
                 connection.Open();
                 string query = @"
-        INSERT INTO kutyak (id, regszam, nev, chipszam, ivar, meret, szuletes, bekerules, ivaros, telephely, foglalt, kennel, indexkepID, visible)
-        VALUES (@id, @regszam, @nev, @chipszam, @ivar, @meret, @szuletes, @bekerules, @ivaros, @telephely, @foglalt, @kennel, @indexkepID, @visible)";
+        INSERT INTO kutyak (id, regszam, nev, chipszam, ivar, meret, szuletes, bekerules, ivaros, telephely, foglalt, kennel, indexkepID, visible, status)
+        VALUES (@id, @regszam, @nev, @chipszam, @ivar, @meret, @szuletes, @bekerules, @ivaros, @telephely, @foglalt, @kennel, @indexkepID, @visible, @status)";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
@@ -218,6 +171,7 @@ namespace Menhely_Projekt
                     cmd.Parameters.AddWithValue("@kennel", newKutya.kennel);
                     cmd.Parameters.AddWithValue("@indexkepID", newKutya.indexkepID);
                     cmd.Parameters.AddWithValue("@visible", newKutya.visible);
+                    cmd.Parameters.AddWithValue("@status", newKutya.status);
 
                     try
                     {
@@ -232,6 +186,7 @@ namespace Menhely_Projekt
             }
 
         }
+
 
     }
 }

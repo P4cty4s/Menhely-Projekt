@@ -76,6 +76,10 @@
                 <RadioButton x:Name="visible_rb" GroupName="visible_rbs" Content="Látható" />
                 <RadioButton x:Name="invisible_rb" GroupName="visible_rbs" Content="Láthatatlan" Margin="10,0,0,0" />
             </StackPanel>
+
+            <Label Content="Státusz:"/>
+            <ComboBox Width="auto" x:Name="Status_cb"/>
+
         </StackPanel>
 
         <!-- Bottom Row: Mentés Button -->

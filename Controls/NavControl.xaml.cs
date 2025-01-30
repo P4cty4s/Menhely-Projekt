@@ -41,5 +41,11 @@ namespace Menhely_Projekt.Controls
         {
             Time_label.Content = DateTime.Now.ToString("HH:mm");
         }
+
+
+        private void Back_btn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

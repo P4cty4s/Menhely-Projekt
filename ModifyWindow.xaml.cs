@@ -96,6 +96,11 @@ namespace Menhely_Projekt
                 visible_rb.IsChecked = true;
             }
 
+            foreach (var item in FoAblak.statuses)
+            {
+                Status_cb.Items.Add(item);
+            }
+
         }
 
         private void save_btn_Click(object sender, RoutedEventArgs e)
@@ -128,6 +133,10 @@ namespace Menhely_Projekt
             alany.indexkepID = int.Parse(indexkepID_tb.Text);
 
             alany.visible = visible_rb.IsChecked == true;
+
+            alany.status = Status_cb.SelectedItem.ToString();
+
+
 
             KutyaDAO.updateKutya(alany);
         }

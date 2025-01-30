@@ -107,6 +107,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\KennelControl.xaml.cs">
+      <DependentUpon>KennelControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MainBase.xaml.cs">
       <DependentUpon>MainBase.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
     </Compile>
     <Compile Include="UdvarDAO.cs" />
     <Compile Include="UserDAO.cs" />
+    <Page Include="Controls\KennelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\MainBase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

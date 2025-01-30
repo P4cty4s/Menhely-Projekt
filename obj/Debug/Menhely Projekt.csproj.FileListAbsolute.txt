@@ -112,3 +112,7 @@ C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\newKutya.g.cs
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\newKutya.baml
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\newKutya.g.cs
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\newKutya.baml
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\MainBase.g.cs
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\MainBase.baml
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\KennelControl.g.cs
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\KennelControl.baml

@@ -24,8 +24,33 @@ namespace Menhely_Projekt.Models
         public int kennel { get; set; }
         public int indexkepID { get; set; }
         public bool visible { get; set; }
+        public string status { get; set; }
 
         public static List<Kutya> kutyak = new List<Kutya>();
+
+        public Kutya(MySqlDataReader adat)
+        {
+            ID = Convert.ToInt32(adat["id"]);
+            regSzam = Convert.ToInt32(adat["regszam"]);
+            nev = adat["nev"].ToString();
+            chipSzam = adat["chipszam"].ToString();
+            ivar = Convert.ToInt32(adat["ivar"]) == 1 ? true : false;
+            meret = adat["meret"].ToString();
+            szuletes = Convert.ToDateTime(adat["szuletes"]);
+            bekerules = Convert.ToDateTime(adat["bekerules"]);
+            ivaros = Convert.ToInt32(adat["ivaros"]) == 1 ? true : false;
+            telephely = adat["telephely"].ToString();
+            foglalt = Convert.ToInt32(adat["foglalt"]) == 1 ? true : false;
+            kennel = Convert.ToInt32(adat["kennel"]);
+            indexkepID = Convert.ToInt32(adat["indexkepid"]);
+            visible = Convert.ToInt32(adat["visible"]) == 1 ? true : false;
+            status = adat["status"].ToString();
+        }
+
+        public Kutya()
+        {
+            
+        }
 
     }
 }

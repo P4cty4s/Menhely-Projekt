@@ -48,6 +48,7 @@ namespace Menhely_Projekt
                 result.kennel = int.Parse(kennel_cb.SelectedItem.ToString());
                 result.indexkepID = int.Parse(indexkepID_tb.Text);
                 result.visible = visible_rb.IsChecked == true;
+                result.status = Status_cb.SelectedItem.ToString();
                 return result;
             }
             catch (Exception)
@@ -84,6 +85,11 @@ namespace Menhely_Projekt
             foreach (var item in Kutya.kutyak.Select(q => q.kennel).Distinct())
             {
                 kennel_cb.Items.Add(item.ToString());
+            }
+
+            foreach (var item in FoAblak.statuses)
+            {
+                Status_cb.Items.Add(item);
             }
 
         }
