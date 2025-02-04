@@ -187,6 +187,31 @@ namespace Menhely_Projekt
 
         }
 
+        public static List<Kutya> getMyKutya()
+        {
+            List<Kutya> result = new List<Kutya>();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM kutyak WHERE status = @value1 OR status = @value2";
+                connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query,connection))
+                {
+                    cmd.Parameters.AddWithValue("@value1","Sérült");
+                    cmd.Parameters.AddWithValue("@value2","Nálunk van");
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(new Kutya(reader));
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
 
     }
 }

@@ -20,8 +20,8 @@
             </Grid.ColumnDefinitions>
 
             <!-- Left Side: Scrollable Panel for Labels -->
-            <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto">
-                <StackPanel x:Name="LeftPanel" Margin="10" />
+            <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Background="Wheat" Margin="0,50,0,0">
+                <ListBox x:Name="Kutyak_panel" Margin="10" DragEnter="Kutyak_panel_DragEnter"/>
             </ScrollViewer>
 
             <!-- Right Side -->
@@ -34,12 +34,13 @@
                 </Grid.RowDefinitions>
 
                 <!-- ComboBox -->
-                <ComboBox x:Name="RightComboBox" Width="300" Height="30" />
+                <ComboBox x:Name="Udvarok_cb" Width="300" Height="30" Margin="440,-11,0,11" />
 
                 <!-- Scrollable Panel for ListBoxes -->
-                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-                    <StackPanel x:Name="RightPanel" Margin="10" />
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Background="LightGray">
+                    <StackPanel x:Name="Kennel_panel" Margin="10" />
                 </ScrollViewer>
+                <Button Content="Kennel hozzáadása" Width="300" Height="30" HorizontalAlignment="Left" Margin="10,-16,0,0" VerticalAlignment="Top" Click="Button_Click"/>
             </Grid>
         </Grid>
     </Grid>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Menhely_Projekt.Models
 {
-    internal class Kutya
+    public class Kutya
     {
         public int ID { get; set; }
         public int regSzam { get; set; }

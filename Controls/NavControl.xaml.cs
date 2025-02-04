@@ -45,7 +45,13 @@ namespace Menhely_Projekt.Controls
 
         private void Back_btn_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (FoAblak.currentContent != "Main")
+            {
+                var ez = Window.GetWindow(this);
+                FoAblak.currentContent = "Main";
+                ez.Content = FoAblak.Main;
+                
+            }
         }
     }
 }

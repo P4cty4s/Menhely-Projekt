@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace Menhely_Projekt.Models
 {
@@ -15,6 +16,15 @@ namespace Menhely_Projekt.Models
             Id = _id;
             nev = _nev;
         }
-        public static List<Udvar> Udvarok = new List<Udvar>();
+        public Udvar(MySqlDataReader _reader)
+        {
+            Id = Convert.ToInt32(_reader["id"]);
+            nev = _reader["udvarnev"].ToString();
+        }
+
+        public override string ToString()
+        {
+            return nev;
+        }
     }
 }

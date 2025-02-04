@@ -4,6 +4,7 @@ using Mysqlx.Cursor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,12 +23,16 @@ namespace Menhely_Projekt
     /// </summary>
     public partial class FoAblak : Window
     {
+        private static int UserId = -1;
         public static List<string> statuses = new List<string>();
 
-        private static List<Kutya> dataShow = new List<Kutya>();
+        public static string currentContent = "";
+
         public FoAblak(int _id)
         {
             InitializeComponent();
+
+            UserId = _id;
 
             statuses.Add("Kórházban");
             statuses.Add("Sérült");
@@ -35,10 +40,18 @@ namespace Menhely_Projekt
             statuses.Add("Eltávozott");
             statuses.Add("Nálunk van");
 
-
-            MainBase Main = new MainBase(_id);
-            this.Content = Main;
-            Main.NavBar.Back_btn.IsEnabled = false;
+            mainBetolt();
         }
+
+        public static KennelControl Kennel = new KennelControl();
+        public static MainBase Main = new MainBase(UserId);
+
+        private void mainBetolt()
+        {
+            this.Content = Main;
+            currentContent = "Main";
+        }
+
     }
+
 }

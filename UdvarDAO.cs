@@ -42,5 +42,26 @@ namespace Menhely_Projekt
 
             return result;
         }
+        public static List<Udvar> AllUdvar()
+        {
+            List<Udvar> result = new List<Udvar>();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM udvar";
+
+                connection.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query,connection))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(new Udvar(reader));
+                        }
+                    }
+                }
+            }
+            return result;
+        }
     }
 }
