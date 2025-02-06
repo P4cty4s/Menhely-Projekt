@@ -34,11 +34,12 @@
                 </Grid.RowDefinitions>
 
                 <!-- ComboBox -->
-                <ComboBox x:Name="Udvarok_cb" Width="300" Height="30" Margin="440,-11,0,11" />
+                <ComboBox x:Name="Udvarok_cb" Width="300" Height="30" Margin="440,-11,0,11" SelectionChanged="Udvarok_cb_SelectionChanged"/>
 
                 <!-- Scrollable Panel for ListBoxes -->
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Background="LightGray">
-                    <StackPanel x:Name="Kennel_panel" Margin="10" />
+                    <StackPanel x:Name="Kennel_panel" Margin="10">
+                    </StackPanel>
                 </ScrollViewer>
                 <Button Content="Kennel hozzáadása" Width="300" Height="30" HorizontalAlignment="Left" Margin="10,-16,0,0" VerticalAlignment="Top" Click="Button_Click"/>
             </Grid>

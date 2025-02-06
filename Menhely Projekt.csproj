@@ -113,6 +113,9 @@
     <Compile Include="Controls\KennelControl.xaml.cs">
       <DependentUpon>KennelControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\kennelShow.xaml.cs">
+      <DependentUpon>kennelShow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MainBase.xaml.cs">
       <DependentUpon>MainBase.xaml</DependentUpon>
     </Compile>
@@ -142,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\KennelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\kennelShow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

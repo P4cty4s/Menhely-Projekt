@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Menhely_Projekt.Models
 {
-    internal class Udvar
+    public class Udvar
     {
         public int Id { get; set; }
         public string nev { get; set; }

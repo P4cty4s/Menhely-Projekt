@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="addKennelName" Height="100" Width="200">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Név" VerticalAlignment="Top" Width="90"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Név" x:Name="kennelName_tb" VerticalAlignment="Top" Width="90"/>
         <Label Content="Új kennel" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Button Content="Létrehozás" HorizontalAlignment="Left" Margin="117,40,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 

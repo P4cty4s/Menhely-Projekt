@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Menhely_Projekt.Models;
+using Mysqlx;
 
 namespace Menhely_Projekt
 {
@@ -21,15 +22,22 @@ namespace Menhely_Projekt
     public partial class addKennelName : Window
     {
         Kennel kennel = new Kennel();
-        public addKennelName(Kennel target)
+        public addKennelName(Udvar _udvar,int _kennelSzam)
         {
             InitializeComponent();
-            kennel = target;
+            kennel.UdvarId = _udvar.Id;
+            kennel.Id = 0;
+            kennel.KennelSzam = _kennelSzam;
+
+            kennelName_tb.Text = "kennel "+_kennelSzam;
+            kennelName_tb.IsEnabled = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             KennelDAO.CreateKennel(kennel);
+            this.DialogResult = true;
+            this.Close();
         }
     }
 }

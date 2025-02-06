@@ -118,3 +118,5 @@ C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\KennelControl.g.
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\KennelControl.baml
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\addKennelName.g.cs
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\addKennelName.baml
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\kennelShow.g.cs
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\kennelShow.baml

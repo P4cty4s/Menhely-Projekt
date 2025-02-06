@@ -17,5 +17,10 @@ namespace Menhely_Projekt.Models
             Name = _name;
             Password = _password;
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
