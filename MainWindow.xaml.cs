@@ -29,6 +29,10 @@ namespace Menhely_Projekt
 
         private void btn_login_Click(object sender, RoutedEventArgs e)
         {
+#if DEBUG
+            tb_name.Text = "admin";
+            tb_password.Text = "0";
+#endif
             ID = UserDAO.login(tb_name.Text, tb_password.Text);
             if (ID == -1)
             {

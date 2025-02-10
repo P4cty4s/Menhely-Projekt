@@ -21,7 +21,13 @@
 
             <!-- Left Side: Scrollable Panel for Labels -->
             <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Background="Wheat" Margin="0,50,0,0">
-                <ListBox x:Name="Kutyak_panel" Margin="10" DragEnter="Kutyak_panel_DragEnter"/>
+                <ListBox x:Name="Kutyak_panel" Margin="10" 
+         DragEnter="Kutyak_panel_DragEnter" 
+         AllowDrop="True" 
+         SelectionMode="Single" 
+         PreviewMouseLeftButtonDown="Kutyak_panel_PreviewMouseLeftButtonDown"
+         PreviewMouseMove="Kutyak_panel_PreviewMouseMove" DragLeave="Kutyak_panel_DragLeave"/>
+
             </ScrollViewer>
 
             <!-- Right Side -->

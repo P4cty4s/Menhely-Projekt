@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Menhely_Projekt.Models;
 
 namespace Menhely_Projekt.Controls
 {
@@ -20,10 +21,18 @@ namespace Menhely_Projekt.Controls
     /// </summary>
     public partial class kennelShow : UserControl
     {
-        public kennelShow()
+        public kennelShow(string name)
         {
             InitializeComponent();
-           
+            kennelName_lb.Content = name;
+        }
+
+        private void kennelek_lb_Drop(object sender, DragEventArgs e)
+        {
+            e.Effects = DragDropEffects.Copy;
+
+            var kopy = sender;
+
         }
     }
 }

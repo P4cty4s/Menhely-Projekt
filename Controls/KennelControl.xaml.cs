@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Menhely_Projekt.Models;
 using Mysqlx;
+using Org.BouncyCastle.Asn1.Cmp;
 
 namespace Menhely_Projekt.Controls
 {
@@ -25,6 +26,8 @@ namespace Menhely_Projekt.Controls
         List<Kutya> myKutyak = new List<Kutya>();
         List<Udvar> Udvarok = new List<Udvar>();
         List<Kennel> Kennelek = new List<Kennel>();
+
+        private Point _startPoint;
 
         Dictionary<Kennel,kennelShow> showKennel = new Dictionary<Kennel,kennelShow>();
         public KennelControl()
@@ -47,7 +50,7 @@ namespace Menhely_Projekt.Controls
 
             foreach (var item in myKutyak)
             {
-                Kutyak_panel.Items.Add(item.ID + " - " + item.nev + " - " + item.status);
+                Kutyak_panel.Items.Add(item);
             }
         }
 
@@ -65,7 +68,7 @@ namespace Menhely_Projekt.Controls
 
                 foreach (var item in Kennelek.Where(q=>q.UdvarId == _udvar.Id))
                 {
-                    showKennel.Add(item,new kennelShow());
+                    showKennel.Add(item,new kennelShow(item.KennelSzam.ToString()));
                     Kennel_panel.Children.Add(showKennel[item]);
                 
                 }
@@ -80,13 +83,6 @@ namespace Menhely_Projekt.Controls
             {
                 Udvarok_cb.Items.Add(item);
             }
-        }
-
-
-        private void Kutyak_panel_DragEnter(object sender, DragEventArgs e)
-        {
-            e.Effects = DragDropEffects.Copy;
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -119,6 +115,46 @@ namespace Menhely_Projekt.Controls
         private void Udvarok_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             kennelBetoltes();
+        }
+
+        private void Kutyak_panel_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            _startPoint = e.GetPosition(null);
+        }
+
+        // Detect drag movement
+        private void Kutyak_panel_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                if (Kutyak_panel.SelectedItem == null) return;
+
+                // Check if mouse moved enough to start a drag
+                Point mousePos = e.GetPosition(null);
+                Vector diff = _startPoint - mousePos;
+
+                if (Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance ||
+                    Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance)
+                {
+                    // Start DragDrop
+                    DragDrop.DoDragDrop(Kutyak_panel, Kutyak_panel.SelectedItem, DragDropEffects.Move);
+
+                }
+            }
+        }
+
+        // Visual feedback when dragging over allowed drop targets
+        private void Kutyak_panel_DragEnter(object sender, DragEventArgs e)
+        {
+            if (!e.Data.GetDataPresent(typeof(Kutya))) // Adjust type if needed
+            {
+                e.Effects = DragDropEffects.None;
+            }
+        }
+
+        private void Kutyak_panel_DragLeave(object sender, DragEventArgs e)
+        {
+            Kutyak_panel.Items.Remove(sender);
         }
     }
 }
