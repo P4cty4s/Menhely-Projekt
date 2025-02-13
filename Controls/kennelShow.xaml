@@ -10,7 +10,9 @@
     <Border Padding="10" BorderBrush="Gray" BorderThickness="1" CornerRadius="5">
         <StackPanel Orientation="Vertical" Margin="5">
             <Label x:Name="kennelName_lb" Content="Kennel Name" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center"/>
-            <ListBox x:Name="kennelek_lb" Height="100" MinWidth="250" AllowDrop="True" Drop="kennelek_lb_Drop"/>
+            <Button Content="Hozzáad" Click="Button_Click"/> 
+            <ListBox x:Name="Kennelek_lb" Height="100" MinWidth="250">
+            </ListBox>
         </StackPanel>
     </Border>
 </UserControl>

@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="1920" d:DesignWidth="1080">
     <Grid>
+
         <!-- Navbar at the top -->
         <local:NavControl Height="50" VerticalAlignment="Top" x:Name="NavBar"/>
 
@@ -21,13 +22,8 @@
 
             <!-- Left Side: Scrollable Panel for Labels -->
             <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Background="Wheat" Margin="0,50,0,0">
-                <ListBox x:Name="Kutyak_panel" Margin="10" 
-         DragEnter="Kutyak_panel_DragEnter" 
-         AllowDrop="True" 
-         SelectionMode="Single" 
-         PreviewMouseLeftButtonDown="Kutyak_panel_PreviewMouseLeftButtonDown"
-         PreviewMouseMove="Kutyak_panel_PreviewMouseMove" DragLeave="Kutyak_panel_DragLeave"/>
-
+                <ListBox x:Name="Kutyak_panel" Margin="10"  
+                SelectionMode="Multiple"/>
             </ScrollViewer>
 
             <!-- Right Side -->
@@ -51,4 +47,5 @@
             </Grid>
         </Grid>
     </Grid>
+    
 </UserControl>

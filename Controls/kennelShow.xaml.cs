@@ -21,18 +21,18 @@ namespace Menhely_Projekt.Controls
     /// </summary>
     public partial class kennelShow : UserControl
     {
+        public event EventHandler requestKutya;
         public kennelShow(string name)
         {
             InitializeComponent();
-            kennelName_lb.Content = name;
+            kennelName_lb.Content = "Kennel "+name;
+            Kennelek_lb.AllowDrop = true;
         }
 
-        private void kennelek_lb_Drop(object sender, DragEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            e.Effects = DragDropEffects.Copy;
-
-            var kopy = sender;
-
+            requestKutya?.Invoke(this, EventArgs.Empty);
         }
+
     }
 }

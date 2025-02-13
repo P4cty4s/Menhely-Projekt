@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\controls\\kennelcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:controls\\kennelcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\controls\\kennelshow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:controls\\kennelshow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\controls\\kennelcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:controls\\kennelcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\a projekt\\menhely projekt\\controls\\kennelcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:controls\\kennelcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\controls\\kennelshow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\a projekt\\menhely projekt\\controls\\kennelshow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:controls\\kennelshow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\a projekt\\menhely projekt\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\a projekt\\menhely projekt\\controls\\kennelcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:controls\\kennelcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\a projekt\\menhely projekt\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\a projekt\\menhely projekt\\models\\kutya.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:models\\kutya.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\addkennelname.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -46,74 +38,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "KennelControl.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\KennelControl.xaml.cs",
-              "RelativeDocumentMoniker": "Controls\\KennelControl.xaml.cs",
-              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\KennelControl.xaml.cs",
-              "RelativeToolTip": "Controls\\KennelControl.xaml.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAADgvz8AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T10:43:44.256Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "kennelShow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\kennelShow.xaml.cs",
-              "RelativeDocumentMoniker": "Controls\\kennelShow.xaml.cs",
-              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\kennelShow.xaml.cs",
-              "RelativeToolTip": "Controls\\kennelShow.xaml.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAhwCIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T10:40:31.002Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "KennelControl.xaml",
               "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\KennelControl.xaml",
               "RelativeDocumentMoniker": "Controls\\KennelControl.xaml",
               "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\KennelControl.xaml",
               "RelativeToolTip": "Controls\\KennelControl.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-06T10:22:57.333Z",
+              "WhenOpened": "2025-02-13T10:07:04.652Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "kennelShow.xaml",
               "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\kennelShow.xaml",
               "RelativeDocumentMoniker": "Controls\\kennelShow.xaml",
               "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\kennelShow.xaml",
               "RelativeToolTip": "Controls\\kennelShow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-06T10:20:29.789Z",
+              "WhenOpened": "2025-02-13T10:00:27.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KennelControl.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\KennelControl.xaml.cs",
+              "RelativeDocumentMoniker": "Controls\\KennelControl.xaml.cs",
+              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\KennelControl.xaml.cs",
+              "RelativeToolTip": "Controls\\KennelControl.xaml.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwHUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T10:43:44.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "kennelShow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\kennelShow.xaml.cs",
+              "RelativeDocumentMoniker": "Controls\\kennelShow.xaml.cs",
+              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\kennelShow.xaml.cs",
+              "RelativeToolTip": "Controls\\kennelShow.xaml.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAUwBsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T10:40:31.002Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCEAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T14:22:52.221Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -125,20 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Kutya.cs",
-              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Models\\Kutya.cs",
-              "RelativeDocumentMoniker": "Models\\Kutya.cs",
-              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Models\\Kutya.cs",
-              "RelativeToolTip": "Models\\Kutya.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADgAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T14:15:28.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "addKennelName.xaml",
               "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\addKennelName.xaml",
               "RelativeDocumentMoniker": "addKennelName.xaml",
@@ -149,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "FoAblak.xaml.cs",
               "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\FoAblak.xaml.cs",
               "RelativeDocumentMoniker": "FoAblak.xaml.cs",

@@ -54,7 +54,7 @@ namespace Menhely_Projekt.Models
 
         public override string ToString()
         {
-            return ID + " - " + nev + " - " + status;
+            return ID + "-" + nev + "-" + status;
         }
 
     }
