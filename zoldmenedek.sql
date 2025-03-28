@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Feb 13. 21:40
+-- Létrehozás ideje: 2025. Már 28. 12:15
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `changelog` (
   `id` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
+  `category` varchar(255) NOT NULL,
   `msg` varchar(255) NOT NULL,
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
@@ -38,28 +39,28 @@ CREATE TABLE `changelog` (
 -- A tábla adatainak kiíratása `changelog`
 --
 
-INSERT INTO `changelog` (`id`, `userid`, `msg`, `date`) VALUES
-(1, 1, 'megváltoztatta Loki adatait(Reg.szám: 122)', '2024-09-30 12:14:00'),
-(3, 1, 'Feltöltött egy új kennelt a(z) elöli udvarba', '2024-09-30 12:17:00'),
-(4, 1, 'Feltöltött egy új kennelt a(z) elöli udvarba', '2024-09-30 12:19:00'),
-(5, 1, 'Törölt egy  kennelt a(z) elöli udvarból', '2024-09-30 12:23:00'),
-(6, 1, 'Áthelyezte Loki(Regszám:122) kutyát a(z) elöli udvar 1 kennelbe', '2024-09-30 12:29:00'),
-(7, 1, 'kivette rexike (Regszám: 126) a(z)kölyökudvar udvarból', '2024-09-30 12:32:00'),
-(8, 1, 'kivette Loki (Regszám: 122) a(z) elöli udvarból', '2024-09-30 12:33:00'),
-(9, 1, 'kivette Frakk (Regszám: 136) kutyát a(z) elöli udvarból', '2024-09-30 12:33:00'),
-(10, 1, 'megváltoztatta Loki adatait(Reg.szám: 122)', '2024-09-30 12:55:00'),
-(11, 1, 'megváltoztatta Loki adatait(Reg.szám: 122)', '2024-09-30 12:56:00'),
-(12, 1, 'Áthelyezte Mici(Regszám:137) kutyát a(z) elöli udvar 4 kennelbe', '2024-10-01 12:06:00'),
-(13, 1, 'megváltoztatta kennelnélküli adatait(Reg.szám: 250)', '2024-10-01 12:07:00'),
-(14, 1, 'megváltoztatta vacak adatait(Reg.szám: 250)', '2024-10-01 12:08:00'),
-(15, 1, 'Áthelyezte Loki(Regszám:122) kutyát a(z) elöli udvar 0 kennelbe', '2024-10-02 23:13:00'),
-(16, 1, 'Áthelyezte Loki(Regszám:122) kutyát a(z) elöli udvar 1 kennelbe', '2024-10-02 23:13:00'),
-(17, 1, 'Áthelyezte Foltos(Regszám:140) kutyát a(z) elöli udvar 0 kennelbe', '2024-10-02 23:13:00'),
-(18, 1, 'Feltöltött egy új kennelt a(z) elöli udvarba', '2024-10-02 23:13:00'),
-(19, 1, 'Áthelyezte Maszat(Regszám:156) kutyát a(z) elöli udvar 5 kennelbe', '2024-10-02 23:13:00'),
-(20, 1, 'Áthelyezte Rex(Regszám:141) kutyát a(z) elöli udvar 5 kennelbe', '2024-10-02 23:13:00'),
-(21, 1, 'Törölt egy  kennelt a(z) elöli udvarból', '2024-10-02 23:14:00'),
-(22, 1, 'kivette Hógolyó (Regszám: 235) kutyát a(z) hátsó udvarból', '2024-10-02 23:14:00');
+INSERT INTO `changelog` (`id`, `userid`, `category`, `msg`, `date`) VALUES
+(1, 1, 'Kutya modositas', 'megváltoztatta Loki adatait(Reg.szám: 122)', '2024-09-30 12:14:00'),
+(3, 1, 'Kennel feltoltes', 'Feltöltött egy új kennelt a(z) elöli udvarba', '2024-09-30 12:17:00'),
+(4, 1, 'Kennel feltoltes', 'Feltöltött egy új kennelt a(z) elöli udvarba', '2024-09-30 12:19:00'),
+(5, 1, 'Kennel torles', 'Törölt egy  kennelt a(z) elöli udvarból', '2024-09-30 12:23:00'),
+(6, 1, 'Kennel modositas', 'Áthelyezte Loki(Regszám:122) kutyát a(z) elöli udvar 1 kennelbe', '2024-09-30 12:29:00'),
+(7, 1, '', 'kivette rexike (Regszám: 126) a(z)kölyökudvar udvarból', '2024-09-30 12:32:00'),
+(8, 1, '', 'kivette Loki (Regszám: 122) a(z) elöli udvarból', '2024-09-30 12:33:00'),
+(9, 1, '', 'kivette Frakk (Regszám: 136) kutyát a(z) elöli udvarból', '2024-09-30 12:33:00'),
+(10, 1, '', 'megváltoztatta Loki adatait(Reg.szám: 122)', '2024-09-30 12:55:00'),
+(11, 1, '', 'megváltoztatta Loki adatait(Reg.szám: 122)', '2024-09-30 12:56:00'),
+(12, 1, '', 'Áthelyezte Mici(Regszám:137) kutyát a(z) elöli udvar 4 kennelbe', '2024-10-01 12:06:00'),
+(13, 1, '', 'megváltoztatta kennelnélküli adatait(Reg.szám: 250)', '2024-10-01 12:07:00'),
+(14, 1, '', 'megváltoztatta vacak adatait(Reg.szám: 250)', '2024-10-01 12:08:00'),
+(15, 1, '', 'Áthelyezte Loki(Regszám:122) kutyát a(z) elöli udvar 0 kennelbe', '2024-10-02 23:13:00'),
+(16, 1, '', 'Áthelyezte Loki(Regszám:122) kutyát a(z) elöli udvar 1 kennelbe', '2024-10-02 23:13:00'),
+(17, 1, '', 'Áthelyezte Foltos(Regszám:140) kutyát a(z) elöli udvar 0 kennelbe', '2024-10-02 23:13:00'),
+(18, 1, '', 'Feltöltött egy új kennelt a(z) elöli udvarba', '2024-10-02 23:13:00'),
+(19, 1, '', 'Áthelyezte Maszat(Regszám:156) kutyát a(z) elöli udvar 5 kennelbe', '2024-10-02 23:13:00'),
+(20, 1, '', 'Áthelyezte Rex(Regszám:141) kutyát a(z) elöli udvar 5 kennelbe', '2024-10-02 23:13:00'),
+(21, 1, '', 'Törölt egy  kennelt a(z) elöli udvarból', '2024-10-02 23:14:00'),
+(22, 1, '', 'kivette Hógolyó (Regszám: 235) kutyát a(z) hátsó udvarból', '2024-10-02 23:14:00');
 
 -- --------------------------------------------------------
 
@@ -79,7 +80,7 @@ CREATE TABLE `kennel` (
 --
 
 INSERT INTO `kennel` (`id`, `udvarid`, `kennelszam`, `kutyak`) VALUES
-(175, 3, 0, '144'),
+(175, 3, 0, '144;121'),
 (176, 3, 1, '214'),
 (178, 3, 2, ''),
 (182, 2, 0, '148;124'),
@@ -111,7 +112,8 @@ INSERT INTO `kennel` (`id`, `udvarid`, `kennelszam`, `kutyak`) VALUES
 (218, 6, 0, ''),
 (219, 6, 1, ''),
 (220, 6, 2, ''),
-(221, 6, 3, '');
+(221, 6, 3, ''),
+(222, 6, 4, '');
 
 -- --------------------------------------------------------
 
@@ -142,9 +144,9 @@ CREATE TABLE `kutyak` (
 --
 
 INSERT INTO `kutyak` (`id`, `regszam`, `nev`, `chipszam`, `ivar`, `meret`, `szuletes`, `bekerules`, `ivaros`, `telephely`, `foglalt`, `kennel`, `indexkepid`, `visible`, `status`) VALUES
-(121, 1, 'asdasdasd', '123456789012345', 0, '0', '2024-09-10', '2021-09-10', 0, '1', 1, 0, 1, 0, 'Sérült'),
+(121, 1, 'Bonno', '123456789012345', 0, '0', '2024-09-10', '2021-09-10', 0, '1', 1, 0, 1, 1, 'Sérült'),
 (122, 1201, 'Loki', '987654321098765', 1, '0', '2019-07-20', '2020-08-14', 0, '0', 1, 1, 0, 1, '0'),
-(123, 1500, 'Morzsi', '567890123456789', 1, '1', '2018-03-30', '2019-01-21', 0, '1', 0, 1, 0, 1, '0'),
+(123, 15002, 'Morzsi', '567890123456789', 1, '1', '2018-03-30', '2019-01-21', 0, '1', 0, 1, 0, 0, 'Gazdásodott'),
 (124, 1500, 'Bobi', '345678901234567', 1, '0', '2017-11-12', '2018-06-25', 0, '0', 1, 1, 0, 1, '0'),
 (125, 1500, 'Csöpi', '765432109876543', 0, '0', '2021-01-05', '2022-03-11', 0, '1', 0, 1, 0, 1, '0'),
 (126, 1500, 'rexike', '654321098765432', 0, '0', '2016-05-18', '2017-04-03', 0, '0', 1, 0, 0, 1, '0'),
@@ -412,7 +414,7 @@ ALTER TABLE `changelog`
 -- AUTO_INCREMENT a táblához `kennel`
 --
 ALTER TABLE `kennel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=222;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
 
 --
 -- AUTO_INCREMENT a táblához `kutyak`
