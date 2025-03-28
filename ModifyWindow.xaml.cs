@@ -101,6 +101,8 @@ namespace Menhely_Projekt
                 Status_cb.Items.Add(item);
             }
 
+            Status_cb.SelectedItem = target.status;
+
         }
 
         private void save_btn_Click(object sender, RoutedEventArgs e)

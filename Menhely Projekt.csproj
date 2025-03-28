@@ -110,6 +110,10 @@
     <Compile Include="addKennelName.xaml.cs">
       <DependentUpon>addKennelName.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ChangelogDAO.cs" />
+    <Compile Include="Controls\ChangelogBase.xaml.cs">
+      <DependentUpon>ChangelogBase.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\KennelControl.xaml.cs">
       <DependentUpon>KennelControl.xaml</DependentUpon>
     </Compile>
@@ -141,6 +145,10 @@
     <Compile Include="UdvarDAO.cs" />
     <Compile Include="UserDAO.cs" />
     <Page Include="addKennelName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChangelogBase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

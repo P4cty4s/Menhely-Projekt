@@ -61,5 +61,29 @@ namespace Menhely_Projekt
 
             return result;
         }
+
+        public static Dictionary<int,string> GetNevek()
+        {
+            Dictionary<int, string> result = new Dictionary<int, string>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM users";
+                conn.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query,conn))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(Convert.ToInt32(reader["id"]), reader["username"].ToString());
+                        }
+                    }
+                }
+            }
+
+                return result;
+        }
     }
 }

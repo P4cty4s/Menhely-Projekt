@@ -23,28 +23,34 @@
             <!-- Left Side: Scrollable Panel for Labels -->
             <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Background="Wheat" Margin="0,50,0,0">
                 <ListBox x:Name="Kutyak_panel" Margin="10"  
-                SelectionMode="Multiple"/>
+                SelectionMode="Multiple" AllowDrop="True" PreviewMouseLeftButtonDown="Kutyak_panel_PreviewMouseLeftButtonDown"/>
             </ScrollViewer>
 
-            <!-- Right Side -->
             <Grid Grid.Column="1" Margin="20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <!-- ComboBox at the top -->
                     <RowDefinition Height="*"/>
                     <!-- Scrollable ListBoxes -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Buttons -->
                 </Grid.RowDefinitions>
 
                 <!-- ComboBox -->
-                <ComboBox x:Name="Udvarok_cb" Width="300" Height="30" Margin="440,-11,0,11" SelectionChanged="Udvarok_cb_SelectionChanged"/>
+                <ComboBox x:Name="Udvarok_cb" Width="300" Height="30" Margin="0,0,0,10" SelectionChanged="Udvarok_cb_SelectionChanged"/>
 
                 <!-- Scrollable Panel for ListBoxes -->
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Background="LightGray">
-                    <StackPanel x:Name="Kennel_panel" Margin="10">
-                    </StackPanel>
+                    <StackPanel x:Name="Kennel_panel" Margin="10"/>
                 </ScrollViewer>
-                <Button Content="Kennel hozzáadása" Width="300" Height="30" HorizontalAlignment="Left" Margin="10,-16,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+
+                <!-- Button Panel for Proper Layout -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,10,10">
+                    <Button Content="Kennel hozzáadása" Width="300" Height="30" Click="Button_Click"/>
+                    <Button x:Name="Save_btn" Content="Mentés" Width="150" Height="30" Background="SpringGreen" Click="Save_btn_Click" Margin="10,0,0,0"/>
+                </StackPanel>
             </Grid>
+
         </Grid>
     </Grid>
     

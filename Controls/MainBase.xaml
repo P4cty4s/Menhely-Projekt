@@ -39,7 +39,7 @@
                     HorizontalAlignment="Left" Margin="20,10,0,10" Click="Kennel_btn_Click"/>
 
                 <Button x:Name="History_btn" Height="50" Width="200" Content="Legutóbbi módosítások"
-                    HorizontalAlignment="Left" Margin="20,10,0,10" VerticalAlignment="Bottom"/>
+                    HorizontalAlignment="Left" Margin="20,10,0,10" VerticalAlignment="Bottom" Click="History_btn_Click"/>
 
                 <Button x:Name="Logout_btn" Height="50" Width="200" Content="Kijelentkezés"
                     HorizontalAlignment="Left" Margin="20,10,0,10" VerticalAlignment="Bottom"

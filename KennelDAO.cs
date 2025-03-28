@@ -13,6 +13,23 @@ namespace Menhely_Projekt
     {
         private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=zoldmenedek";
 
+        private static string createQuery(List<Kutya> _kutyak)
+        {
+            string _query = "";
+
+            foreach (Kutya item in _kutyak)
+            {
+                _query += item.ID+";";
+            }
+
+            if (_query.EndsWith(";"))
+            {
+                _query = _query.Remove(_query.Length - 1,1);
+            }
+
+            return _query;
+        }
+
         public static List<Kennel> AllKennel()
         {
             List<Kennel> result = new List<Kennel>();
@@ -65,5 +82,42 @@ namespace Menhely_Projekt
                 }
             }
         }
+        public static async Task SetKennel(List<Kennel> target)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                await conn.OpenAsync();
+                using (var transaction = await conn.BeginTransactionAsync())
+                {
+                    Console.WriteLine("Itt jár");
+                    try
+                    {
+                        foreach (var item in target)
+                        {
+                            string szoveg = createQuery(item.Kutyak);
+                            string query = "UPDATE kennel SET kutyak = @kutyak WHERE id = @id";
+
+                            using (var command = new MySqlCommand(query, conn, transaction))
+                            {
+                                command.Parameters.AddWithValue("@kutyak", szoveg);
+                                command.Parameters.AddWithValue("@id", item.Id);
+
+                                await command.ExecuteNonQueryAsync();
+                            }
+                        }
+
+                        await transaction.CommitAsync();
+                        MessageBox.Show("LEGGOO");
+                    }
+                    catch (Exception ex)
+                    {
+                        await transaction.RollbackAsync();
+                        MessageBox.Show($"Transaction failed: {ex.Message}");
+                        throw;
+                    }
+                }
+            }
+        }
+
     }
 }

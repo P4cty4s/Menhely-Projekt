@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using Menhely_Projekt.Models;
 using Mysqlx;
 using Org.BouncyCastle.Asn1.Cmp;
+using Menhely_Projekt.Controls;
+using MySqlX.XDevAPI.Common;
 
 namespace Menhely_Projekt.Controls
 {
@@ -27,48 +29,74 @@ namespace Menhely_Projekt.Controls
         List<Udvar> Udvarok = new List<Udvar>();
         List<Kennel> Kennelek = new List<Kennel>();
 
-        Dictionary<Kennel,kennelShow> showKennel = new Dictionary<Kennel,kennelShow>();
+        public static ListBox dragSource = null;
+
+        public static List<kennelShow> showKennel = new List<kennelShow>();
         public KennelControl()
         {
             InitializeComponent();
-            
+            showKennel.Clear();
             betoltes();
         }
         private void betoltes()
         {
             FoAblak.currentContent = "Kennel";
+            Kennelek = KennelDAO.AllKennel();
             kennelBetoltes();
-            udvarBetoltes();
             kutyaBetoltes();
+            udvarBetoltes();
         }
 
         private void kutyaBetoltes()
         {
             myKutyak = KutyaDAO.getMyKutya();
 
-            foreach (var item in myKutyak)
+            foreach (var ikutya in myKutyak)
             {
-                Kutyak_panel.Items.Add(item);
+                if (valogato(ikutya))
+                {
+                    Kutyak_panel.Items.Add(ikutya);
+                }
             }
         }
 
-        private void kennelBetoltes()
+        private bool valogato(Kutya ikutya)
         {
-            Kennelek = KennelDAO.AllKennel();
-
-            showKennel.Clear();
-
-            if(Udvarok_cb.SelectedItem != null)
+            foreach (Kennel ikennel in Kennelek)
             {
-                Kennel_panel.Children.Clear();
+                if (ikennel.Kutyak.Any(q=>q.ID == ikutya.ID))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private void kennelBetoltes()
+        {   
 
                 Udvar _udvar = Udvarok_cb.SelectedItem as Udvar;
 
-                foreach (var item in Kennelek.Where(q=>q.UdvarId == _udvar.Id))
+                foreach (Kennel item in Kennelek)
                 {
-                    showKennel.Add(item,new kennelShow(item.KennelSzam.ToString()));
-                    Kennel_panel.Children.Add(showKennel[item]);
-                
+                    showKennel.Add(new kennelShow(item,Kutyak_panel));
+                }
+
+                kennelMegjelenit();
+        }
+
+        private void kennelMegjelenit()
+        {
+            Kennel_panel.Children.Clear();
+
+            if (Udvarok_cb.SelectedItem != null)
+            {
+                Udvar _udvar = Udvarok_cb.SelectedItem as Udvar;
+
+                foreach (kennelShow item in showKennel.Where(q=>q.alap.UdvarId == _udvar.Id))
+                {
+                    Kennel_panel.Children.Add(item);
                 }
             }
 
@@ -102,7 +130,7 @@ namespace Menhely_Projekt.Controls
 
                 if(addKennel.DialogResult == true)
                 {
-                    kennelBetoltes();
+                    kennelMegjelenit();
                 }
             } else
             {
@@ -112,7 +140,69 @@ namespace Menhely_Projekt.Controls
 
         private void Udvarok_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            kennelBetoltes();
+            if (Udvarok_cb.SelectedItem != null)
+            {
+                kennelMegjelenit();
+            }
+        }
+
+        private void Kutyak_panel_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ListBox parent = (ListBox)sender;
+            dragSource = parent;
+            object data = GetDataFromListBox(dragSource, e.GetPosition(parent));
+
+            if (data != null)
+            {
+                DragDrop.DoDragDrop(parent, data, DragDropEffects.Move);
+            }
+        }
+        #region GetDataFromListBox(ListBox,Point)
+        private static object GetDataFromListBox(ListBox source, Point point)
+        {
+            UIElement element = source.InputHitTest(point) as UIElement;
+            if (element != null)
+            {
+                object data = DependencyProperty.UnsetValue;
+                while (data == DependencyProperty.UnsetValue)
+                {
+                    data = source.ItemContainerGenerator.ItemFromContainer(element);
+
+                    if (data == DependencyProperty.UnsetValue)
+                    {
+                        element = VisualTreeHelper.GetParent(element) as UIElement;
+                    }
+
+                    if (element == source)
+                    {
+                        return null;
+                    }
+                }
+
+                if (data != DependencyProperty.UnsetValue)
+                {
+                    return data;
+                }
+            }
+
+            return null;
+        }
+
+
+        #endregion
+
+        private void Save_btn_Click(object sender, RoutedEventArgs e)
+        {
+            List<Kennel> result = new List<Kennel>();
+
+            Udvar _udvar = Udvarok_cb.SelectedItem as Udvar;
+
+            foreach (var item in showKennel.Where(q => q.alap.UdvarId == _udvar.Id))
+            {
+                result.Add(item.alap);
+            }
+
+            KennelDAO.SetKennel(result);
         }
     }
 }

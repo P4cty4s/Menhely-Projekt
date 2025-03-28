@@ -13,12 +13,12 @@ namespace Menhely_Projekt.Models
         public int Id { get; set; }
         public int UdvarId { get; set; }
         public int KennelSzam { get; set; }
-        public List<Kutya> Kutya { get; set; }
+        public List<Kutya> Kutyak { get; set; }
 
 
         public Kennel(int _id,int _udvarid, int szam)
         {
-            Kutya = new List<Kutya>();
+            Kutyak = new List<Kutya>();
 
             Id = _id;
             UdvarId = _udvarid;
@@ -36,7 +36,7 @@ namespace Menhely_Projekt.Models
             Id = Convert.ToInt32(_reader["id"]);
             UdvarId = Convert.ToInt32(_reader["udvarid"]);
             KennelSzam = Convert.ToInt32(_reader["kennelszam"]);
-            Kutya = new List<Kutya>();
+            Kutyak = new List<Kutya>();
 
             if (_reader["kutyak"].ToString() != "" && _reader["kutyak"].ToString() != null)
             {
@@ -44,7 +44,7 @@ namespace Menhely_Projekt.Models
                 tomb = _reader["kutyak"].ToString().Split(';');
                 foreach (string item in tomb)
                 {
-                    Kutya.Add(KutyaDAO.egyKutya(int.Parse(item)));
+                    Kutyak.Add(KutyaDAO.egyKutya(int.Parse(item)));
                 }
 
             }       

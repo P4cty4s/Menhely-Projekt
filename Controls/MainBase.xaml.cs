@@ -114,10 +114,10 @@ namespace Menhely_Projekt.Controls
                     break;
                 //--------
                 case "ivar":
-                    dataShow = KutyaDAO.searchKutya("ivar", Options_cb.SelectedItem == "Kan" ? "1" : "0");
+                    dataShow = KutyaDAO.searchKutya("ivar", Options_cb.SelectedItem.ToString() == "Kan" ? "1" : "0");
                     break;
                 case "ivaros":
-                    dataShow = KutyaDAO.searchKutya("ivaros", Options_cb.SelectedItem == "Ivaros" ? "1" : "0");
+                    dataShow = KutyaDAO.searchKutya("ivaros", Options_cb.SelectedItem.ToString() == "Ivaros" ? "1" : "0");
                     break;
                 case "telephely":
                     if (Options_cb.SelectedItem != null)
@@ -128,7 +128,7 @@ namespace Menhely_Projekt.Controls
                 case "foglalt":
                     if (Options_cb.SelectedItem != null)
                     {
-                        dataShow = KutyaDAO.searchKutya("foglalt", Options_cb.SelectedItem == "Foglalt" ? "1" : "0");
+                        dataShow = KutyaDAO.searchKutya("foglalt", Options_cb.SelectedItem.ToString() == "Foglalt" ? "1" : "0");
                     }
                     break;
                 case "kennel":
@@ -140,7 +140,7 @@ namespace Menhely_Projekt.Controls
                 case "Látható":
                     if (Options_cb.SelectedItem != null)
                     {
-                        dataShow = KutyaDAO.searchKutya("visible", Options_cb.SelectedItem == "Látható" ? "1" : "0");
+                        dataShow = KutyaDAO.searchKutya("visible", Options_cb.SelectedItem.ToString() == "Látható" ? "1" : "0");
                     }
                     break;
             }
@@ -227,16 +227,14 @@ namespace Menhely_Projekt.Controls
 
         private void KutyaDataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            // Check if the column is bound to a DateTime property
             if (e.PropertyType == typeof(DateTime))
             {
-                // Apply a StringFormat to display only the date part
                 var column = e.Column as DataGridTextColumn;
                 if (column != null)
                 {
                     column.Binding = new Binding(e.PropertyName)
                     {
-                        StringFormat = "yyyy-MM-dd"  // Format the DateTime to show only the date
+                        StringFormat = "yyyy-MM-dd"
                     };
                 }
             }
@@ -253,6 +251,13 @@ namespace Menhely_Projekt.Controls
             var ez = Window.GetWindow(this);
             KennelControl kennelControl = new KennelControl();
             ez.Content = kennelControl;
+        }
+
+        private void History_btn_Click(object sender, RoutedEventArgs e)
+        {
+            var ez = Window.GetWindow(this);
+            ChangelogBase changelog = new ChangelogBase();
+            ez.Content = changelog;
         }
     }
 }

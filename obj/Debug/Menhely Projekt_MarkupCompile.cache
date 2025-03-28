@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\App.xaml
-91359291528
+101087703533
 
-22310690592
+24725592531
 33535445098
-addKennelName.xaml;Controls\KennelControl.xaml;Controls\kennelShow.xaml;Controls\MainBase.xaml;Controls\NavControl.xaml;FoAblak.xaml;MainWindow.xaml;ModifyWindow.xaml;newKutya.xaml;
+addKennelName.xaml;Controls\ChangelogBase.xaml;Controls\KennelControl.xaml;Controls\kennelShow.xaml;Controls\MainBase.xaml;Controls\NavControl.xaml;FoAblak.xaml;MainWindow.xaml;ModifyWindow.xaml;newKutya.xaml;
 
 False
 
