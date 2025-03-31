@@ -59,6 +59,8 @@
                 <Image x:Name="profilePicture" Stretch="Uniform" />
             </Border>
 
+            <Button Height="30px" Content="Kép választása" Click="ImgUpload_btn_Click" x:Name="ImgUpload_btn"/>
+
             <Label Content="Foglalt állapot:" />
             <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
                 <RadioButton x:Name="szabad_rb" GroupName="foglalt_rbs" Content="Szabad" />

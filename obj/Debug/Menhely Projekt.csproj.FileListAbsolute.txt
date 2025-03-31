@@ -122,3 +122,15 @@ C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\kennelShow.g.cs
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\kennelShow.baml
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\ChangelogBase.g.cs
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\obj\Debug\Controls\ChangelogBase.baml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\FluentFTP.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\FluentFTP.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\addKennelName.g.cs
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\ChangelogBase.g.cs
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\KennelControl.g.cs
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\kennelShow.g.cs
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\MainBase.g.cs
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\addKennelName.baml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\ChangelogBase.baml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\KennelControl.baml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\kennelShow.baml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\MainBase.baml

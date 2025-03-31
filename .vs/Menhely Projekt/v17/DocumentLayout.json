@@ -1,14 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\",
+  "WorkspaceRootPath": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\a projekt\\menhely projekt\\controls\\mainbase.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:controls\\mainbase.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\eles c\\menhely-projekt\\modifywindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:modifywindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\a projekt\\menhely projekt\\controls\\mainbase.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:controls\\mainbase.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\eles c\\menhely-projekt\\modifywindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:modifywindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\eles c\\menhely-projekt\\newkutya.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:newkutya.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\eles c\\menhely-projekt\\newkutya.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:newkutya.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\eles c\\menhely-projekt\\models\\kutya.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:models\\kutya.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|c:\\users\\t\\desktop\\eles c\\menhely-projekt\\kutyadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1865B31-1C0F-4619-A0BD-FDADF6954F2C}|Menhely Projekt.csproj|solutionrelative:kutyadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,31 +34,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainBase.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\MainBase.xaml.cs",
-              "RelativeDocumentMoniker": "Controls\\MainBase.xaml.cs",
-              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\MainBase.xaml.cs",
-              "RelativeToolTip": "Controls\\MainBase.xaml.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAowHcAAABsAAAAAAAAAA==",
+              "Title": "ModifyWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\ModifyWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ModifyWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\ModifyWindow.xaml.cs",
+              "RelativeToolTip": "ModifyWindow.xaml.cs",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAcwLsAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T12:26:48.728Z",
+              "WhenOpened": "2025-03-28T12:19:23.241Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainBase.xaml",
-              "DocumentMoniker": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\MainBase.xaml",
-              "RelativeDocumentMoniker": "Controls\\MainBase.xaml",
-              "ToolTip": "C:\\Users\\T\\Desktop\\A PROJEKT\\Menhely Projekt\\Controls\\MainBase.xaml",
-              "RelativeToolTip": "Controls\\MainBase.xaml",
+              "Title": "ModifyWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\ModifyWindow.xaml",
+              "RelativeDocumentMoniker": "ModifyWindow.xaml",
+              "ToolTip": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\ModifyWindow.xaml",
+              "RelativeToolTip": "ModifyWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-25T12:26:40.368Z",
+              "WhenOpened": "2025-03-28T12:18:57.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "newKutya.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\newKutya.xaml.cs",
+              "RelativeDocumentMoniker": "newKutya.xaml.cs",
+              "ToolTip": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\newKutya.xaml.cs",
+              "RelativeToolTip": "newKutya.xaml.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAowJMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T11:51:26.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "newKutya.xaml",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\newKutya.xaml",
+              "RelativeDocumentMoniker": "newKutya.xaml",
+              "ToolTip": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\newKutya.xaml",
+              "RelativeToolTip": "newKutya.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-28T11:49:35.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "KutyaDAO.cs",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\KutyaDAO.cs",
+              "RelativeDocumentMoniker": "KutyaDAO.cs",
+              "ToolTip": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\KutyaDAO.cs",
+              "RelativeToolTip": "KutyaDAO.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAJQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T12:17:27.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Kutya.cs",
+              "DocumentMoniker": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\Models\\Kutya.cs",
+              "RelativeDocumentMoniker": "Models\\Kutya.cs",
+              "ToolTip": "C:\\Users\\T\\Desktop\\eles c\\Menhely-Projekt\\Models\\Kutya.cs",
+              "RelativeToolTip": "Models\\Kutya.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T12:12:03.692Z",
               "EditorCaption": ""
             }
           ]

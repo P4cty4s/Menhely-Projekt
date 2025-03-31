@@ -12,7 +12,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FluentFTP;
 using Menhely_Projekt.Models;
+using Microsoft.Win32;
 
 namespace Menhely_Projekt
 {
@@ -21,6 +23,8 @@ namespace Menhely_Projekt
     /// </summary>
     public partial class newKutya : Window
     {
+        private static Kutya target = new Kutya();
+
         public newKutya()
         {
             InitializeComponent();
@@ -30,26 +34,24 @@ namespace Menhely_Projekt
 
         private Kutya buildKutya()
         {
-            Kutya result = new Kutya();
-
             try
             {
-                result.ID = 0;
-                result.regSzam = int.Parse(regisztraciosSzam_tb.Text);
-                result.nev = nev_tb.Text;
-                result.chipSzam = chipSzam_tb.Text;
-                result.ivar = ivar_cb.SelectedItem.ToString() == "Kan";
-                result.meret = meret_cb.SelectedItem.ToString();
-                result.szuletes = DateTime.Parse(szuletes_dp.Text);
-                result.bekerules = DateTime.Parse(bekerules_dp.Text);
-                result.ivaros = ivaros_cb.SelectedItem.ToString() == "Ivaros";
-                result.telephely = telephely_cb.SelectedItem.ToString();
-                result.foglalt = foglalt_rb.IsChecked == true;
-                result.kennel = int.Parse(kennel_cb.SelectedItem.ToString());
-                result.indexkepID = int.Parse(indexkepID_tb.Text);
-                result.visible = visible_rb.IsChecked == true;
-                result.status = Status_cb.SelectedItem.ToString();
-                return result;
+                target.ID = 0;
+                target.regSzam = int.Parse(regisztraciosSzam_tb.Text);
+                target.nev = nev_tb.Text;
+                target.chipSzam = chipSzam_tb.Text;
+                target.ivar = ivar_cb.SelectedItem.ToString() == "Kan";
+                target.meret = meret_cb.SelectedItem.ToString();
+                target.szuletes = DateTime.Parse(szuletes_dp.Text);
+                target.bekerules = DateTime.Parse(bekerules_dp.Text);
+                target.ivaros = ivaros_cb.SelectedItem.ToString() == "Ivaros";
+                target.telephely = telephely_cb.SelectedItem.ToString();
+                target.foglalt = foglalt_rb.IsChecked == true;
+                target.kennel = int.Parse(kennel_cb.SelectedItem.ToString());
+                target.indexkepID = int.Parse(indexkepID_tb.Text);
+                target.visible = visible_rb.IsChecked == true;
+                target.status = Status_cb.SelectedItem.ToString();
+                return target;
             }
             catch (Exception)
             {
@@ -102,6 +104,46 @@ namespace Menhely_Projekt
             {
             KutyaDAO.createKutya(target);
                
+            }
+        }
+
+        private void ImgUpload_btn_Click(object sender, RoutedEventArgs e)
+        {
+            string host = "127.0.0.1";
+            string username = "Menhely_Projekt";
+            string password = "admin";
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+
+                string customName = target.ID.ToString();
+                string selectedFilePath = openFileDialog.FileName;
+                string fileExtension = System.IO.Path.GetExtension(selectedFilePath);
+                string remotePath = $"/uploads/{customName}{fileExtension}";
+
+                try
+                {
+                    using (FtpClient client = new FtpClient(host, username, password))
+                    {
+                        client.Connect();
+                        client.UploadFile(selectedFilePath, remotePath, FtpRemoteExists.Overwrite);
+                        MessageBox.Show("Siker " + remotePath);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Valami hiba történt: "+ex);
+                }
+
+                
+            }
+            else
+            {
+                Console.WriteLine("Nincs fájl kiválasztva");
             }
         }
     }

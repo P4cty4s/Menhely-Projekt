@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,10 +9,14 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using FluentFTP;
 using Menhely_Projekt.Models;
+using Microsoft.Win32;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace Menhely_Projekt
 {
@@ -142,5 +147,100 @@ namespace Menhely_Projekt
 
             KutyaDAO.updateKutya(alany);
         }
+
+        private void StreamImageFromFTP(string remoteFilePath)
+        {
+            string host = "127.0.0.1"; // FTP host
+            string username = "Menhely_Projekt"; // FTP username
+            string password = "admin"; // FTP password
+
+            try
+            {
+                using (FtpClient client = new FtpClient(host, username, password))
+                {
+                    client.Connect();
+
+                    // Create a temporary file path
+                    string tempFilePath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), Guid.NewGuid().ToString() + ".tmp");
+
+                    // Download the file into the temporary file
+                    client.DownloadFile(tempFilePath, remoteFilePath);
+
+                    // Load the temporary file into a MemoryStream
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        byte[] fileBytes = File.ReadAllBytes(tempFilePath);
+                        memoryStream.Write(fileBytes, 0, fileBytes.Length);
+
+                        // Reset the memory stream position to the start
+                        memoryStream.Position = 0;
+
+                        // Create a BitmapImage from the memory stream
+                        BitmapImage bitmap = new BitmapImage();
+                        bitmap.BeginInit();
+                        bitmap.StreamSource = memoryStream;
+                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                        bitmap.EndInit();
+
+                        // Display the image in the WPF Image control
+                        profilePicture.Source = bitmap;
+
+                        // Optionally, delete the temporary file after usage
+                        File.Delete(tempFilePath);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading image: " + ex.Message);
+            }
+        }
+
+        private void ImgUpload_btn_Click(object sender, RoutedEventArgs e)
+        {
+            string host = "127.0.0.1";
+            string username = "Menhely_Projekt";
+            string password = "admin";
+
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string customName = alany.ID.ToString(); // Ensure this is a valid string
+                string selectedFilePath = openFileDialog.FileName;
+                string fileExtension = System.IO.Path.GetExtension(selectedFilePath);
+                string remoteFolder = "/uploads";
+                string remotePath = $"{remoteFolder}/{customName}{fileExtension}";
+
+                try
+                {
+                    using (FtpClient client = new FtpClient(host, username, password))
+                    {
+                        client.Connect();
+
+                        // 🟢 Ensure /uploads directory exists before uploading
+                        if (!client.DirectoryExists(remoteFolder))
+                        {
+                            client.CreateDirectory(remoteFolder);
+                        }
+
+                        client.UploadFile(selectedFilePath, remotePath, FtpRemoteExists.Overwrite);
+                        MessageBox.Show("Siker: " + remotePath);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Valami hiba történt: " + ex.Message);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nincs fájl kiválasztva");
+            }
+        }
+
     }
 }
