@@ -212,6 +212,26 @@ namespace Menhely_Projekt
             return result;
         }
 
+        public static int LatestID()
+        {
+            int result = 0;
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = "SELECT MAX(Id) AS LatestId FROM your_table;";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    object item = cmd.ExecuteScalar();
+                    result = item != DBNull.Value ? Convert.ToInt32(item) : 0;
+
+                }
+            }
+            return result;
+        }
+
 
     }
 }

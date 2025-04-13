@@ -34,9 +34,10 @@ namespace Menhely_Projekt
 
         private Kutya buildKutya()
         {
+
             try
             {
-                target.ID = 0;
+                target.ID = KutyaDAO.LatestID()+1;
                 target.regSzam = int.Parse(regisztraciosSzam_tb.Text);
                 target.nev = nev_tb.Text;
                 target.chipSzam = chipSzam_tb.Text;
@@ -63,6 +64,7 @@ namespace Menhely_Projekt
 
         private void betoltes()
         {
+            
 
             ivar_cb.Items.Clear();
             ivar_cb.Items.Add("Kan");
