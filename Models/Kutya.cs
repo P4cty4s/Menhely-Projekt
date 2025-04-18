@@ -14,11 +14,11 @@ namespace Menhely_Projekt.Models
         public int regSzam { get; set; }
         public string nev { get; set; }
         public string chipSzam { get; set; }
-        public bool ivar { get; set; }
+        public string ivar { get; set; }
         public string meret { get; set; }
         public DateTime szuletes { get; set; }
         public DateTime bekerules { get; set; }
-        public bool ivaros { get; set; }
+        public string ivaros { get; set; }
         public string telephely { get; set; }
         public bool foglalt { get; set; }
         public int kennel { get; set; }
@@ -34,11 +34,11 @@ namespace Menhely_Projekt.Models
             regSzam = Convert.ToInt32(adat["regszam"]);
             nev = adat["nev"].ToString();
             chipSzam = adat["chipszam"].ToString();
-            ivar = Convert.ToInt32(adat["ivar"]) == 1 ? true : false;
+            ivar = adat["ivar"].ToString();
             meret = adat["meret"].ToString();
             szuletes = Convert.ToDateTime(adat["szuletes"]);
             bekerules = Convert.ToDateTime(adat["bekerules"]);
-            ivaros = Convert.ToInt32(adat["ivaros"]) == 1 ? true : false;
+            ivaros = adat["ivaros"].ToString();
             telephely = adat["telephely"].ToString();
             foglalt = Convert.ToInt32(adat["foglalt"]) == 1 ? true : false;
             kennel = Convert.ToInt32(adat["kennel"]);

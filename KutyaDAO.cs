@@ -12,10 +12,13 @@ using System.Windows;
 
 namespace Menhely_Projekt
 {
+    //Kutya - Adatbázis
     internal class KutyaDAO
     {
-        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=zoldmenedek";
+        //Connection string
+        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=pawdmin";
 
+        //Minden Kutya lekérdezése
         public static void getKutyak()
         {
             Kutya.kutyak.Clear();
@@ -37,6 +40,8 @@ namespace Menhely_Projekt
                 connection.Close();
             }
         }
+
+        //Kutya kereső
         public static List<Kutya> searchKutya(string prop,string value)
         {
             List<Kutya> result = new List<Kutya>();
@@ -63,6 +68,8 @@ namespace Menhely_Projekt
 
             return result;
         }
+
+        //Egy kutya
         public static Kutya egyKutya(int ID)
         {
             Kutya target = new Kutya();
@@ -89,6 +96,7 @@ namespace Menhely_Projekt
             return target;
         }
 
+        //Kutya változtatása
         public static void updateKutya(Kutya infok)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -146,6 +154,7 @@ namespace Menhely_Projekt
             }
         }
 
+        //Kutya létrehozása
         public static void createKutya(Kutya newKutya)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -187,6 +196,7 @@ namespace Menhely_Projekt
 
         }
 
+        //Nálunk tartózkodó kutyák lekérése
         public static List<Kutya> getMyKutya()
         {
             List<Kutya> result = new List<Kutya>();
@@ -212,6 +222,7 @@ namespace Menhely_Projekt
             return result;
         }
 
+        //A legkésöbbi ID kikeresése
         public static int LatestID()
         {
             int result = 0;

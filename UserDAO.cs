@@ -9,9 +9,15 @@ using MySql.Data.MySqlClient;
 
 namespace Menhely_Projekt
 {
+
+    //Felhasználók - Adatbázis
     public static class UserDAO
     {
-        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=zoldmenedek";
+
+        //Connection string
+        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=pawdmin";
+
+        //Bejelentkezés
         public static int login(string _name,string _password)
         {
             int _id = -1;
@@ -20,7 +26,7 @@ namespace Menhely_Projekt
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT id FROM users WHERE username = @name AND password = @password";
+                string query = "SELECT * FROM users WHERE username = @name";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@name", _name);
@@ -30,7 +36,11 @@ namespace Menhely_Projekt
                         if (reader.HasRows)
                         {
                             reader.Read();
-                            _id = reader.GetInt32(0);
+                            string dbHash = reader["password"].ToString().Trim().Replace("$2y$", "$2b$");
+                            if (BCrypt.Net.BCrypt.Verify(_password,dbHash))
+                            {
+                                _id = reader.GetInt32(reader.GetOrdinal("id"));
+                            }
                         }
                     }
                 }
@@ -40,6 +50,8 @@ namespace Menhely_Projekt
             return _id;
 
         }
+
+        //Név lekérdezése
         public static string getName(int id)
         {
             string result = "";
@@ -62,6 +74,7 @@ namespace Menhely_Projekt
             return result;
         }
 
+        //Összes felhasználónév lekérdezése
         public static Dictionary<int,string> GetNevek()
         {
             Dictionary<int, string> result = new Dictionary<int, string>();

@@ -23,7 +23,6 @@ namespace Menhely_Projekt
             InitializeComponent();
             
             ID = -1;
-            
         }
 
 

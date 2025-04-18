@@ -59,6 +59,12 @@
                 <Image x:Name="profilePicture" Stretch="Uniform" />
             </Border>
 
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,5">
+                <Button Height="25px" Width="40" Content="⬅" Margin="2" x:Name="PrevImg_btn"/>
+                <Button Height="25px" Content="Törlés" Margin="2" x:Name="DelImg_btn"/>
+                <Button Height="25px" Width="40" Content="➞" Margin="2" x:Name="NextImg_btn"/>
+            </StackPanel>
+
             <Button Height="30px" Content="Kép választása" Click="ImgUpload_btn_Click" x:Name="ImgUpload_btn"/>
 
             <Label Content="Foglalt állapot:" />

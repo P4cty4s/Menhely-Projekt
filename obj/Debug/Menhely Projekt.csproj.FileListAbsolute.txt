@@ -134,3 +134,7 @@ C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\ChangelogBase.baml
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\KennelControl.baml
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\kennelShow.baml
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\Controls\MainBase.baml
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\bin\Debug\FluentFTP.dll
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\bin\Debug\BCrypt.Net-Next.xml
+C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\bin\Debug\FluentFTP.xml

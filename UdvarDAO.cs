@@ -8,10 +8,14 @@ using MySql.Data.MySqlClient;
 
 namespace Menhely_Projekt
 {
+    //Udvar - Adatbázis
     internal class UdvarDAO
     {
-        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=zoldmenedek";
 
+        //Connection string
+        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=pawdmin";
+
+        //Egy udvar lekérdezése
         public static Udvar GetUdvar(string _id)
         {
             Udvar result = null;
@@ -42,6 +46,8 @@ namespace Menhely_Projekt
 
             return result;
         }
+
+        //Összes udvar lekérdezése
         public static List<Udvar> AllUdvar()
         {
             List<Udvar> result = new List<Udvar>();

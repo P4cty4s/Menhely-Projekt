@@ -9,10 +9,13 @@ using MySql.Data.MySqlClient;
 
 namespace Menhely_Projekt
 {
+    //Kennel - Adatbázis
     internal class KennelDAO
     {
-        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=zoldmenedek";
+        //Connection string
+        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=pawdmin";
 
+        //Kutya ID-k egybevarrása
         private static string createQuery(List<Kutya> _kutyak)
         {
             string _query = "";
@@ -30,6 +33,7 @@ namespace Menhely_Projekt
             return _query;
         }
 
+        //Kennelek lekérdezése
         public static List<Kennel> AllKennel()
         {
             List<Kennel> result = new List<Kennel>();
@@ -56,6 +60,8 @@ namespace Menhely_Projekt
 
             return result;
         } 
+
+        //Kennel létrehozása
         public static void CreateKennel(Kennel target)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -82,6 +88,8 @@ namespace Menhely_Projekt
                 }
             }
         }
+
+        //Kennel módosítása
         public static async Task SetKennel(List<Kennel> target)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))

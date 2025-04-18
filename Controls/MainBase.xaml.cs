@@ -114,10 +114,16 @@ namespace Menhely_Projekt.Controls
                     break;
                 //--------
                 case "ivar":
-                    dataShow = KutyaDAO.searchKutya("ivar", Options_cb.SelectedItem.ToString() == "Kan" ? "1" : "0");
+                    if (Options_cb.SelectedItem != null)
+                    {
+                        dataShow = KutyaDAO.searchKutya("ivar", Options_cb.SelectedItem.ToString());
+                    }
                     break;
                 case "ivaros":
-                    dataShow = KutyaDAO.searchKutya("ivaros", Options_cb.SelectedItem.ToString() == "Ivaros" ? "1" : "0");
+                    if (Options_cb.SelectedItem != null)
+                    {
+                        dataShow = KutyaDAO.searchKutya("ivaros", Options_cb.SelectedItem.ToString());
+                    }
                     break;
                 case "telephely":
                     if (Options_cb.SelectedItem != null)

@@ -18,11 +18,12 @@ using Microsoft.Win32;
 
 namespace Menhely_Projekt
 {
-    /// <summary>
-    /// Interaction logic for newKutya.xaml
-    /// </summary>
+
+    //Új kutya felvétele a redszerbe
     public partial class newKutya : Window
     {
+
+        //Feltöltendő kutya
         private static Kutya target = new Kutya();
 
         public newKutya()
@@ -35,23 +36,25 @@ namespace Menhely_Projekt
         private Kutya buildKutya()
         {
 
+            //Kuya kreálása
             try
             {
                 target.ID = KutyaDAO.LatestID()+1;
                 target.regSzam = int.Parse(regisztraciosSzam_tb.Text);
                 target.nev = nev_tb.Text;
                 target.chipSzam = chipSzam_tb.Text;
-                target.ivar = ivar_cb.SelectedItem.ToString() == "Kan";
+                target.ivar = ivar_cb.SelectedItem.ToString();
                 target.meret = meret_cb.SelectedItem.ToString();
                 target.szuletes = DateTime.Parse(szuletes_dp.Text);
                 target.bekerules = DateTime.Parse(bekerules_dp.Text);
-                target.ivaros = ivaros_cb.SelectedItem.ToString() == "Ivaros";
+                target.ivaros = ivaros_cb.SelectedItem.ToString();
                 target.telephely = telephely_cb.SelectedItem.ToString();
                 target.foglalt = foglalt_rb.IsChecked == true;
                 target.kennel = int.Parse(kennel_cb.SelectedItem.ToString());
                 target.indexkepID = int.Parse(indexkepID_tb.Text);
                 target.visible = visible_rb.IsChecked == true;
                 target.status = Status_cb.SelectedItem.ToString();
+
                 return target;
             }
             catch (Exception)
@@ -62,6 +65,7 @@ namespace Menhely_Projekt
 
         }
 
+        //Kutya adatainak betöltése
         private void betoltes()
         {
             
@@ -80,10 +84,10 @@ namespace Menhely_Projekt
             ivaros_cb.Items.Add("Ivaros");
             ivaros_cb.Items.Add("Ivartalan");
 
-            meret_cb.Items.Add("Kicsi");
-            meret_cb.Items.Add("Közepes");
-            meret_cb.Items.Add("Nagy");
-            meret_cb.Items.Add("Kölyök");
+            meret_cb.Items.Add("kisestű");
+            meret_cb.Items.Add("közepes testű");
+            meret_cb.Items.Add("nagytestű");
+            meret_cb.Items.Add("kölyök");
 
             kennel_cb.Items.Clear();
             foreach (var item in Kutya.kutyak.Select(q => q.kennel).Distinct())
@@ -98,34 +102,40 @@ namespace Menhely_Projekt
 
         }
 
+        //Véglegesítés
         private void save_btn_Click(object sender, RoutedEventArgs e)
         {
             Kutya target = buildKutya();
 
             if (target != null)
             {
-            KutyaDAO.createKutya(target);
-               
+                KutyaDAO.createKutya(target);
             }
         }
 
+        //Kép feltöltése
         private void ImgUpload_btn_Click(object sender, RoutedEventArgs e)
         {
+
+            //FTP szerver adatai
+
             string host = "127.0.0.1";
             string username = "Menhely_Projekt";
             string password = "admin";
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
+            //Elfogadott fileok
             openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
 
+            //Fájl feltöltése
             if (openFileDialog.ShowDialog() == true)
             {
 
                 string customName = target.ID.ToString();
                 string selectedFilePath = openFileDialog.FileName;
                 string fileExtension = System.IO.Path.GetExtension(selectedFilePath);
-                string remotePath = $"/uploads/{customName}{fileExtension}";
+                string remotePath = $"/temp/{customName}-{selectedFilePath}";
 
                 try
                 {

@@ -9,10 +9,13 @@ using MySql.Data.MySqlClient;
 
 namespace Menhely_Projekt
 {
+    //Changelog - Adatbázis
     internal class ChangelogDAO
     {
-        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=zoldmenedek";
+        //Connectiong string
+        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=pawdmin";
 
+        //Minden rekord
         public static List<Changelog> GetAllChangelog()
         {
             List<Changelog> result = new List<Changelog>();
@@ -37,6 +40,7 @@ namespace Menhely_Projekt
             }
         }
 
+        //Rekord létrehozása
         public static void CreateChangelog(Changelog target)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))

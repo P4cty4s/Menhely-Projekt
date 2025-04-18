@@ -48,7 +48,7 @@ namespace Menhely_Projekt
             ivar_cb.Items.Clear();
             ivar_cb.Items.Add("Kan");
             ivar_cb.Items.Add("Szuka");
-            ivar_cb.SelectedItem = target.ivar == true ? "Kan" : "Szuka";
+            ivar_cb.SelectedItem = target.ivar;
 
             meret_tb.Text = target.meret.ToString();
 
@@ -74,14 +74,14 @@ namespace Menhely_Projekt
             }
 
             ivaros_cb.Items.Clear();
-            ivaros_cb.Items.Add("Ivaros");
-            ivaros_cb.Items.Add("Ivartalan");
-            if (target.ivaros)
+            ivaros_cb.Items.Add("ivaros");
+            ivaros_cb.Items.Add("ivartalan");
+            if (target.ivaros == "ivaros")
             {
-                ivaros_cb.SelectedItem = "Ivaros";
+                ivaros_cb.SelectedItem = "ivaros";
             } else
             {
-                ivaros_cb.SelectedItem = "Ivartalan";
+                ivaros_cb.SelectedItem = "ivartalan";
             }
 
             kennel_cb.Items.Clear();
@@ -121,7 +121,7 @@ namespace Menhely_Projekt
 
             alany.chipSzam = chipSzam_tb.Text;
 
-            alany.ivar = ivar_cb.SelectedItem == "Kan";
+            alany.ivar = ivar_cb.SelectedItem.ToString();
 
             alany.meret = meret_tb.Text;
 
@@ -129,7 +129,7 @@ namespace Menhely_Projekt
 
             alany.bekerules = DateTime.Parse(bekerules_dp.Text);
 
-            alany.ivaros = ivaros_cb.SelectedItem == "Ivaros";
+            alany.ivaros = ivaros_cb.SelectedItem.ToString();
 
             alany.telephely = telephely_cb.Text;
 
@@ -143,7 +143,10 @@ namespace Menhely_Projekt
 
             alany.status = Status_cb.SelectedItem.ToString();
 
-
+            if(alany.status == null || alany.status == "")
+            {
+                alany.status = "Nálunk van";
+            }
 
             KutyaDAO.updateKutya(alany);
         }
@@ -211,21 +214,15 @@ namespace Menhely_Projekt
             {
                 string customName = alany.ID.ToString(); // Ensure this is a valid string
                 string selectedFilePath = openFileDialog.FileName;
+                string fileName = System.IO.Path.GetFileNameWithoutExtension(selectedFilePath);
                 string fileExtension = System.IO.Path.GetExtension(selectedFilePath);
-                string remoteFolder = "/uploads";
-                string remotePath = $"{remoteFolder}/{customName}{fileExtension}";
+                string remotePath = $"/uploads/{customName}-{fileName}{fileExtension}";
 
                 try
                 {
                     using (FtpClient client = new FtpClient(host, username, password))
                     {
                         client.Connect();
-
-                        // 🟢 Ensure /uploads directory exists before uploading
-                        if (!client.DirectoryExists(remoteFolder))
-                        {
-                            client.CreateDirectory(remoteFolder);
-                        }
 
                         client.UploadFile(selectedFilePath, remotePath, FtpRemoteExists.Overwrite);
                         MessageBox.Show("Siker: " + remotePath);
