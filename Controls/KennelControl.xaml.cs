@@ -38,6 +38,17 @@ namespace Menhely_Projekt.Controls
             showKennel.Clear();
             betoltes();
         }
+
+        private void ujratoltes()
+        {
+            Kennelek.Clear();
+            showKennel.Clear();
+
+            Kennelek = KennelDAO.AllKennel();
+
+            kennelBetoltes();
+            kennelMegjelenit();
+        }
         private void betoltes()
         {
             FoAblak.currentContent = "Kennel";
@@ -47,9 +58,12 @@ namespace Menhely_Projekt.Controls
             udvarBetoltes();
         }
 
+        //Betölti a nálunk lévő kutyákat (Sérült,Nálunk van)
         private void kutyaBetoltes()
         {
             myKutyak = KutyaDAO.getMyKutya();
+
+            Kutyak_panel.Items.Clear();
 
             foreach (var ikutya in myKutyak)
             {
@@ -60,6 +74,7 @@ namespace Menhely_Projekt.Controls
             }
         }
 
+        //Megnézi hogy melyik kennelben van benne a kutya
         private bool valogato(Kutya ikutya)
         {
             foreach (Kennel ikennel in Kennelek)
@@ -72,6 +87,7 @@ namespace Menhely_Projekt.Controls
 
             return true;
         }
+
 
         private void kennelBetoltes()
         {   
@@ -86,6 +102,7 @@ namespace Menhely_Projekt.Controls
                 kennelMegjelenit();
         }
 
+        //Újra tölti a lekért kenneleket
         private void kennelMegjelenit()
         {
             Kennel_panel.Children.Clear();
@@ -130,7 +147,7 @@ namespace Menhely_Projekt.Controls
 
                 if(addKennel.DialogResult == true)
                 {
-                    kennelMegjelenit();
+                    ujratoltes();
                 }
             } else
             {
@@ -203,6 +220,23 @@ namespace Menhely_Projekt.Controls
             }
 
             KennelDAO.SetKennel(result);
+        }
+
+        //Az összes kennel kiürítése, kutyák újra gyüjtése
+        private async void Reset_All(object sender, RoutedEventArgs e)
+        {
+            List<Kennel> target = new List<Kennel>();
+
+            foreach (var item in showKennel)
+            {
+                target.Add(new Kennel(item.alap.Id,item.alap.UdvarId,item.alap.KennelSzam));
+            }
+
+            await KennelDAO.SetKennel(target);
+
+            ujratoltes();
+
+            kutyaBetoltes();
         }
     }
 }

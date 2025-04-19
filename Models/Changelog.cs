@@ -16,9 +16,9 @@ namespace Menhely_Projekt.Models
         public DateTime When { get; set; }
         public Changelog(int _id,int user, DateTime _when,string _msg)
         {
-            Id = _id;
+            Id = 0;
             UserId = user;
-            When = _when;
+            When = DateTime.Now;
             Msg = _msg;
         }
         public Changelog(MySqlDataReader reader)
