@@ -79,6 +79,7 @@ namespace Menhely_Projekt
                     try
                     {
                         cmd.ExecuteNonQuery();
+                        ChangelogDAO.CreateChangelog($"létrehozott egy új kennelt({LatestID()})", new string[] { "kennel", "létrehozva" });
                         MessageBox.Show("Kennel sikeresen létrehozva!");
                     }
                     catch (Exception ex)
@@ -87,6 +88,26 @@ namespace Menhely_Projekt
                     }
                 }
             }
+        }
+
+        public static int LatestID()
+        {
+            int result = 0;
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = "SELECT MAX(Id) AS LatestId FROM kennel";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    object item = cmd.ExecuteScalar();
+                    result = item != DBNull.Value ? Convert.ToInt32(item) : 0;
+
+                }
+            }
+            return result;
         }
 
         //Kennel módosítása

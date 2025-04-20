@@ -15,6 +15,8 @@ namespace Menhely_Projekt
         //Connectiong string
         private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=pawdmin";
 
+        public static string userName = UserDAO.getName(FoAblak.UserId);
+
         //Minden rekord
         public static List<Changelog> GetAllChangelog()
         {
@@ -41,7 +43,7 @@ namespace Menhely_Projekt
         }
 
         //Rekord létrehozása
-        public static void CreateChangelog(Changelog target)
+        public static void CreateChangelog(string _msg, string[] category)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -52,11 +54,11 @@ namespace Menhely_Projekt
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
-                    cmd.Parameters.AddWithValue("@id", target.Id);
-                    cmd.Parameters.AddWithValue("@regszam", target.UserId);
-                    cmd.Parameters.AddWithValue("@nev", target.Category);
-                    cmd.Parameters.AddWithValue("@chipszam", target.Msg);
-                    cmd.Parameters.AddWithValue("@ivar", target.When);
+                    cmd.Parameters.AddWithValue("@id", 0);
+                    cmd.Parameters.AddWithValue("@userid", FoAblak.UserId);
+                    cmd.Parameters.AddWithValue("@category", $"{category[0]} {category[1]}");
+                    cmd.Parameters.AddWithValue("@msg", $"{userName} {_msg}");
+                    cmd.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-d H:m:s"));
 
                     try
                     {

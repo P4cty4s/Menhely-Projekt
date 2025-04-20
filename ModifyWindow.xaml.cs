@@ -46,8 +46,8 @@ namespace Menhely_Projekt
             chipSzam_tb.Text = target.chipSzam.ToString();
 
             ivar_cb.Items.Clear();
-            ivar_cb.Items.Add("Kan");
-            ivar_cb.Items.Add("Szuka");
+            ivar_cb.Items.Add("kan");
+            ivar_cb.Items.Add("szuka");
             ivar_cb.SelectedItem = target.ivar;
 
             meret_tb.Text = target.meret.ToString();

@@ -71,8 +71,8 @@ namespace Menhely_Projekt
             
 
             ivar_cb.Items.Clear();
-            ivar_cb.Items.Add("Kan");
-            ivar_cb.Items.Add("Szuka");
+            ivar_cb.Items.Add("kan");
+            ivar_cb.Items.Add("szuka");
 
             telephely_cb.Items.Clear();
             foreach (var item in Kutya.kutyak.Select(q => q.telephely).Distinct())
@@ -81,8 +81,8 @@ namespace Menhely_Projekt
             }
 
             ivaros_cb.Items.Clear();
-            ivaros_cb.Items.Add("Ivaros");
-            ivaros_cb.Items.Add("Ivartalan");
+            ivaros_cb.Items.Add("ivaros");
+            ivaros_cb.Items.Add("ivartalan");
 
             meret_cb.Items.Add("kisestű");
             meret_cb.Items.Add("közepes testű");

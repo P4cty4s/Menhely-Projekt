@@ -143,6 +143,7 @@ namespace Menhely_Projekt
                     try
                     {
                         cmd.ExecuteNonQuery();
+                        ChangelogDAO.CreateChangelog($"megváltoztatta {infok.nev}({infok.ID}) kutyát", new string[] {"kutya", "módosítva"});
                         MessageBox.Show("Sikeres mentés!");
                     }
                     catch (Exception ex)
@@ -185,6 +186,7 @@ namespace Menhely_Projekt
                     try
                     {
                         cmd.ExecuteNonQuery();
+                        ChangelogDAO.CreateChangelog($"létrehozta {newKutya.nev}({newKutya.ID}) kutyát", new string[] { "kutya", "létrehozva" });
                         MessageBox.Show("Sikeres hozzáadás!");
                     }
                     catch (Exception ex)
@@ -231,7 +233,7 @@ namespace Menhely_Projekt
             {
                 conn.Open();
 
-                string query = "SELECT MAX(Id) AS LatestId FROM your_table;";
+                string query = "SELECT MAX(Id) AS LatestId FROM kutya";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {

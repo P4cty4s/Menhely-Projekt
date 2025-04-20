@@ -23,7 +23,7 @@ namespace Menhely_Projekt
     /// </summary>
     public partial class FoAblak : Window
     {
-        private static int UserId = -1;
+        public static int UserId = -1;
         public static List<string> statuses = new List<string>();
 
         public static string currentContent = "";
