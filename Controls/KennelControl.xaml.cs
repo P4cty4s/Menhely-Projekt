@@ -27,7 +27,8 @@ namespace Menhely_Projekt.Controls
     {
         List<Kutya> myKutyak = new List<Kutya>();
         List<Udvar> Udvarok = new List<Udvar>();
-        List<Kennel> Kennelek = new List<Kennel>();
+        public static List<Kennel> Kennelek = new List<Kennel>();
+        public static List<int> valtozottID = new List<int>();
 
         public static ListBox dragSource = null;
 
@@ -210,20 +211,35 @@ namespace Menhely_Projekt.Controls
 
         private void Save_btn_Click(object sender, RoutedEventArgs e)
         {
-            List<Kennel> result = new List<Kennel>();
-
-            Udvar _udvar = Udvarok_cb.SelectedItem as Udvar;
-
-            foreach (var item in showKennel.Where(q => q.alap.UdvarId == _udvar.Id))
+            if (Udvarok_cb.SelectedItem != null)
             {
-                result.Add(item.alap);
-            }
+                List<Kennel> result = new List<Kennel>();
 
-            KennelDAO.SetKennel(result);
+                Udvar _udvar = Udvarok_cb.SelectedItem as Udvar;
+
+                foreach (var item in showKennel.Where(q => q.alap.UdvarId == _udvar.Id))
+                {
+                    result.Add(item.alap);
+                }
+
+                KennelDAO.SetKennel(result);
+                Kennelek = KennelDAO.AllKennel();
+
+                foreach (var item in valtozottID)
+                {
+                    ChangelogDAO.CreateChangelog($"módosította {Kennelek.Find(q=>q.Id == item).KennelSzam} szamu kennelt({item})", new string[] { "kennel", "modositva" });
+                }
+
+                valtozottID.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Válassz udvart");
+            }
         }
 
         //Az összes kennel kiürítése, kutyák újra gyüjtése
-        private async void Reset_All(object sender, RoutedEventArgs e)
+        private void Reset_All(object sender, RoutedEventArgs e)
         {
             List<Kennel> target = new List<Kennel>();
 
@@ -232,7 +248,7 @@ namespace Menhely_Projekt.Controls
                 target.Add(new Kennel(item.alap.Id,item.alap.UdvarId,item.alap.KennelSzam));
             }
 
-            await KennelDAO.SetKennel(target);
+            KennelDAO.SetKennel(target);
 
             ujratoltes();
 

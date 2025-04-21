@@ -61,6 +61,32 @@ namespace Menhely_Projekt
             return result;
         } 
 
+        //Egy kennel lekérdezése
+        public static Kennel GetKennel(int _id)
+        {
+            Kennel target = new Kennel();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM kennel WHERE id = @value";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@value", _id);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        reader.Read();
+                        target = new Kennel(reader);
+                    }
+
+                }
+                connection.Close();
+            }
+
+            return target;
+        }
+
         //Kennel létrehozása
         public static void CreateKennel(Kennel target)
         {
@@ -90,6 +116,7 @@ namespace Menhely_Projekt
             }
         }
 
+        //Utolso Id lekerese
         public static int LatestID()
         {
             int result = 0;
@@ -110,15 +137,41 @@ namespace Menhely_Projekt
             return result;
         }
 
-        //Kennel módosítása
-        public static async Task SetKennel(List<Kennel> target)
+        //Vane valtozas (false == nincs valtozas)
+        //private static bool csekkolo(List<Kutya> programLista, List<Kutya> dblista)
+        //{
+        //    if (programLista.Count() == 0 && dblista.Count() == 0)
+        //    {
+        //        return false;
+        //    }
+
+        //    if (programLista.Count() != dblista.Count())
+        //    {
+        //        return true;
+        //    }
+
+        //    foreach (var item in programLista)
+        //    {
+        //        Kutya vane = null;
+
+        //        vane = dblista.Find(q=>q.ID == item.ID);
+
+        //        if (vane == null)
+        //        {
+        //            return true;
+        //        }
+
+        //    }
+
+        //    return false;
+        //}
+
+        //Kennel módosítása (kutya felvétele vagy levétele)
+        public static void SetKennel(List<Kennel> target)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                await conn.OpenAsync();
-                using (var transaction = await conn.BeginTransactionAsync())
-                {
-                    Console.WriteLine("Itt jár");
+                conn.Open();
                     try
                     {
                         foreach (var item in target)
@@ -126,21 +179,21 @@ namespace Menhely_Projekt
                             string szoveg = createQuery(item.Kutyak);
                             string query = "UPDATE kennel SET kutyak = @kutyak WHERE id = @id";
 
-                            using (var command = new MySqlCommand(query, conn, transaction))
+                            using (var command = new MySqlCommand(query, conn))
                             {
                                 command.Parameters.AddWithValue("@kutyak", szoveg);
                                 command.Parameters.AddWithValue("@id", item.Id);
 
-                                await command.ExecuteNonQueryAsync();
+                                command.ExecuteNonQuery();
+
+                                Kennel masik = GetKennel(item.Id);
                             }
                         }
 
-                        await transaction.CommitAsync();
                         MessageBox.Show("LEGGOO");
                     }
                     catch (Exception ex)
                     {
-                        await transaction.RollbackAsync();
                         MessageBox.Show($"Transaction failed: {ex.Message}");
                         throw;
                     }
@@ -149,4 +202,3 @@ namespace Menhely_Projekt
         }
 
     }
-}

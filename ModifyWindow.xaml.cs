@@ -25,6 +25,8 @@ namespace Menhely_Projekt
     /// </summary>
     public partial class ModifyWindow : Window
     {
+        List<BitmapImage> kutya_kepek;
+
         Kutya alany = new Kutya();
         public ModifyWindow(int ID)
         {
@@ -37,6 +39,8 @@ namespace Menhely_Projekt
 
         private void betoltes(Kutya target)
         {
+
+
             id_tb.Text = target.ID.ToString();
 
             regisztraciosSzam_tb.Text = target.regSzam.ToString();
@@ -186,7 +190,7 @@ namespace Menhely_Projekt
                         bitmap.EndInit();
 
                         // Display the image in the WPF Image control
-                        profilePicture.Source = bitmap;
+                        kutya_kepek.Add(bitmap);
 
                         // Optionally, delete the temporary file after usage
                         File.Delete(tempFilePath);

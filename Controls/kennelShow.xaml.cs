@@ -55,7 +55,12 @@ namespace Menhely_Projekt.Controls
                 parent.Items.Add(data);
                 alap.Kutyak.Add(data as Kutya);
                 kutyakPanel.Items.Remove(data);
+                if (!KennelControl.valtozottID.Contains(alap.Id))
+                {
+                    KennelControl.valtozottID.Add(alap.Id);
+                }
             }
+
         }
 
         private void Kennelek_lb_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
@@ -64,6 +69,11 @@ namespace Menhely_Projekt.Controls
             kutyakPanel.Items.Add((Kutya)objekt);
             alap.Kutyak.Remove(objekt);
             Kennelek_lb.Items.Remove(objekt);
+
+            if (!KennelControl.valtozottID.Contains(alap.Id))
+            {
+                KennelControl.valtozottID.Add(alap.Id);
+            }
         }
     }
 }
