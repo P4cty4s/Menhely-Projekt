@@ -25,6 +25,11 @@ namespace Menhely_Projekt
     /// </summary>
     public partial class ModifyWindow : Window
     {
+<<<<<<< Updated upstream
+=======
+        List<KutyaKep> kutya_kepek = new List<KutyaKep>();
+
+>>>>>>> Stashed changes
         Kutya alany = new Kutya();
         public ModifyWindow(int ID)
         {
@@ -32,7 +37,16 @@ namespace Menhely_Projekt
 
             alany = KutyaDAO.egyKutya(ID);
 
+            KepekBetoltese();
+
             betoltes(KutyaDAO.egyKutya(ID));
+        }
+
+        private void KepekBetoltese()
+        {
+            List<int> kepNevek = KutyaDAO.GetKutyaImages(alany.ID);
+
+            StreamImagesFromFTP(kepNevek);
         }
 
         private void betoltes(Kutya target)
@@ -63,7 +77,7 @@ namespace Menhely_Projekt
             }
             telephely_cb.SelectedItem = target.telephely.ToString();
 
-            profilePicture.Source = new BitmapImage(new Uri("Images/sampleProfile.jpg",UriKind.Relative));
+            profilePicture.Source = kutya_kepek;
 
             if (target.foglalt)
             {
@@ -151,7 +165,7 @@ namespace Menhely_Projekt
             KutyaDAO.updateKutya(alany);
         }
 
-        private void StreamImageFromFTP(string remoteFilePath)
+        private void StreamImagesFromFTP(List<string> imageFileNames)
         {
             string host = "127.0.0.1"; // FTP host
             string username = "Menhely_Projekt"; // FTP username
@@ -163,21 +177,29 @@ namespace Menhely_Projekt
                 {
                     client.Connect();
 
-                    // Create a temporary file path
-                    string tempFilePath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), Guid.NewGuid().ToString() + ".tmp");
-
-                    // Download the file into the temporary file
-                    client.DownloadFile(tempFilePath, remoteFilePath);
-
-                    // Load the temporary file into a MemoryStream
-                    using (MemoryStream memoryStream = new MemoryStream())
+                    foreach (string remoteFileName in imageFileNames)
                     {
+                        string tempFilePath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), Guid.NewGuid().ToString() + ".tmp");
+
+                        // Download the file from FTP
+                        client.DownloadFile(tempFilePath, remoteFileName);
+
+                        // Load file into MemoryStream
                         byte[] fileBytes = File.ReadAllBytes(tempFilePath);
-                        memoryStream.Write(fileBytes, 0, fileBytes.Length);
+                        using (MemoryStream memoryStream = new MemoryStream(fileBytes))
+                        {
+                            // Create BitmapImage from stream
+                            BitmapImage bitmap = new BitmapImage();
+                            bitmap.BeginInit();
+                            bitmap.StreamSource = memoryStream;
+                            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                            bitmap.EndInit();
+                            bitmap.Freeze(); // Makes it cross-thread accessible and improves performance
 
-                        // Reset the memory stream position to the start
-                        memoryStream.Position = 0;
+                            kutya_kepek.Add(bitmap); // Add to list
+                        }
 
+<<<<<<< Updated upstream
                         // Create a BitmapImage from the memory stream
                         BitmapImage bitmap = new BitmapImage();
                         bitmap.BeginInit();
@@ -189,15 +211,19 @@ namespace Menhely_Projekt
                         profilePicture.Source = bitmap;
 
                         // Optionally, delete the temporary file after usage
+=======
+                        // Delete temp file
+>>>>>>> Stashed changes
                         File.Delete(tempFilePath);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading image: " + ex.Message);
+                MessageBox.Show("Error loading images: " + ex.Message);
             }
         }
+
 
         private void ImgUpload_btn_Click(object sender, RoutedEventArgs e)
         {

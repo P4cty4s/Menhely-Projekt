@@ -141,6 +141,7 @@
     <Compile Include="Models\Changelog.cs" />
     <Compile Include="Models\Kennel.cs" />
     <Compile Include="Models\Kutya.cs" />
+    <Compile Include="Models\KutyaKep.cs" />
     <Compile Include="Models\Udvar.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="ModifyWindow.xaml.cs">

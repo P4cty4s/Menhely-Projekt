@@ -233,7 +233,7 @@ namespace Menhely_Projekt
             {
                 conn.Open();
 
-                string query = "SELECT MAX(Id) AS LatestId FROM kutya";
+                string query = "SELECT MAX(id) AS LatestId FROM kutyak";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
@@ -243,6 +243,61 @@ namespace Menhely_Projekt
                 }
             }
             return result;
+        }
+
+        //Kutyahoz kepek lekerese
+
+        public static List<int> GetKutyaImages(int _ID)
+        {
+            List<int> result = new List<int>();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT Id FROM kutyakep WHERE kutyaid = @value";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@value", _ID);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(Convert.ToInt32(reader));
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return result;
+        }
+
+        //Kutyakep adatainak feltoltese
+
+        public static void SetKutyaImages(int _ID,string _nev)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"INSERT INTO kutyakep (kutyaid, nev) VALUES (@kutyaid, @nev)";
+
+                using (MySqlCommand cmd = new MySqlCommand(query,conn))
+                {
+                    cmd.Parameters.AddWithValue("@kutyaid",_ID);
+                    cmd.Parameters.AddWithValue("@nev",_nev);
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Sikeres képfeltöltés!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Hiba oka: {ex.Message}");
+                    }
+                }
+            }
         }
 
 

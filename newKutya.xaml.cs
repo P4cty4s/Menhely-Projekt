@@ -29,39 +29,30 @@ namespace Menhely_Projekt
         public newKutya()
         {
             InitializeComponent();
+            target.ID = KutyaDAO.LatestID() + 1;
             betoltes();
             
         }
 
+        //Kutya létrehozása
         private Kutya buildKutya()
         {
+            target.regSzam = int.Parse(regisztraciosSzam_tb.Text);
+            target.nev = nev_tb.Text;
+            target.chipSzam = chipSzam_tb.Text;
+            target.ivar = ivar_cb.SelectedItem.ToString();
+            target.meret = meret_cb.SelectedItem.ToString();
+            target.szuletes = DateTime.Parse(szuletes_dp.Text);
+            target.bekerules = DateTime.Parse(bekerules_dp.Text);
+            target.ivaros = ivaros_cb.SelectedItem.ToString();
+            target.telephely = telephely_cb.SelectedItem.ToString();
+            target.foglalt = foglalt_rb.IsChecked == true;
+            target.kennel = int.Parse(kennel_cb.SelectedItem.ToString());
+            target.indexkepID = int.Parse(indexkepID_tb.Text);
+            target.visible = visible_rb.IsChecked == true;
+            target.status = Status_cb.SelectedItem.ToString();
 
-            //Kuya kreálása
-            try
-            {
-                target.ID = KutyaDAO.LatestID()+1;
-                target.regSzam = int.Parse(regisztraciosSzam_tb.Text);
-                target.nev = nev_tb.Text;
-                target.chipSzam = chipSzam_tb.Text;
-                target.ivar = ivar_cb.SelectedItem.ToString();
-                target.meret = meret_cb.SelectedItem.ToString();
-                target.szuletes = DateTime.Parse(szuletes_dp.Text);
-                target.bekerules = DateTime.Parse(bekerules_dp.Text);
-                target.ivaros = ivaros_cb.SelectedItem.ToString();
-                target.telephely = telephely_cb.SelectedItem.ToString();
-                target.foglalt = foglalt_rb.IsChecked == true;
-                target.kennel = int.Parse(kennel_cb.SelectedItem.ToString());
-                target.indexkepID = int.Parse(indexkepID_tb.Text);
-                target.visible = visible_rb.IsChecked == true;
-                target.status = Status_cb.SelectedItem.ToString();
-
-                return target;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Minden mezőt ki kell tölteni!");
-                return null;
-            }
+            return target;
 
         }
 
@@ -105,11 +96,18 @@ namespace Menhely_Projekt
         //Véglegesítés
         private void save_btn_Click(object sender, RoutedEventArgs e)
         {
-            Kutya target = buildKutya();
-
-            if (target != null)
+            try
             {
-                KutyaDAO.createKutya(target);
+                Kutya target = buildKutya();
+
+                if (target != null)
+                {
+                    KutyaDAO.createKutya(target);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Minden mezőt ki kell tölteni!");
             }
         }
 
@@ -134,8 +132,9 @@ namespace Menhely_Projekt
 
                 string customName = target.ID.ToString();
                 string selectedFilePath = openFileDialog.FileName;
+                string fileName = System.IO.Path.GetFileName(selectedFilePath);
                 string fileExtension = System.IO.Path.GetExtension(selectedFilePath);
-                string remotePath = $"/temp/{customName}-{selectedFilePath}";
+                string remotePath = $"/uploads/{customName}-{fileName}";
 
                 try
                 {
@@ -144,6 +143,7 @@ namespace Menhely_Projekt
                         client.Connect();
                         client.UploadFile(selectedFilePath, remotePath, FtpRemoteExists.Overwrite);
                         MessageBox.Show("Siker " + remotePath);
+                        KutyaDAO.SetKutyaImages(target.ID,$"{customName}-{fileName}");
                     }
                 }
                 catch (Exception ex)
@@ -157,6 +157,26 @@ namespace Menhely_Projekt
             {
                 Console.WriteLine("Nincs fájl kiválasztva");
             }
+        }
+
+        private void DelImg(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PrevImg(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NextImg_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NextImg(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
