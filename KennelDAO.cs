@@ -148,5 +148,41 @@ namespace Menhely_Projekt
             }
         }
 
+        //Kennel törlése
+
+        public static void DelKennel(int _id)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = "DELETE FROM kennel WHERE id = @id";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", _id);
+
+                    try
+                    {
+                        int affectedRows = cmd.ExecuteNonQuery();
+
+                        if (affectedRows > 0)
+                        {
+                            MessageBox.Show("Sikeres törlés!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nem található ilyen rekord.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Hiba a törlés közben: {ex.Message}");
+                    }
+                }
+            }
+
+        }
+
     }
 }

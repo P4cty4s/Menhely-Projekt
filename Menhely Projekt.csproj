@@ -135,11 +135,11 @@
     <Compile Include="FoAblak.xaml.cs">
       <DependentUpon>FoAblak.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FSA.cs" />
     <Compile Include="KennelDAO.cs" />
     <Compile Include="KutyaDAO.cs" />
     <Compile Include="Models\Changelog.cs" />
     <Compile Include="Models\Kennel.cs" />
+    <Compile Include="Models\KepInfo.cs" />
     <Compile Include="Models\Kutya.cs" />
     <Compile Include="Models\KutyaKep.cs" />
     <Compile Include="Models\Udvar.cs" />

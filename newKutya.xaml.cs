@@ -26,12 +26,27 @@ namespace Menhely_Projekt
         //Feltöltendő kutya
         private static Kutya target = new Kutya();
 
+        private static int currentPic = 0;
+
         public newKutya()
         {
             InitializeComponent();
             target.ID = KutyaDAO.LatestID() + 1;
+            target.kepek = new List<KutyaKep>();
             betoltes();
             
+            
+        }
+
+        private void reloadImages(int Szam)
+        {
+            if (target.kepek.Count > 0)
+            {
+                profilePicture.Source = target.kepek[Szam].Kep;
+            } else
+            {
+                profilePicture.Source = new BitmapImage();
+            }
         }
 
         //Kutya létrehozása
@@ -48,9 +63,19 @@ namespace Menhely_Projekt
             target.telephely = telephely_cb.SelectedItem.ToString();
             target.foglalt = foglalt_rb.IsChecked == true;
             target.kennel = int.Parse(kennel_cb.SelectedItem.ToString());
-            target.indexkepID = int.Parse(indexkepID_tb.Text);
             target.visible = visible_rb.IsChecked == true;
             target.status = Status_cb.SelectedItem.ToString();
+
+            try
+            {
+                target.indexkepID = target.kepek.Find(q=>q.Info.nev == IndexKep_cb.SelectedItem.ToString()).Info.ID;
+            }
+            catch (Exception)
+            {
+                target.indexkepID = 0;
+            }
+
+            target.kepek = new List<KutyaKep>();
 
             return target;
 
@@ -99,11 +124,7 @@ namespace Menhely_Projekt
             try
             {
                 Kutya target = buildKutya();
-
-                if (target != null)
-                {
-                    KutyaDAO.createKutya(target);
-                }
+                KutyaDAO.createKutya(target);
             }
             catch (Exception)
             {
@@ -143,15 +164,19 @@ namespace Menhely_Projekt
                         client.Connect();
                         client.UploadFile(selectedFilePath, remotePath, FtpRemoteExists.Overwrite);
                         MessageBox.Show("Siker " + remotePath);
-                        KutyaDAO.SetKutyaImages(target.ID,$"{customName}-{fileName}");
+                        KepInfo _kepInfo = KutyaDAO.SetKutyaImages(target.ID,$"{customName}-{fileName}");
+
+                        target.kepek.Add(new KutyaKep(_kepInfo,KutyaDAO.GetModelImage(_kepInfo.nev)));
+                        currentPic = target.kepek.Count - 1;
+                        reloadImages(currentPic);
+
+                        IndexKep_cb.Items.Add(_kepInfo.nev);
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Valami hiba történt: "+ex);
                 }
-
-                
             }
             else
             {
@@ -161,22 +186,33 @@ namespace Menhely_Projekt
 
         private void DelImg(object sender, RoutedEventArgs e)
         {
-
+            if (target.kepek.Count() > 0)
+            {
+                KutyaDAO.DelDbImage(target.kepek[currentPic].Info.ID);
+                KutyaDAO.DelFTPImage(target.kepek[currentPic].Info.nev);
+                target.kepek.Remove(target.kepek[currentPic]);
+            
+                currentPic = 0;
+                reloadImages(currentPic);
+            }
         }
 
         private void PrevImg(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void NextImg_btn_Click(object sender, RoutedEventArgs e)
-        {
-
+            if (currentPic > 0)
+            {
+                currentPic--;
+                reloadImages(currentPic);
+            }
         }
 
         private void NextImg(object sender, RoutedEventArgs e)
         {
-
+            if (currentPic < target.kepek.Count - 1)
+            {
+                currentPic++;
+                reloadImages(currentPic);
+            }
         }
     }
 }

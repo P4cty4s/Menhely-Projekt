@@ -60,9 +60,9 @@
             </Border>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,5">
-                <Button Height="25px" Width="40" Content="⬅" Margin="2" x:Name="PrevImg_btn"/>
-                <Button Height="25px" Content="Törlés" Margin="2" x:Name="DelImg_btn"/>
-                <Button Height="25px" Width="40" Content="➞" Margin="2" x:Name="NextImg_btn"/>
+                <Button Height="25px" Width="40" Content="⬅" Margin="2" x:Name="PrevImg_btn" Click="PrevImg"/>
+                <Button Height="25px" Content="Törlés" Margin="2" x:Name="DelImg_btn" Click="DelImg"/>
+                <Button Height="25px" Width="40" Content="➞" Margin="2" x:Name="NextImg_btn" Click="NextImg"/>
             </StackPanel>
 
             <Button Height="30px" Content="Kép választása" Click="ImgUpload_btn_Click" x:Name="ImgUpload_btn"/>
@@ -76,9 +76,6 @@
             <Label Content="Kennel:" />
             <ComboBox x:Name="kennel_cb" Margin="0,5,0,10" />
 
-            <Label Content="Indexkép ID:" />
-            <TextBox x:Name="indexkepID_tb" Margin="0,5,0,10" />
-
             <Label Content="Láthatóság:" />
             <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
                 <RadioButton x:Name="visible_rb" GroupName="visible_rbs" Content="Látható" />
@@ -87,6 +84,9 @@
 
             <Label Content="Státusz:"/>
             <ComboBox Width="auto" x:Name="Status_cb"/>
+
+            <Label Content="Indexkép:"/>
+            <ComboBox Width="auto" x:Name="IndexKep_cb"/>
 
         </StackPanel>
 

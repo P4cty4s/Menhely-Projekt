@@ -25,28 +25,34 @@ namespace Menhely_Projekt
     /// </summary>
     public partial class ModifyWindow : Window
     {
-<<<<<<< Updated upstream
-=======
-        List<KutyaKep> kutya_kepek = new List<KutyaKep>();
-
->>>>>>> Stashed changes
         Kutya alany = new Kutya();
+        private static int currentPic = 0;
         public ModifyWindow(int ID)
         {
             InitializeComponent();
 
             alany = KutyaDAO.egyKutya(ID);
 
-            KepekBetoltese();
+            if (alany.kepek == null)
+            {
+                alany.kepek = new List<KutyaKep>();
+            }
 
             betoltes(KutyaDAO.egyKutya(ID));
+
+            reloadImages(0);
         }
 
-        private void KepekBetoltese()
+        private void reloadImages(int Szam)
         {
-            List<int> kepNevek = KutyaDAO.GetKutyaImages(alany.ID);
-
-            StreamImagesFromFTP(kepNevek);
+            if (alany.kepek.Count > 0)
+            {
+                profilePicture.Source = alany.kepek[Szam].Kep;
+            }
+            else
+            {
+                profilePicture.Source = new BitmapImage();
+            }
         }
 
         private void betoltes(Kutya target)
@@ -77,7 +83,7 @@ namespace Menhely_Projekt
             }
             telephely_cb.SelectedItem = target.telephely.ToString();
 
-            profilePicture.Source = kutya_kepek;
+            profilePicture.Source = new BitmapImage();
 
             if (target.foglalt)
             {
@@ -105,8 +111,6 @@ namespace Menhely_Projekt
             }
             kennel_cb.SelectedItem = target.kennel.ToString();
 
-            indexkepID_tb.Text = target.indexkepID.ToString();
-
             if (target.visible)
             {
                 invisible_rb.IsChecked = true;
@@ -122,6 +126,32 @@ namespace Menhely_Projekt
 
             Status_cb.SelectedItem = target.status;
 
+            foreach (var item in alany.kepek)
+            {
+                IndexKep_cb.Items.Add(item.Info.nev);
+            }
+
+            indexkepBetoltese();
+        }
+
+        private void indexkepBetoltese()
+        {
+            try
+            {
+                if (alany.indexkepID != null)
+                {
+                    IndexKep_cb.SelectedItem = alany.kepek.Find(q => q.Info.ID == alany.indexkepID).Info.nev;
+                }
+                else
+                {
+                    IndexKep_cb.SelectedItem = alany.kepek.First().Info.nev;
+                }
+            }
+            catch (Exception)
+            {
+                IndexKep_cb.SelectedItem = "0";
+            }
+            
         }
 
         private void save_btn_Click(object sender, RoutedEventArgs e)
@@ -151,11 +181,18 @@ namespace Menhely_Projekt
 
             alany.kennel = int.Parse(kennel_cb.Text);
 
-            alany.indexkepID = int.Parse(indexkepID_tb.Text);
-
             alany.visible = visible_rb.IsChecked == true;
 
             alany.status = Status_cb.SelectedItem.ToString();
+
+            if (IndexKep_cb.SelectedItem != null)
+            {
+                alany.indexkepID = alany.kepek.Find(q=>q.Info.nev == IndexKep_cb.SelectedItem.ToString()).Info.ID;
+            } else
+            {
+                alany.indexkepID = 0;
+            }
+
 
             if(alany.status == null || alany.status == "")
             {
@@ -165,103 +202,87 @@ namespace Menhely_Projekt
             KutyaDAO.updateKutya(alany);
         }
 
-        private void StreamImagesFromFTP(List<string> imageFileNames)
-        {
-            string host = "127.0.0.1"; // FTP host
-            string username = "Menhely_Projekt"; // FTP username
-            string password = "admin"; // FTP password
-
-            try
-            {
-                using (FtpClient client = new FtpClient(host, username, password))
-                {
-                    client.Connect();
-
-                    foreach (string remoteFileName in imageFileNames)
-                    {
-                        string tempFilePath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), Guid.NewGuid().ToString() + ".tmp");
-
-                        // Download the file from FTP
-                        client.DownloadFile(tempFilePath, remoteFileName);
-
-                        // Load file into MemoryStream
-                        byte[] fileBytes = File.ReadAllBytes(tempFilePath);
-                        using (MemoryStream memoryStream = new MemoryStream(fileBytes))
-                        {
-                            // Create BitmapImage from stream
-                            BitmapImage bitmap = new BitmapImage();
-                            bitmap.BeginInit();
-                            bitmap.StreamSource = memoryStream;
-                            bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                            bitmap.EndInit();
-                            bitmap.Freeze(); // Makes it cross-thread accessible and improves performance
-
-                            kutya_kepek.Add(bitmap); // Add to list
-                        }
-
-<<<<<<< Updated upstream
-                        // Create a BitmapImage from the memory stream
-                        BitmapImage bitmap = new BitmapImage();
-                        bitmap.BeginInit();
-                        bitmap.StreamSource = memoryStream;
-                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                        bitmap.EndInit();
-
-                        // Display the image in the WPF Image control
-                        profilePicture.Source = bitmap;
-
-                        // Optionally, delete the temporary file after usage
-=======
-                        // Delete temp file
->>>>>>> Stashed changes
-                        File.Delete(tempFilePath);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading images: " + ex.Message);
-            }
-        }
 
 
+
+        //Kép feltöltése
         private void ImgUpload_btn_Click(object sender, RoutedEventArgs e)
         {
+
+            //FTP szerver adatai
+
             string host = "127.0.0.1";
             string username = "Menhely_Projekt";
             string password = "admin";
 
-            OpenFileDialog openFileDialog = new OpenFileDialog
-            {
-                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
-            };
+            OpenFileDialog openFileDialog = new OpenFileDialog();
 
+            //Elfogadott fileok
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+
+            //Fájl feltöltése
             if (openFileDialog.ShowDialog() == true)
             {
-                string customName = alany.ID.ToString(); // Ensure this is a valid string
+
+                string customName = alany.ID.ToString();
                 string selectedFilePath = openFileDialog.FileName;
-                string fileName = System.IO.Path.GetFileNameWithoutExtension(selectedFilePath);
+                string fileName = System.IO.Path.GetFileName(selectedFilePath);
                 string fileExtension = System.IO.Path.GetExtension(selectedFilePath);
-                string remotePath = $"/uploads/{customName}-{fileName}{fileExtension}";
+                string remotePath = $"/uploads/{customName}-{fileName}";
 
                 try
                 {
                     using (FtpClient client = new FtpClient(host, username, password))
                     {
                         client.Connect();
-
                         client.UploadFile(selectedFilePath, remotePath, FtpRemoteExists.Overwrite);
-                        MessageBox.Show("Siker: " + remotePath);
+                        MessageBox.Show("Siker " + remotePath);
+                        KepInfo _kepInfo = KutyaDAO.SetKutyaImages(alany.ID, $"{customName}-{fileName}");
+
+                        alany.kepek.Add(new KutyaKep(_kepInfo, KutyaDAO.GetModelImage(_kepInfo.nev)));
+                        currentPic = alany.kepek.Count - 1;
+                        reloadImages(currentPic);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Valami hiba történt: " + ex.Message);
+                    MessageBox.Show("Valami hiba történt: " + ex);
                 }
             }
             else
             {
                 Console.WriteLine("Nincs fájl kiválasztva");
+            }
+        }
+
+        private void DelImg(object sender, RoutedEventArgs e)
+        {
+            if (alany.kepek.Count() > 0)
+            {
+                KutyaDAO.DelDbImage(alany.kepek[currentPic].Info.ID);
+                KutyaDAO.DelFTPImage(alany.kepek[currentPic].Info.nev);
+                alany.kepek.Remove(alany.kepek[currentPic]);
+
+                currentPic = 0;
+                reloadImages(currentPic);
+            }
+        }
+
+        private void PrevImg(object sender, RoutedEventArgs e)
+        {
+            if (currentPic > 0)
+            {
+                currentPic--;
+                reloadImages(currentPic);
+            }
+        }
+
+        private void NextImg(object sender, RoutedEventArgs e)
+        {
+            if (currentPic < alany.kepek.Count - 1)
+            {
+                currentPic++;
+                reloadImages(currentPic);
             }
         }
 

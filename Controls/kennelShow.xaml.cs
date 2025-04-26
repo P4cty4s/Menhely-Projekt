@@ -65,5 +65,14 @@ namespace Menhely_Projekt.Controls
             alap.Kutyak.Remove(objekt);
             Kennelek_lb.Items.Remove(objekt);
         }
+
+        private void DelKennel(object sender, RoutedEventArgs e)
+        {
+            KennelControl.showKennel.Remove(KennelControl.showKennel.Find(q=>q.alap.Id == this.alap.Id));
+
+            KennelDAO.DelKennel(alap.Id);
+
+            MessageBox.Show("Siker");
+        }
     }
 }

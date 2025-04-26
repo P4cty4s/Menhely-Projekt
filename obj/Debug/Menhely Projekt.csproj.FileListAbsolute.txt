@@ -138,3 +138,5 @@ C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\bin\Debug\BCrypt.Net-Next.dll
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\bin\Debug\FluentFTP.dll
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\bin\Debug\BCrypt.Net-Next.xml
 C:\Users\T\Desktop\A PROJEKT\Menhely Projekt\bin\Debug\FluentFTP.xml
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\BCrypt.Net-Next.xml

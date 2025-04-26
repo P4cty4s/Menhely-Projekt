@@ -5,10 +5,13 @@ using MySqlX.XDevAPI.Common;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace Menhely_Projekt
 {
@@ -245,16 +248,16 @@ namespace Menhely_Projekt
             return result;
         }
 
-        //Kutyahoz kepek lekerese
+        //Kep tulajdonsagok lekerdezese
 
-        public static List<int> GetKutyaImages(int _ID)
+        public static List<KepInfo> GetImageDetails(int _ID)
         {
-            List<int> result = new List<int>();
+            List<KepInfo> result = new List<KepInfo>();
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT Id FROM kutyakep WHERE kutyaid = @value";
+                string query = "SELECT * FROM kutyakep WHERE kutyaid = @value";
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
@@ -263,7 +266,7 @@ namespace Menhely_Projekt
                     {
                         while (reader.Read())
                         {
-                            result.Add(Convert.ToInt32(reader));
+                            result.Add(new KepInfo(reader));
                         }
                     }
                 }
@@ -274,22 +277,42 @@ namespace Menhely_Projekt
 
         //Kutyakep adatainak feltoltese
 
-        public static void SetKutyaImages(int _ID,string _nev)
+        public static KepInfo SetKutyaImages(int _ID, string _nev)
         {
+            KepInfo _kepInfo = null;
+
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
 
-                string query = @"INSERT INTO kutyakep (kutyaid, nev) VALUES (@kutyaid, @nev)";
+                string query = @"INSERT INTO kutyakep (kutyaid, nev) VALUES (@kutyaid, @nev); SELECT LAST_INSERT_ID();";
 
-                using (MySqlCommand cmd = new MySqlCommand(query,conn))
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@kutyaid",_ID);
-                    cmd.Parameters.AddWithValue("@nev",_nev);
+                    cmd.Parameters.AddWithValue("@kutyaid", _ID);
+                    cmd.Parameters.AddWithValue("@nev", _nev);
 
                     try
                     {
-                        cmd.ExecuteNonQuery();
+                        // Insert + get the new ID
+                        long newId = Convert.ToInt64(cmd.ExecuteScalar());
+
+                        // Now select the newly inserted record
+                        string selectQuery = "SELECT id, kutyaid, nev FROM kutyakep WHERE id = @id";
+
+                        using (MySqlCommand selectCmd = new MySqlCommand(selectQuery, conn))
+                        {
+                            selectCmd.Parameters.AddWithValue("@id", newId);
+
+                            using (MySqlDataReader reader = selectCmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    _kepInfo = new KepInfo(reader);
+                                }
+                            }
+                        }
+
                         MessageBox.Show("Sikeres képfeltöltés!");
                     }
                     catch (Exception ex)
@@ -297,6 +320,109 @@ namespace Menhely_Projekt
                         MessageBox.Show($"Hiba oka: {ex.Message}");
                     }
                 }
+            }
+
+            return _kepInfo;
+        }
+
+
+        //Kutyahoz kep rendelese (ftp)
+
+        public static BitmapImage GetModelImage(string imageName)
+        {
+            string host = "127.0.0.1";
+            string username = "Menhely_Projekt";
+            string password = "admin";
+
+            try
+            {
+                string ftpUrl = $"ftp://{host}/uploads/{imageName}";
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpUrl);
+                request.Method = WebRequestMethods.Ftp.DownloadFile;
+                request.Credentials = new NetworkCredential(username, password);
+
+                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                using (Stream responseStream = response.GetResponseStream())
+                {
+                    if (responseStream == null)
+                        return null;
+
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmap.StreamSource = new MemoryStream();
+                    responseStream.CopyTo(bitmap.StreamSource);
+                    bitmap.StreamSource.Position = 0;
+                    bitmap.EndInit();
+                    bitmap.Freeze();
+                    return bitmap;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        //Kep torlese adatbázisból
+
+        public static void DelDbImage(int id)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = "DELETE FROM kutyakep WHERE id = @id";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    try
+                    {
+                        int affectedRows = cmd.ExecuteNonQuery();
+
+                        if (affectedRows > 0)
+                        {
+                            MessageBox.Show("Sikeres törlés!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nem található ilyen rekord.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Hiba a törlés közben: {ex.Message}");
+                    }
+                }
+            }
+        }
+
+        //Törlés az ftp szerverről
+
+        public static void DelFTPImage(string _nev)
+        {
+            string host = "127.0.0.1";
+            string username = "Menhely_Projekt";
+            string password = "admin";
+
+            try
+            {
+                string ftpFullPath = $"ftp://{host}/uploads/{_nev}";
+
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpFullPath);
+                request.Method = WebRequestMethods.Ftp.DeleteFile;
+                request.Credentials = new NetworkCredential(username, password);
+
+                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                {
+                    MessageBox.Show($"Törlés sikeres: {response.StatusDescription}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hiba az FTP törlés közben: {ex.Message}");
             }
         }
 

@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Automation.Peers;
+using System.Windows.Media.Imaging;
 
 namespace Menhely_Projekt.Models
 {
@@ -25,6 +28,7 @@ namespace Menhely_Projekt.Models
         public int indexkepID { get; set; }
         public bool visible { get; set; }
         public string status { get; set; }
+        public List<KutyaKep> kepek {  get; set; }
 
         public static List<Kutya> kutyak = new List<Kutya>();
 
@@ -45,6 +49,17 @@ namespace Menhely_Projekt.Models
             indexkepID = Convert.ToInt32(adat["indexkepid"]);
             visible = Convert.ToInt32(adat["visible"]) == 1 ? true : false;
             status = adat["status"].ToString();
+            kepek = new List<KutyaKep>();
+
+            //--------Kepek betoltese proba-------
+
+            List<KepInfo> seged = KutyaDAO.GetImageDetails(ID);
+
+            foreach (var infok in seged)
+            {
+                BitmapImage _kep = KutyaDAO.GetModelImage(infok.nev);
+                kepek.Add(new KutyaKep(infok,_kep));
+            }
         }
 
         public Kutya()

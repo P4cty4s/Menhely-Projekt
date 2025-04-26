@@ -238,5 +238,10 @@ namespace Menhely_Projekt.Controls
 
             kutyaBetoltes();
         }
+
+        private void Refresh_Button(object sender, RoutedEventArgs e)
+        {
+            ujratoltes();
+        }
     }
 }
