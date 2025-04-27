@@ -22,9 +22,10 @@
 
             <!-- ComboBoxes at the top -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,10">
-                <ComboBox x:Name="User_cb" Width="200" Height="30" Margin="10,0,10,0"/>
-                <ComboBox x:Name="Category_cb" Width="200" Height="30" Margin="10,10,20,10"/>
-                <ComboBox x:Name="SubCategory_cb" Width="200" Height="30"/>
+                <ComboBox x:Name="User_cb" Width="200" Height="30" Margin="10,0,10,0" SelectionChanged="UserFilter"/>
+                <ComboBox x:Name="Category_cb" Width="200" Height="30" Margin="10,10,20,10" SelectionChanged="CategoryFilter"/>
+                <ComboBox x:Name="SubCategory_cb" Width="200" Height="30" SelectionChanged="SubCategoryFilter"/>
+                <Button x:Name="ResetFilter_btn" Width="100px" Height="50px" Margin="25,0,0,0" Content="Filter törlése" Click="FilterReset"/>
             </StackPanel>
 
             <!-- Table (DataGrid) -->
