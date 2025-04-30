@@ -26,6 +26,7 @@ namespace Menhely_Projekt
         //Feltöltendő kutya
         private static Kutya target = new Kutya();
 
+        //Kép számontartó
         private static int currentPic = 0;
 
         public newKutya()
@@ -34,10 +35,9 @@ namespace Menhely_Projekt
             target.ID = KutyaDAO.LatestID() + 1;
             target.kepek = new List<KutyaKep>();
             betoltes();
-            
-            
         }
 
+        //Képek újratöltése
         private void reloadImages(int Szam)
         {
             if (target.kepek.Count > 0)
@@ -185,6 +185,7 @@ namespace Menhely_Projekt
             }
         }
 
+        //Kép törlése gomb
         private void DelImg(object sender, RoutedEventArgs e)
         {
             if (target.kepek.Count() > 0)
@@ -198,6 +199,7 @@ namespace Menhely_Projekt
             }
         }
 
+        //Előző kép gomb
         private void PrevImg(object sender, RoutedEventArgs e)
         {
             if (currentPic > 0)
@@ -207,6 +209,7 @@ namespace Menhely_Projekt
             }
         }
 
+        //Kövi kép gomb
         private void NextImg(object sender, RoutedEventArgs e)
         {
             if (currentPic < target.kepek.Count - 1)

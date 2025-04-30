@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Menhely_Projekt.Models
 {
+    //Felhasználó
     internal class User
     {
         public int ID { get; set; }

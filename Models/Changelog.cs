@@ -9,6 +9,7 @@ namespace Menhely_Projekt.Models
 {
     internal class Changelog
     {
+        //Módosítások
         public int Id { get; set; }
         public int UserId { get; set; }
         public string Category { get; set; }

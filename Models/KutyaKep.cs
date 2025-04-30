@@ -14,6 +14,7 @@ namespace Menhely_Projekt.Models
 {
     public class KutyaKep
     {
+        //Kép
         public KepInfo Info { get; set; }
         public BitmapImage Kep { get; set; }
 

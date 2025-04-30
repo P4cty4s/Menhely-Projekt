@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Menhely_Projekt.Models
 {
+    //Udvar
     public class Udvar
     {
         public int Id { get; set; }

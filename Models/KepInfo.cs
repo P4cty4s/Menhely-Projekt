@@ -11,6 +11,7 @@ namespace Menhely_Projekt.Models
 {
     public class KepInfo
     {
+        //Kép információi
         public int ID { get; set; }
         public int KutyaID { get; set; }
         public string nev { get; set; }

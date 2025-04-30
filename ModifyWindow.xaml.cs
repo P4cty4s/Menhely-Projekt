@@ -213,9 +213,6 @@ namespace Menhely_Projekt
             this.Close();
         }
 
-
-
-
         //Kép feltöltése
         private void ImgUpload_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -266,6 +263,7 @@ namespace Menhely_Projekt
             }
         }
 
+        //Kép törlő gomb
         private void DelImg(object sender, RoutedEventArgs e)
         {
             if (alany.kepek.Count() > 0)

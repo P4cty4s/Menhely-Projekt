@@ -17,16 +17,20 @@ using Menhely_Projekt.Models;
 namespace Menhely_Projekt.Controls
 {
     /// <summary>
-    /// Interaction logic for ChangelogBase.xaml
+    /// Changelog oldal, változtatások számon tartása, szűrés rájuk
     /// </summary>
     public partial class ChangelogBase : UserControl
     {
+        //Módosítások
         private static List<Changelog> changelogs =new List<Changelog>();
 
+        //Filterelt módosítás gyütemény
         private static List<Changelog> Filtered = new List<Changelog>();
 
+        //Filter számontartó
         private static string[] usedFilters = new string[3]; //0.Elem = User | 1.Elem = Kategoria | 2.Elem = Alkategoria
 
+        //Userek gyütemény
         private static Dictionary<int, string> users = UserDAO.GetNevek();
         public ChangelogBase()
         {
@@ -36,17 +40,15 @@ namespace Menhely_Projekt.Controls
             betoltes();
             Filtered = changelogs;
         }
-
+        
+        //Minden adat betöltése
         private void betoltes()
         {
-            //Userek betöltése
-
             foreach (string item in users.Values)
             {
                 User_cb.Items.Add(item);
             }
 
-            //Kategoriak betoltese
             changelogs = ChangelogDAO.GetAllChangelog();
             Changelog_dg.ItemsSource = changelogs;
 
@@ -66,6 +68,7 @@ namespace Menhely_Projekt.Controls
             }
         }
 
+        //Filterek kezelése
         private void ManageFilter()
         {
             Filtered = changelogs;
@@ -88,6 +91,7 @@ namespace Menhely_Projekt.Controls
             Changelog_dg.ItemsSource = Filtered;
         }
 
+        //User filter használata
         private void UserFilter(object sender, SelectionChangedEventArgs e)
         {
             if (User_cb.SelectedItem != null && User_cb.SelectedItem.ToString() != "")
@@ -97,6 +101,7 @@ namespace Menhely_Projekt.Controls
             }
         }
 
+        //Kategória filter használata
         private void CategoryFilter(object sender, SelectionChangedEventArgs e)
         {
             if (Category_cb.SelectedItem != null && Category_cb.SelectedItem.ToString() != "")
@@ -106,6 +111,7 @@ namespace Menhely_Projekt.Controls
             }
         }
 
+        //Alkategória használata
         private void SubCategoryFilter(object sender, SelectionChangedEventArgs e)
         {
             if (SubCategory_cb.SelectedItem != null && SubCategory_cb.SelectedItem.ToString() != "")
@@ -115,6 +121,7 @@ namespace Menhely_Projekt.Controls
             }
         }
 
+        //Filterek alaphelyzetbe állítása
         private void FilterReset(object sender, RoutedEventArgs e)
         {
             usedFilters = new string[3];

@@ -10,6 +10,7 @@ namespace Menhely_Projekt.Models
 {
     public class Kennel
     {
+        //Kennel
         public int Id { get; set; }
         public int UdvarId { get; set; }
         public int KennelSzam { get; set; }

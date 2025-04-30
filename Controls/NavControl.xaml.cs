@@ -17,11 +17,13 @@ using Mysqlx.Crud;
 
 namespace Menhely_Projekt.Controls
 {
-    /// <summary>
-    /// Interaction logic for NavControl.xaml
-    /// </summary>
     public partial class NavControl : UserControl
     {
+
+        /// <summary>
+        /// Fejléce a programnak, van benne egy óra, és számon tarja ki van bejelentkezve.
+        /// </summary>
+
         private DispatcherTimer _timer;
         public NavControl()
         {
@@ -37,12 +39,14 @@ namespace Menhely_Projekt.Controls
             _timer.Tick += updateTime;
             _timer.Start();
         }
+
+        //Óra
         private void updateTime(object sender, EventArgs e)
         {
             Time_label.Content = DateTime.Now.ToString("HH:mm");
         }
 
-
+        //Vissza gomb
         private void Back_btn_Click(object sender, RoutedEventArgs e)
         {
             if (FoAblak.currentContent != "Main")

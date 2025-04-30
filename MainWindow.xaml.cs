@@ -25,7 +25,7 @@ namespace Menhely_Projekt
             ID = -1;
         }
 
-
+        //Bejelentkezés
         private void btn_login_Click(object sender, RoutedEventArgs e)
         {
 #if DEBUG

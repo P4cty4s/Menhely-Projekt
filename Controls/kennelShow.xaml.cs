@@ -19,11 +19,14 @@ using System.Windows.Markup;
 
 namespace Menhely_Projekt.Controls
 {
-    /// <summary>
-    /// Interaction logic for kennelShow.xaml
-    /// </summary>
     public partial class kennelShow : UserControl
     {
+
+        /// <summary>
+        /// Kennelt megtestesítő objektum, lehet bele kutyákat pakolni (behúzás), kivenni belőle (jobb klikk).
+        /// Törölni önmagát tudja, létrehozni a KennelControl tudja.
+        /// </summary>
+
         ListBox kutyakPanel;
 
         public Kennel alap = new Kennel();
@@ -37,15 +40,16 @@ namespace Menhely_Projekt.Controls
             betoltes();
         }
 
+        //Kenelben lévő kutyák betöltése
         private void betoltes()
         {   
             foreach (var item in alap.Kutyak)
             {
                 Kennelek_lb.Items.Add(item);
             }
-            
         }
 
+        //Drop event
         private void Kennelek_lb_Drop(object sender, DragEventArgs e)
         {
             ListBox parent = (ListBox)sender;
@@ -58,6 +62,7 @@ namespace Menhely_Projekt.Controls
             }
         }
 
+        //Kutya kivétele a kennelből
         private void Kennelek_lb_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
             Kutya objekt = Kennelek_lb.SelectedItem as Kutya;
@@ -66,6 +71,7 @@ namespace Menhely_Projekt.Controls
             Kennelek_lb.Items.Remove(objekt);
         }
 
+        //Kennel törlése
         private void DelKennel(object sender, RoutedEventArgs e)
         {
             KennelControl.showKennel.Remove(KennelControl.showKennel.Find(q=>q.alap.Id == this.alap.Id));

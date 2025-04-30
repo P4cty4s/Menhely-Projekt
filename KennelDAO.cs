@@ -90,6 +90,7 @@ namespace Menhely_Projekt
             }
         }
 
+        //Következő ID lekérése
         public static int LatestID()
         {
             int result = 0;
@@ -149,7 +150,6 @@ namespace Menhely_Projekt
         }
 
         //Kennel törlése
-
         public static void DelKennel(int _id)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))

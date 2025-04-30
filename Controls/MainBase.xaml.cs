@@ -18,7 +18,8 @@ using Mysqlx.Connection;
 namespace Menhely_Projekt.Controls
 {
     /// <summary>
-    /// Interaction logic for MainBase.xaml
+    /// UserControl ami a program kezdőlapja bejelentkezés után,
+    /// itt van az alap data grid, kereső és a navigációs gombok.
     /// </summary>
     public partial class MainBase : UserControl
     {
@@ -31,6 +32,7 @@ namespace Menhely_Projekt.Controls
             feltoltes();
         }
 
+        //Datagrid feltöltése kutyákkal
         public void feltoltes()
         {
             KutyaDataGrid.ItemsSource = null;
@@ -39,6 +41,7 @@ namespace Menhely_Projekt.Controls
             KutyaDataGrid.ItemsSource = dataShow;
         }
 
+        //Kijelentkezés gomb
         private void Logout_btn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -48,10 +51,13 @@ namespace Menhely_Projekt.Controls
             ez.Close();
         }
 
+        //Frissítés gomb
         private void Reset_btn_Click(object sender, RoutedEventArgs e)
         {
             feltoltes();
         }
+
+        //Kereséshez tartozó összes metódus
         #region Keresés
 
         private void enableOptions()
@@ -217,6 +223,7 @@ namespace Menhely_Projekt.Controls
 
         #endregion
 
+        //Kutya módosításának megnyitása
         private void ModifyKutya_btn_Click(object sender, RoutedEventArgs e)
         {
             if (KutyaDataGrid.SelectedItem != null)
@@ -231,6 +238,7 @@ namespace Menhely_Projekt.Controls
             }
         }
 
+        //Datagrid legenerálásának módosítása. (Idő formátum,stb...)
         private void KutyaDataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             if (e.PropertyType == typeof(DateTime))
@@ -251,12 +259,14 @@ namespace Menhely_Projekt.Controls
             }
         }
 
+        //Új kutya létrehozásának megnyitása
         private void AddKutya_btn_Click(object sender, RoutedEventArgs e)
         {
             newKutya create = new newKutya();
             create.Show();
         }
 
+        //Kennelek kezelésének megnyitása
         private void Kennel_btn_Click(object sender, RoutedEventArgs e)
         {
             var ez = Window.GetWindow(this);
@@ -264,6 +274,7 @@ namespace Menhely_Projekt.Controls
             ez.Content = kennelControl;
         }
 
+        //Előzmények megnyitása
         private void History_btn_Click(object sender, RoutedEventArgs e)
         {
             var ez = Window.GetWindow(this);

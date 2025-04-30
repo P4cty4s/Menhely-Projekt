@@ -19,13 +19,17 @@ using System.Windows.Shapes;
 namespace Menhely_Projekt
 {
     /// <summary>
-    /// Interaction logic for FoAblak.xaml
+    /// A program fő ablaka, ezen belül lehet több féle User Interfacet megjeleníteni.
     /// </summary>
     public partial class FoAblak : Window
     {
+        //Felhasználó ID-ja
         public static int UserId = -1;
+
+        //Státuszok
         public static List<string> statuses = new List<string>();
 
+        //Az ablakban megjelenített Content
         public static string currentContent = "";
 
         public FoAblak(int _id)
@@ -43,9 +47,13 @@ namespace Menhely_Projekt
             mainBetolt();
         }
 
+        //Kennel User Interface létrehozása
         public static KennelControl Kennel = new KennelControl();
+
+        //Main User Interface létrehozása
         public static MainBase Main = new MainBase(UserId);
 
+        //Main User Interface betöltése
         private void mainBetolt()
         {
             this.Content = Main;

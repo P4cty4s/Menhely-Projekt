@@ -15,6 +15,7 @@ namespace Menhely_Projekt
         //Connectiong string
         private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=pawdmin";
 
+        //Aktív felhasználónév lekérése
         public static string userName = UserDAO.getName(FoAblak.UserId);
 
         //Minden rekord

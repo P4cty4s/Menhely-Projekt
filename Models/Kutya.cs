@@ -13,6 +13,7 @@ namespace Menhely_Projekt.Models
 {
     public class Kutya
     {
+        //Kutya
         public int ID { get; set; }
         public int regSzam { get; set; }
         public string nev { get; set; }

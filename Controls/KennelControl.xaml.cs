@@ -21,16 +21,24 @@ using MySqlX.XDevAPI.Common;
 namespace Menhely_Projekt.Controls
 {
     /// <summary>
-    /// Interaction logic for KennelControl.xaml
+    /// Kenneleket tartja számon/teszi intreaktívvá
+    /// Kutyák lehet pakolni ide-oda, kenneleket létrehozni, kulon udvarokba vagy to.
     /// </summary>
     public partial class KennelControl : UserControl
     {
+        //Itt lévő kutyák
         List<Kutya> myKutyak = new List<Kutya>();
+
+        //Udvarok
         List<Udvar> Udvarok = new List<Udvar>();
+
+        //Kennelek
         List<Kennel> Kennelek = new List<Kennel>();
 
+        //Drag reset
         public static ListBox dragSource = null;
 
+        //Kennel objektumok
         public static List<kennelShow> showKennel = new List<kennelShow>();
         public KennelControl()
         {
@@ -39,6 +47,7 @@ namespace Menhely_Projekt.Controls
             betoltes();
         }
 
+        //Minden frissítése
         private void ujratoltes()
         {
             Kennelek.Clear();
@@ -49,6 +58,8 @@ namespace Menhely_Projekt.Controls
             kennelBetoltes();
             kennelMegjelenit();
         }
+
+        //Minden alap betöltése
         private void betoltes()
         {
             FoAblak.currentContent = "Kennel";
@@ -88,7 +99,7 @@ namespace Menhely_Projekt.Controls
             return true;
         }
 
-
+        //Kennelek betöltése
         private void kennelBetoltes()
         {   
 
@@ -118,7 +129,8 @@ namespace Menhely_Projekt.Controls
             }
 
         }
-
+        
+        //Udvarok lekérdezése, majd betöltése
         private void udvarBetoltes()
         {
             Udvarok = UdvarDAO.AllUdvar();
@@ -128,7 +140,8 @@ namespace Menhely_Projekt.Controls
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        //Új kennel létrehozása a választott udvarhoz
+        private void NewKennel_Click(object sender, RoutedEventArgs e)
         {
 
             if(Udvarok_cb.SelectedItem != null)
@@ -155,6 +168,7 @@ namespace Menhely_Projekt.Controls
             }
         }
 
+        //Udvar változtatását figyelő és kezelő metódus
         private void Udvarok_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (Udvarok_cb.SelectedItem != null)
@@ -163,6 +177,7 @@ namespace Menhely_Projekt.Controls
             }
         }
 
+        //Kidragelés a kutya gyüjtő panelból
         private void Kutyak_panel_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             ListBox parent = (ListBox)sender;
@@ -174,7 +189,8 @@ namespace Menhely_Projekt.Controls
                 DragDrop.DoDragDrop(parent, data, DragDropEffects.Move);
             }
         }
-        #region GetDataFromListBox(ListBox,Point)
+
+        //Drag kezelése
         private static object GetDataFromListBox(ListBox source, Point point)
         {
             UIElement element = source.InputHitTest(point) as UIElement;
@@ -205,9 +221,7 @@ namespace Menhely_Projekt.Controls
             return null;
         }
 
-
-        #endregion
-
+        //Kennelek mentése
         private void Save_btn_Click(object sender, RoutedEventArgs e)
         {
             List<Kennel> result = new List<Kennel>();
@@ -239,9 +253,11 @@ namespace Menhely_Projekt.Controls
             kutyaBetoltes();
         }
 
+        //Adatok újratöltése
         private void Refresh_Button(object sender, RoutedEventArgs e)
         {
             ujratoltes();
         }
+
     }
 }

@@ -249,7 +249,6 @@ namespace Menhely_Projekt
         }
 
         //Kep tulajdonsagok lekerdezese
-
         public static List<KepInfo> GetImageDetails(int _ID)
         {
             List<KepInfo> result = new List<KepInfo>();
@@ -276,7 +275,6 @@ namespace Menhely_Projekt
         }
 
         //Kutyakep adatainak feltoltese
-
         public static KepInfo SetKutyaImages(int _ID, string _nev)
         {
             KepInfo _kepInfo = null;
@@ -327,7 +325,6 @@ namespace Menhely_Projekt
 
 
         //Kutyahoz kep rendelese (ftp)
-
         public static BitmapImage GetModelImage(string imageName)
         {
             string host = "127.0.0.1";
@@ -365,7 +362,6 @@ namespace Menhely_Projekt
         }
 
         //Kep torlese adatbázisból
-
         public static void DelDbImage(int id)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -400,7 +396,6 @@ namespace Menhely_Projekt
         }
 
         //Törlés az ftp szerverről
-
         public static void DelFTPImage(string _nev)
         {
             string host = "127.0.0.1";
