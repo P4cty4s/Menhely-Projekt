@@ -26,6 +26,7 @@ namespace Menhely_Projekt
     /// </summary>
     public partial class ModifyWindow : Window
     {
+        public event Action OnClose;
         Kutya alany = new Kutya();
         private static int currentPic = 0;
         public ModifyWindow(int ID)
@@ -210,6 +211,7 @@ namespace Menhely_Projekt
             }
 
             KutyaDAO.updateKutya(alany);
+            OnClose?.Invoke();
             this.Close();
         }
 

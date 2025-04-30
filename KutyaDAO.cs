@@ -19,7 +19,7 @@ namespace Menhely_Projekt
     internal class KutyaDAO
     {
         //Connection string
-        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=pawdmin";
+        private static string connectionString = MainWindow._ConnectionString;
 
         //Minden Kutya lekérdezése
         public static void getKutyak()

@@ -10,7 +10,8 @@
         x:Name="_FoAblak"
         Width="1920"
         Height="1080"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Closing="TurnOff">
     <DockPanel x:Name="Kontent">
         
     </DockPanel>

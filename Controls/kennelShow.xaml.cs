@@ -30,6 +30,8 @@ namespace Menhely_Projekt.Controls
         ListBox kutyakPanel;
 
         public Kennel alap = new Kennel();
+
+        public event Action kennelDeleted;
         public kennelShow(Kennel _kennel, ListBox _kutyakPanel)
         {
             InitializeComponent();
@@ -78,7 +80,7 @@ namespace Menhely_Projekt.Controls
 
             KennelDAO.DelKennel(alap.Id);
 
-            MessageBox.Show("Siker");
+            kennelDeleted?.Invoke();
         }
     }
 }

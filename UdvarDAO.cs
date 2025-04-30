@@ -13,7 +13,7 @@ namespace Menhely_Projekt
     {
 
         //Connection string
-        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=pawdmin";
+        private static string connectionString = MainWindow._ConnectionString;
 
         //Egy udvar lekérdezése
         public static Udvar GetUdvar(string _id)

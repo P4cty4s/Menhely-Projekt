@@ -29,7 +29,7 @@ namespace Menhely_Projekt.Controls
         {
             InitializeComponent();
 
-            Username_label.Content = UserDAO.getName(MainWindow.ID);
+            Username_label.Content = FoAblak.UserName;
 
             _timer = new DispatcherTimer
             {

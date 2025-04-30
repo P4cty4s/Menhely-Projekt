@@ -13,7 +13,7 @@ namespace Menhely_Projekt
     internal class ChangelogDAO
     {
         //Connectiong string
-        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=pawdmin";
+        private static string connectionString = MainWindow._ConnectionString;
 
         //Aktív felhasználónév lekérése
         public static string userName = UserDAO.getName(FoAblak.UserId);

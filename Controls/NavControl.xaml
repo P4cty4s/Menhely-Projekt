@@ -10,7 +10,7 @@
         <Button Content="⬅" FontSize="18" Width="40" Height="40" HorizontalAlignment="Left" x:Name="Back_btn" Click="Back_btn_Click"/>
 
         <!-- Jelenlegi felhasználó -->
-        <Label FontSize="22" x:Name="Username_label" HorizontalAlignment="Left"></Label>
+        <Label FontSize="22" x:Name="Username_label" HorizontalAlignment="Left"/>
 
         <!-- Idő -->
         <Label FontSize="22" x:Name="Time_label" HorizontalAlignment="Right"></Label>

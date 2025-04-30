@@ -44,11 +44,8 @@ namespace Menhely_Projekt.Controls
         //Kijelentkezés gomb
         private void Logout_btn_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-
-            var ez = Window.GetWindow(this);
-            ez.Close();
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
         }
 
         //Frissítés gomb
@@ -230,6 +227,7 @@ namespace Menhely_Projekt.Controls
             {
                 Kutya target = KutyaDataGrid.SelectedItem as Kutya;
                 ModifyWindow modifyWindow = new ModifyWindow(target.ID);
+                modifyWindow.OnClose += feltoltes;
                 modifyWindow.Show();
             }
             else
@@ -263,6 +261,7 @@ namespace Menhely_Projekt.Controls
         private void AddKutya_btn_Click(object sender, RoutedEventArgs e)
         {
             newKutya create = new newKutya();
+            create.onClose += feltoltes;
             create.Show();
         }
 

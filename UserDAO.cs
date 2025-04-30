@@ -15,7 +15,7 @@ namespace Menhely_Projekt
     {
 
         //Connection string
-        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=pawdmin";
+        private static string connectionString = MainWindow._ConnectionString;
 
         //Bejelentkezés
         public static int login(string _name,string _password)

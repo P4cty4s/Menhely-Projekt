@@ -48,7 +48,7 @@ namespace Menhely_Projekt.Controls
         }
 
         //Minden frissítése
-        private void ujratoltes()
+        public void ujratoltes()
         {
             Kennelek.Clear();
             showKennel.Clear();
@@ -57,6 +57,7 @@ namespace Menhely_Projekt.Controls
 
             kennelBetoltes();
             kennelMegjelenit();
+            kutyaBetoltes();
         }
 
         //Minden alap betöltése
@@ -124,6 +125,7 @@ namespace Menhely_Projekt.Controls
 
                 foreach (kennelShow item in showKennel.Where(q=>q.alap.UdvarId == _udvar.Id))
                 {
+                    item.kennelDeleted += KennelTorles;
                     Kennel_panel.Children.Add(item);
                 }
             }
@@ -255,6 +257,12 @@ namespace Menhely_Projekt.Controls
 
         //Adatok újratöltése
         private void Refresh_Button(object sender, RoutedEventArgs e)
+        {
+            ujratoltes();
+        }
+
+        //Kennel torlese eventkor ujratolt
+        private void KennelTorles()
         {
             ujratoltes();
         }

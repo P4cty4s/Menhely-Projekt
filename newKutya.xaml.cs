@@ -22,6 +22,7 @@ namespace Menhely_Projekt
     //Új kutya felvétele a redszerbe
     public partial class newKutya : Window
     {
+        public event Action onClose;
 
         //Feltöltendő kutya
         private static Kutya target = new Kutya();
@@ -125,6 +126,7 @@ namespace Menhely_Projekt
             {
                 Kutya target = buildKutya();
                 KutyaDAO.createKutya(target);
+                onClose?.Invoke();
                 this.Close();
             }
             catch (Exception)

@@ -132,6 +132,9 @@
     <Compile Include="Controls\NavControl.xaml.cs">
       <DependentUpon>NavControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateConfig.xaml.cs">
+      <DependentUpon>CreateConfig.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FoAblak.xaml.cs">
       <DependentUpon>FoAblak.xaml</DependentUpon>
     </Compile>
@@ -173,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\NavControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateConfig.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

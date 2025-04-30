@@ -26,6 +26,9 @@ namespace Menhely_Projekt
         //Felhasználó ID-ja
         public static int UserId = -1;
 
+        //Felhasznalo nev
+        public static string UserName = UserDAO.getName(MainWindow.ID);
+
         //Státuszok
         public static List<string> statuses = new List<string>();
 
@@ -45,6 +48,7 @@ namespace Menhely_Projekt
             statuses.Add("Nálunk van");
 
             mainBetolt();
+
         }
 
         //Kennel User Interface létrehozása
@@ -60,6 +64,10 @@ namespace Menhely_Projekt
             currentContent = "Main";
         }
 
+        private void TurnOff(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 
 }

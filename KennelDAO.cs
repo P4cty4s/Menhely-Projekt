@@ -13,7 +13,7 @@ namespace Menhely_Projekt
     internal class KennelDAO
     {
         //Connection string
-        private static string connectionString = "datasource=localhost;port=3306;username=root;password=;database=pawdmin";
+        private static string connectionString = MainWindow._ConnectionString;
 
         //Kutya ID-k egybevarrása
         private static string createQuery(List<Kutya> _kutyak)
@@ -168,7 +168,6 @@ namespace Menhely_Projekt
 
                         if (affectedRows > 0)
                         {
-                            MessageBox.Show("Sikeres törlés!");
                         }
                         else
                         {
