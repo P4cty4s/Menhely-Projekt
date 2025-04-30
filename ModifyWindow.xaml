@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Menhely_Projekt"
         mc:Ignorable="d"
-        Title="ModifyWindow" Height="800" Width="700">
+        Title="ModifyWindow" Height="800" Width="700"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
     <Grid>
         <!-- Define rows: main content and bottom row for the button -->
         <Grid.RowDefinitions>
@@ -21,35 +23,35 @@
 
         <!-- Left Half: Data Fields -->
         <StackPanel Grid.Column="0" Margin="20">
-            <Label Content="ID:" />
-            <TextBox x:Name="id_tb" IsReadOnly="True" Margin="0,5,0,10" />
+            <Label Content="ID:" FontSize="14" />
+            <TextBox x:Name="id_tb" IsReadOnly="True" Margin="0,5,0,10" FontSize="16" Background="LightBlue" />
 
-            <Label Content="Regisztrációs szám:" />
-            <TextBox x:Name="regisztraciosSzam_tb" Margin="0,5,0,10" />
+            <Label Content="Regisztrációs szám:" FontSize="14" />
+            <TextBox x:Name="regisztraciosSzam_tb" Margin="0,5,0,10" FontSize="16" Background="LightBlue" />
 
-            <Label Content="Név:" />
-            <TextBox x:Name="nev_tb" Margin="0,5,0,10" />
+            <Label Content="Név:" FontSize="14" />
+            <TextBox x:Name="nev_tb" Margin="0,5,0,10" FontSize="16" Background="LightBlue" />
 
-            <Label Content="Chip Szám:" />
-            <TextBox x:Name="chipSzam_tb" Margin="0,5,0,10" />
+            <Label Content="Chip Szám:" FontSize="14" />
+            <TextBox x:Name="chipSzam_tb" Margin="0,5,0,10" FontSize="16" Background="LightBlue" />
 
-            <Label Content="Ivar:" />
-            <ComboBox x:Name="ivar_cb" Margin="0,5,0,10" />
+            <Label Content="Ivar:" FontSize="14" />
+            <ComboBox x:Name="ivar_cb" Margin="0,5,0,10" FontSize="16" Background="LightBlue" />
 
-            <Label Content="Méret:" />
-            <TextBox x:Name="meret_tb" Margin="0,5,0,10" />
+            <Label Content="Méret:" FontSize="14" />
+            <ComboBox x:Name="meret_cb" Margin="0,5,0,10" FontSize="16" Background="LightBlue" />
 
-            <Label Content="Születési Dátum:" />
-            <DatePicker x:Name="szuletes_dp" Margin="0,5,0,10" />
+            <Label Content="Születési Dátum:" FontSize="14" />
+            <DatePicker x:Name="szuletes_dp" Margin="0,5,0,10" FontSize="16" Background="LightBlue" />
 
-            <Label Content="Bekerülési Dátum:" />
-            <DatePicker x:Name="bekerules_dp" Margin="0,5,0,10" />
+            <Label Content="Bekerülési Dátum:" FontSize="14" />
+            <DatePicker x:Name="bekerules_dp" Margin="0,5,0,10" FontSize="16" Background="LightBlue" />
 
-            <Label Content="Ivaros?" />
-            <ComboBox x:Name="ivaros_cb" Margin="0,5,0,10" />
+            <Label Content="Ivaros?" FontSize="14" />
+            <ComboBox x:Name="ivaros_cb" Margin="0,5,0,10" FontSize="16" Background="LightBlue" />
 
-            <Label Content="Telephely:" />
-            <ComboBox x:Name="telephely_cb" Margin="0,5,0,10" />
+            <Label Content="Telephely:" FontSize="14" />
+            <ComboBox x:Name="telephely_cb" Margin="0,5,0,10" FontSize="16" Background="LightBlue" />
         </StackPanel>
 
         <!-- Right Half: Profile Picture and Additional Data -->
@@ -60,37 +62,37 @@
             </Border>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,5">
-                <Button Height="25px" Width="40" Content="⬅" Margin="2" x:Name="PrevImg_btn" Click="PrevImg"/>
-                <Button Height="25px" Content="Törlés" Margin="2" x:Name="DelImg_btn" Click="DelImg"/>
-                <Button Height="25px" Width="40" Content="➞" Margin="2" x:Name="NextImg_btn" Click="NextImg"/>
+                <Button Height="25px" Width="40" Content="⬅" Margin="2" x:Name="PrevImg_btn" Click="PrevImg" FontSize="16" Background="LightBlue"/>
+                <Button Height="25px" Content="Törlés" Margin="2" x:Name="DelImg_btn" Click="DelImg" FontSize="16" Background="LightBlue"/>
+                <Button Height="25px" Width="40" Content="➞" Margin="2" x:Name="NextImg_btn" Click="NextImg" FontSize="16" Background="LightBlue"/>
             </StackPanel>
 
-            <Button Height="30px" Content="Kép választása" Click="ImgUpload_btn_Click" x:Name="ImgUpload_btn"/>
+            <Button Height="30px" Content="Kép választása" Click="ImgUpload_btn_Click" x:Name="ImgUpload_btn" FontSize="16" Background="LightBlue"/>
 
-            <Label Content="Foglalt állapot:" />
+            <Label Content="Foglalt állapot:" FontSize="14" />
             <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                <RadioButton x:Name="szabad_rb" GroupName="foglalt_rbs" Content="Szabad" />
-                <RadioButton x:Name="foglalt_rb" GroupName="foglalt_rbs" Content="Foglalt" Margin="10,0,0,0" />
+                <RadioButton x:Name="szabad_rb" GroupName="foglalt_rbs" Content="Szabad" FontSize="16" Background="LightBlue" />
+                <RadioButton x:Name="foglalt_rb" GroupName="foglalt_rbs" Content="Foglalt" Margin="10,0,0,0" FontSize="16" Background="LightBlue" />
             </StackPanel>
 
             <Label Content="Kennel:" />
-            <ComboBox x:Name="kennel_cb" Margin="0,5,0,10" />
+            <ComboBox x:Name="kennel_cb" Margin="0,5,0,10" FontSize="16" Background="LightBlue" />
 
-            <Label Content="Láthatóság:" />
+            <Label Content="Láthatóság:" FontSize="14" />
             <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                <RadioButton x:Name="visible_rb" GroupName="visible_rbs" Content="Látható" />
-                <RadioButton x:Name="invisible_rb" GroupName="visible_rbs" Content="Láthatatlan" Margin="10,0,0,0" />
+                <RadioButton x:Name="visible_rb" GroupName="visible_rbs" Content="Látható" FontSize="16" Background="LightBlue" />
+                <RadioButton x:Name="invisible_rb" GroupName="visible_rbs" Content="Láthatatlan" Margin="10,0,0,0" FontSize="16" Background="LightBlue" />
             </StackPanel>
 
-            <Label Content="Státusz:"/>
-            <ComboBox Width="auto" x:Name="Status_cb"/>
+            <Label Content="Státusz:" FontSize="14"/>
+            <ComboBox Width="auto" x:Name="Status_cb" FontSize="16" Background="LightBlue"/>
 
-            <Label Content="Indexkép:"/>
-            <ComboBox Width="auto" x:Name="IndexKep_cb"/>
+            <Label Content="Indexkép:" FontSize="14"/>
+            <ComboBox Width="auto" x:Name="IndexKep_cb" FontSize="16" Background="LightBlue"/>
 
         </StackPanel>
 
         <!-- Bottom Row: Mentés Button -->
-        <Button x:Name="save_btn" Grid.Row="1" Grid.ColumnSpan="2" Content="Mentés" HorizontalAlignment="Center" Margin="10" Padding="10,5" Click="save_btn_Click"/>
+        <Button x:Name="save_btn" Grid.Row="1" Grid.ColumnSpan="2" Content="Mentés" HorizontalAlignment="Center" Margin="10" Padding="10,5" Click="save_btn_Click" Background="SpringGreen" FontSize="16"/>
     </Grid>
 </Window>

@@ -31,7 +31,7 @@ namespace Menhely_Projekt.Controls
             feltoltes();
         }
 
-        private void feltoltes()
+        public void feltoltes()
         {
             KutyaDataGrid.ItemsSource = null;
             KutyaDAO.getKutyak();
@@ -243,6 +243,11 @@ namespace Menhely_Projekt.Controls
                         StringFormat = "yyyy-MM-dd"
                     };
                 }
+            }
+
+            if (e.PropertyName == "kepek")
+            {
+                e.Cancel = true;
             }
         }
 

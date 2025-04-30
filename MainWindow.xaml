@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="400"
         Background="White"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Images/login_bg.jpg" Stretch="None"></ImageBrush>

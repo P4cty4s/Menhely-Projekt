@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using FluentFTP;
+using Menhely_Projekt.Controls;
 using Menhely_Projekt.Models;
 using Microsoft.Win32;
 using Org.BouncyCastle.Asn1.X509;
@@ -30,6 +31,8 @@ namespace Menhely_Projekt
         public ModifyWindow(int ID)
         {
             InitializeComponent();
+
+            
 
             alany = KutyaDAO.egyKutya(ID);
 
@@ -70,7 +73,12 @@ namespace Menhely_Projekt
             ivar_cb.Items.Add("szuka");
             ivar_cb.SelectedItem = target.ivar;
 
-            meret_tb.Text = target.meret.ToString();
+            meret_cb.Items.Add("kisestű");
+            meret_cb.Items.Add("közepes testű");
+            meret_cb.Items.Add("nagytestű");
+            meret_cb.Items.Add("kölyök");
+
+            meret_cb.SelectedItem = target.meret.ToString();
 
             szuletes_dp.Text = target.szuletes.ToString();
 
@@ -136,21 +144,23 @@ namespace Menhely_Projekt
 
         private void indexkepBetoltese()
         {
-            try
+
+            if (alany.kepek.Count() > 0)
             {
-                if (alany.indexkepID != null)
+                try
                 {
-                    IndexKep_cb.SelectedItem = alany.kepek.Find(q => q.Info.ID == alany.indexkepID).Info.nev;
+                    var x = alany.kepek.Find(q => q.Info.ID == alany.indexkepID);
+                    IndexKep_cb.SelectedItem = x!=null?x.Info.nev:null;
                 }
-                else
+                catch (Exception)
                 {
-                    IndexKep_cb.SelectedItem = alany.kepek.First().Info.nev;
+                    IndexKep_cb.SelectedIndex = -1;
                 }
-            }
-            catch (Exception)
+            } else
             {
-                IndexKep_cb.SelectedItem = "0";
+                IndexKep_cb.SelectedIndex = -1;
             }
+
             
         }
 
@@ -167,7 +177,7 @@ namespace Menhely_Projekt
 
             alany.ivar = ivar_cb.SelectedItem.ToString();
 
-            alany.meret = meret_tb.Text;
+            alany.meret = meret_cb.SelectedItem.ToString();
 
             alany.szuletes = DateTime.Parse(szuletes_dp.Text);
 
@@ -200,6 +210,7 @@ namespace Menhely_Projekt
             }
 
             KutyaDAO.updateKutya(alany);
+            this.Close();
         }
 
 

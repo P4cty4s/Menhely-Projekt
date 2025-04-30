@@ -125,6 +125,7 @@ namespace Menhely_Projekt
             {
                 Kutya target = buildKutya();
                 KutyaDAO.createKutya(target);
+                this.Close();
             }
             catch (Exception)
             {

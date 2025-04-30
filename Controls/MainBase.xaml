@@ -27,23 +27,23 @@
             <!-- Buttons Panel -->
             <StackPanel Grid.Column="0" Grid.Row="1" Background="#E0E0E0" Margin="0,0,10,0">
                 <Button x:Name="Reset_btn" Height="50" Width="200" Content="🔁" FontSize="32"
-                    HorizontalAlignment="Left" Margin="20,10,0,10" Click="Reset_btn_Click" />
+                    HorizontalAlignment="Left" Margin="20,10,0,10" Click="Reset_btn_Click" Background="Blue"/>
 
                 <Button x:Name="ModifyKutya_btn" Height="50" Width="200" Content="Kutya Módosítása"
-                    HorizontalAlignment="Left" Margin="20,10,0,10" Click="ModifyKutya_btn_Click"/>
+                    HorizontalAlignment="Left" Margin="20,10,0,10" Click="ModifyKutya_btn_Click" FontSize="18" Background="SpringGreen"/>
 
                 <Button x:Name="AddKutya_btn" Height="50" Width="200" Content="Új kutya hozzáadása"
-                    HorizontalAlignment="Left" Margin="20,10,0,10" Click="AddKutya_btn_Click"/>
+                    HorizontalAlignment="Left" Margin="20,10,0,10" Click="AddKutya_btn_Click" FontSize="18" Background="SpringGreen"/>
 
                 <Button x:Name="Kennel_btn" Height="50" Width="200" Content="Kennelek kezelése"
-                    HorizontalAlignment="Left" Margin="20,10,0,10" Click="Kennel_btn_Click"/>
+                    HorizontalAlignment="Left" Margin="20,10,0,10" Click="Kennel_btn_Click" FontSize="18" Background="SpringGreen"/>
 
                 <Button x:Name="History_btn" Height="50" Width="200" Content="Legutóbbi módosítások"
-                    HorizontalAlignment="Left" Margin="20,10,0,10" VerticalAlignment="Bottom" Click="History_btn_Click"/>
+                    HorizontalAlignment="Left" Margin="20,10,0,10" VerticalAlignment="Bottom" Click="History_btn_Click" FontSize="18" Background="SpringGreen"/>
 
                 <Button x:Name="Logout_btn" Height="50" Width="200" Content="Kijelentkezés"
-                    HorizontalAlignment="Left" Margin="20,10,0,10" VerticalAlignment="Bottom"
-                    Click="Logout_btn_Click" />
+                    HorizontalAlignment="Left" Margin="20,10,0,10"
+                    Click="Logout_btn_Click" FontSize="18" Background="red" VerticalAlignment="Bottom"/>
             </StackPanel>
 
             <!-- Search Bar -->
@@ -54,9 +54,9 @@
                     <ColumnDefinition Width="*" />
                     <!-- TextBox -->
                 </Grid.ColumnDefinitions>
-                <ComboBox Grid.Column="0" Width="150" Margin="0,0,10,0" x:Name="Kereso_cb" SelectionChanged="Kereso_cb_SelectionChanged"/>
+                <ComboBox Grid.Column="0" Width="150" Margin="0,0,10,0" x:Name="Kereso_cb" SelectionChanged="Kereso_cb_SelectionChanged" FontSize="16"/>
                 <ComboBox x:Name="Options_cb" Grid.Column="1" HorizontalAlignment="Stretch" SelectionChanged="Options_cb_SelectionChanged"/>
-                <TextBox x:Name="Kereso_tb" Grid.Column="1" HorizontalAlignment="Stretch" KeyUp="Kereso_tb_KeyUp"/>
+                <TextBox x:Name="Kereso_tb" Grid.Column="1" HorizontalAlignment="Stretch" KeyUp="Kereso_tb_KeyUp" FontSize="16"/>
             </Grid>
 
             <!-- DataGrid -->
@@ -66,7 +66,7 @@
                       CanUserAddRows="False"
                       HorizontalAlignment="Stretch"
                       VerticalAlignment="Stretch"
-                      IsReadOnly="True" AutoGeneratingColumn="KutyaDataGrid_AutoGeneratingColumn">
+                      IsReadOnly="True" AutoGeneratingColumn="KutyaDataGrid_AutoGeneratingColumn" FontSize="16">
 
                 </DataGrid>
             </Grid>
