@@ -1,0 +1,48 @@
+.desktop-button
+{
+    display: none;
+}
+
+td, th
+{
+    font-size: 0.8rem;
+}
+
+.muveletek
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+}
+
+.mobile-buttons
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+}
+
+.mobile-buttons button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 768px)
+{
+    .mobile-buttons, .mobile-button
+    {
+        display: none;
+    }
+
+    .desktop-button
+    {
+        display: block;
+    }
+
+}

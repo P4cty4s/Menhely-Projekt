@@ -142,3 +142,76 @@ C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\BCrypt.Net-Next.dll
 C:\Users\T\Desktop\eles c\Menhely-Projekt\bin\Debug\BCrypt.Net-Next.xml
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\CreateConfig.g.cs
 C:\Users\T\Desktop\eles c\Menhely-Projekt\obj\Debug\CreateConfig.baml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\Menhely Projekt.exe.config
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\Menhely Projekt.exe
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\Menhely Projekt.pdb
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\FluentFTP.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\Google.Protobuf.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\MySql.Data.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Buffers.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.IO.Pipelines.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Memory.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\ZstdSharp.dll
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\BCrypt.Net-Next.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\FluentFTP.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\Google.Protobuf.pdb
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\Google.Protobuf.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\MySql.Data.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Buffers.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.IO.Pipelines.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Memory.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Menhely Projekt.csproj.AssemblyReference.cache
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\addKennelName.g.cs
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Controls\ChangelogBase.g.cs
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Controls\KennelControl.g.cs
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Controls\kennelShow.g.cs
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Controls\MainBase.g.cs
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Controls\NavControl.g.cs
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\CreateConfig.g.cs
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\FoAblak.g.cs
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\MainWindow.g.cs
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\ModifyWindow.g.cs
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\newKutya.g.cs
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\App.g.cs
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Menhely Projekt_MarkupCompile.cache
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Menhely Projekt_MarkupCompile.lref
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\addKennelName.baml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Controls\ChangelogBase.baml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Controls\KennelControl.baml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Controls\kennelShow.baml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Controls\MainBase.baml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Controls\NavControl.baml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\CreateConfig.baml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\FoAblak.baml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\MainWindow.baml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\ModifyWindow.baml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\newKutya.baml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Menhely Projekt.g.resources
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Menhely_Projekt.Properties.Resources.resources
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Menhely Projekt.csproj.GenerateResource.cache
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Menhely Projekt.csproj.CoreCompileInputs.cache
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Menhely .8F2D582E.Up2Date
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Menhely Projekt.exe
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\Menhely Projekt.pdb

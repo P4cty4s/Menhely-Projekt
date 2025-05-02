@@ -1,0 +1,159 @@
+.kennel-nelkuli-kutyak
+{
+    overflow-y: scroll;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 12px;
+}
+
+.trash
+{
+    position: fixed;
+    background-color: red;
+    width: 300px;
+    height: 50px;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 30px;
+    color: white;
+    font-weight: 700;
+    z-index: 100000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+
+#kennel-nelkuli-kutyak .tag
+{
+    width: fit-content;
+    height: fit-content;
+}
+
+.kennel
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    min-height: 50px;
+}
+
+table
+{
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+th
+{
+    padding: 8px;
+    text-align: center;
+    font-weight: 700;
+    border-bottom: 2px solid var(--thin-light-gray);
+}
+
+.kennel-tr
+{
+    border-bottom: 2px solid var(--thin-light-gray);
+}
+
+.kennelszam
+{
+    padding: 8px;
+}
+
+.add
+{
+    background-color: var(--dark-brown);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.add button
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    color: white;
+    font-size: large;
+}
+
+.udvarnev
+{
+    font-weight: 700;
+    font-size: x-large;
+    border: none;
+    width: 100%;
+    text-align: center;
+}
+
+.table-controller
+{
+    padding: 0;
+    border: none;
+}
+
+.padding
+{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+}
+
+.modify
+{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+}
+
+.modify .delete-udvar
+{
+    background-color: var(--error-red);
+    color: white;
+}
+
+@media screen and (min-width: 768px)
+{
+    .kennelszam
+    {
+        width: 20%;
+        position: relative;
+    }
+
+    .padding
+    {
+        display: none;
+    }
+
+    c-button
+    {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 35px;
+        top:  50%;
+        font-size: large;
+        display: none;
+    }
+
+    c-button span
+    {
+        display: none;
+    }
+
+    td:hover c-button, .kennel:hover c-button
+    {
+        display: block;
+    }
+
+}
+

@@ -1,0 +1,241 @@
+#kutyak
+{
+    border-bottom: 2px solid var(--thin-light-gray);
+}
+
+
+.kutya
+{
+    margin-bottom: 24px;
+    text-align: center;
+    position: relative!important;
+    width: 100%;
+    height: 170px;
+    box-sizing: border-box;
+    max-width: none;
+
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.image
+{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+
+.info
+{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.info h4
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 700;
+    color: var(--lighter-brown);
+}
+
+.info label
+{
+    font-size: 15px;
+    color: var(--light-gray);
+    margin-bottom: 12px;
+}
+
+.info button
+{
+    width: 90%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 16px;
+}
+
+.tags
+{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.tag
+{
+    font-size: 14px;
+    padding: 2px 8px;
+    margin-bottom: 4px;
+    background-color: var(--dark-brown);
+    border-radius: 3px;
+}
+
+.content
+{
+    width: 100%;
+    padding-left: 24px;
+    margin-bottom: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-buttons
+{
+    border: 2px solid var(--thin-light-gray);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    max-width: 500px;
+}
+
+#szures
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+    color: var(--dark-brown);
+}
+
+#mobil-nev
+{
+    border: none;
+    padding: 4px;
+    width: 100%;
+}
+
+.mobile-buttons button
+{
+    border-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: var(--thin-light-gray);
+    color: var(--light-brown);
+}
+
+.content h1
+{
+    margin-bottom: 60px;
+}
+
+.pagination
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+    margin-top: 32px;
+    gap: 12px;
+}
+
+.desktop-nev
+{
+    display: none;
+}
+
+.pagination button
+{
+    padding: 8px 32px;
+}
+
+.pagination button:hover
+{
+    background-color: var(--lighter-brown);
+    color: white;
+}
+
+.pagination span
+{
+    font-weight: 700;
+}
+
+.kutya-foglalt
+{
+    position: absolute;
+    padding: 8px;
+    width: 100%;
+    background-color: var(--error-red);
+    color: white;
+    z-index: 100;
+    top: -10px;
+}
+
+@media screen and (min-width: 768px)
+{
+    .desktop-nev
+    {
+        display: block;
+    }
+
+    .mobile-buttons
+    {
+        display: none;
+    }
+
+    .kutya
+    {
+        flex-direction: column;
+        height: 400px;
+        justify-content: center;
+    }
+
+    .image
+    {
+        width: 100%;
+        background-size: cover;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .info
+    {
+        padding: 8px;
+    }
+
+    .info a
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .info a button
+    {
+        max-width: 200px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .info a button:hover
+    {
+        background-color: var(--dark-brown);
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .kutya:hover .info
+    {
+        animation: stretchUp 0.3s ease-out forwards;
+    }
+
+    .sidebar
+    {
+        margin-top: 100px;
+    }
+
+}

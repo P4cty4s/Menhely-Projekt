@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\obj\Debug\
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\obj\Debug\
 Menhely_Projekt
 none
 false
 DEBUG;TRACE
-C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\App.xaml
+C:\Users\T\Desktop\eles c\Vizsga Komplett\Menhely-Projekt\Desktop App\App.xaml
 112032208453
 
-291365586669
-352144016211
+28-847292009
+35-1210036913
 addKennelName.xaml;Controls\ChangelogBase.xaml;Controls\KennelControl.xaml;Controls\kennelShow.xaml;Controls\MainBase.xaml;Controls\NavControl.xaml;CreateConfig.xaml;FoAblak.xaml;MainWindow.xaml;ModifyWindow.xaml;newKutya.xaml;
 
-True
+False
 

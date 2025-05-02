@@ -1,0 +1,72 @@
+.hero {
+    background-color: #faf3ea;
+    color: #5c4a34; 
+    padding: 250px 10px;
+    height: 250px;
+    text-align: left;
+    margin-top: 0px;
+    width: 100%;
+
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+
+  .hero h1
+  {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: black;
+  }
+
+  .hero button 
+  {
+    background-color: var(--dark-brown);
+    height: 40px;
+  }
+
+  .hero button a
+  {
+    padding: 80px;
+    color: white;
+  }
+
+  .hero .container
+  {}
+
+@media screen and (max-width: 768px)
+{
+    .hero
+    {
+        margin-top: 80px;
+        text-align: center;
+
+        background-size: cover;
+        background-position: center;
+        padding: 250px 0px;
+       
+    }
+
+    .hero .container
+    {
+      background-color: var(--darkLayer);
+      width: 100%;
+      max-width: none;
+      padding: 12px;
+      margin-top: 30px;
+    }
+
+    .hero p, .hero h1
+    {
+      color: white;
+    }
+
+
+}

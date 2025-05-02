@@ -1,0 +1,50 @@
+form
+{
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 auto;
+}
+
+.input-container
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-container label
+{
+    font-size: 14px;
+    color: var(--light-gray);
+    font-weight: 700;
+}
+
+.input-container i
+{
+    position: absolute;
+    right: 10px;
+    top: 60%;
+}
+
+.form-title
+{
+    text-align: center;
+    color: var(--light-brown);
+    font-weight: 700;
+}
+
+form button
+{
+    margin-top: 32px;
+}
+
+.input-container-checkbox
+{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+

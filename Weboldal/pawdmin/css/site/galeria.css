@@ -1,0 +1,55 @@
+.galeria
+{
+    padding: 24px;
+}
+
+.kutyanev
+{
+    width: 100%;
+    background-color: var(--light-brown);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+}
+
+.kutyanev i
+{
+    font-size: x-large;
+}
+
+.rope {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0; /* nincs magasság, csak a kötél jelenik meg */
+    pointer-events: none;
+    z-index: 2;
+}
+
+.rope::before,
+.rope::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 29px;
+    background-color: #b6a385;
+    border-radius: 3px;
+    top: 0;
+    transform: translateY(-100%); /* felfelé nyúljon */
+}
+
+.rope::before {
+    left: 20px;
+}
+
+.rope::after {
+    right: 20px;
+}
+
+.gallery-item img
+{
+    border-radius: 5px;
+}

@@ -1,0 +1,40 @@
+.popup-box
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 350px;
+    min-width: 300px;
+    border-radius: 10px;
+    background-color: yellow;
+    padding: 10px 12px;
+    font-size: 16px;
+
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 5%;
+
+}
+
+.popup-box i
+{
+    font-size: large;
+}
+
+.popup-box .close
+{
+    color: var(--error-red);
+}
+
+/* alert */
+.popup-box.alert-popup
+{
+    background-color: var(--alert-yellow);
+}
+
+/* success */
+.popup-box.success-popup
+{
+    background-color: var(--success-green);
+}

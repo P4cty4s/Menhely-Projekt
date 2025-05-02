@@ -1,0 +1,13 @@
+.tag
+{
+    font-size: 14px;
+    padding: 2px 8px;
+    margin-bottom: 4px;
+    background-color: var(--light-brown);
+    color: white;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}

@@ -1,0 +1,167 @@
+header
+{
+    width: 100%!important;
+    height: 80px;
+    min-height: 0px!important;
+    position: fixed;
+    top: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 1001;
+    background-color: var(--image-bg);
+    border-radius: 0px; 
+}
+
+#site-title
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+
+#site-title .title
+{
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--dark-red);
+}
+
+.logo
+{
+    width: 60px;
+    height: 60px;
+}
+
+header .mobile
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 24px;  
+    color: black;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .desktop
+{
+    display: none;
+}
+
+#mobile-menu-btn
+{
+    font-size: x-large;
+    color: var(--dark-red);
+}
+
+#site-title
+{
+    font-size: large;
+    font-weight: 800;
+}
+
+.mobile-nav
+{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: var(--image-bg); 
+    bottom: 0;
+    left: 0;
+}
+
+.mobile-nav nav
+{
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile-nav h3
+{
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 32px;
+}
+
+.mobile-nav nav a
+{
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-top: 1px solid var(--thin-light-gray);
+    color: var(--light-gray);
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media screen and (min-width: 768px)
+{
+    header
+    {
+        position: relative;
+        width: 100%;
+        background-color: transparent;
+        box-shadow: none;
+        z-index: 0;
+        background-color: var(--image-bg);
+        border-radius: 0px;
+    }
+
+    header .mobile, .mobile-nav
+    {
+        display: none!important;
+    }
+
+    header .desktop
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 24px;  
+        color: black;
+    }
+
+    header .desktop nav
+    {
+        display: flex;
+    }
+
+    header .desktop nav a
+    {
+        color: var(--light-gray);
+        margin-right: 32px;
+        font-weight: bold;
+
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    header .desktop nav a:hover
+    {
+        color: var(--dark-brown);
+    }
+
+    header .desktop h3
+    {
+        font-weight: 700;
+    }
+
+}

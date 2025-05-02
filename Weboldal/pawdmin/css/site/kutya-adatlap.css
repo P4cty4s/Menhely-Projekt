@@ -1,0 +1,48 @@
+.kutya-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    width: 80%;
+}
+
+.kutya-adatlap
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.kutya-kep img
+{
+    max-width: 400px;
+}
+
+.adatlap
+{
+    width: 100%;
+}
+
+.adatlap td
+{
+    padding-left: 24px;
+    padding-bottom: 4px;
+}
+
+@media screen and (min-width: 700px)
+{
+    .kutya-container
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: normal;
+        justify-content: space-around;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
+}

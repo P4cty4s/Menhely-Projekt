@@ -1,0 +1,10 @@
+.image-info
+{
+    width: 100%;
+    padding: 4px;
+    background-color: var(--light-brown);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
