@@ -80,13 +80,6 @@
 
         // database
 
-            // webszerver
-            /*$database = "team03";
-            $db_host = "localhost";
-            $db_user = "team03";
-            $db_pass = "fw=rM8&BjY5p;GT4dyn`R<?6";
-            $db_charset = "utf8mb4";*/
-
             // local
             $database = "pawdmin";
             $db_host = "localhost";
