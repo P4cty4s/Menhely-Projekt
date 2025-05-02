@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Menhely_Projekt"
         mc:Ignorable="d"
-        Title="CreateConfig" Height="auto" Width="300">
+        Title="CreateConfig" Height="400" Width="300">
     <Grid>
         <!-- Elrendezés -->
         <Grid.ColumnDefinitions>

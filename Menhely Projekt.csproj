@@ -153,6 +153,7 @@
     <Compile Include="newKutya.xaml.cs">
       <DependentUpon>newKutya.xaml</DependentUpon>
     </Compile>
+    <Compile Include="telephelyDAO.cs" />
     <Compile Include="UdvarDAO.cs" />
     <Compile Include="UserDAO.cs" />
     <Page Include="addKennelName.xaml">

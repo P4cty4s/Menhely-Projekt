@@ -63,15 +63,14 @@ namespace Menhely_Projekt
             target.ivaros = ivaros_cb.SelectedItem.ToString();
             target.telephely = telephely_cb.SelectedItem.ToString();
             target.foglalt = foglalt_rb.IsChecked == true;
-            target.kennel = int.Parse(kennel_cb.SelectedItem.ToString());
+            target.kennel = 0;
             target.visible = visible_rb.IsChecked == true;
             target.status = Status_cb.SelectedItem.ToString();
 
-            try
+            if (IndexKep_cb.SelectedIndex != -1)
             {
-                target.indexkepID = target.kepek.Find(q=>q.Info.nev == IndexKep_cb.SelectedItem.ToString()).Info.ID;
-            }
-            catch (Exception)
+                target.indexkepID = target.kepek.Find(q => q.Info.nev == IndexKep_cb.SelectedItem.ToString()).Info.ID;
+            } else
             {
                 target.indexkepID = 0;
             }
@@ -92,9 +91,9 @@ namespace Menhely_Projekt
             ivar_cb.Items.Add("szuka");
 
             telephely_cb.Items.Clear();
-            foreach (var item in Kutya.kutyak.Select(q => q.telephely).Distinct())
+            foreach (string item in telephelyDAO.AllTelephely())
             {
-                telephely_cb.Items.Add(item.ToString());
+                telephely_cb.Items.Add(item);
             }
 
             ivaros_cb.Items.Clear();
@@ -105,12 +104,6 @@ namespace Menhely_Projekt
             meret_cb.Items.Add("közepes testű");
             meret_cb.Items.Add("nagytestű");
             meret_cb.Items.Add("kölyök");
-
-            kennel_cb.Items.Clear();
-            foreach (var item in Kutya.kutyak.Select(q => q.kennel).Distinct())
-            {
-                kennel_cb.Items.Add(item.ToString());
-            }
 
             foreach (var item in FoAblak.statuses)
             {
@@ -192,10 +185,11 @@ namespace Menhely_Projekt
         {
             if (target.kepek.Count() > 0)
             {
+                IndexKep_cb.Items.Remove(target.kepek[currentPic].Info.nev);
                 KutyaDAO.DelDbImage(target.kepek[currentPic].Info.ID);
                 KutyaDAO.DelFTPImage(target.kepek[currentPic].Info.nev);
                 target.kepek.Remove(target.kepek[currentPic]);
-            
+
                 currentPic = 0;
                 reloadImages(currentPic);
             }

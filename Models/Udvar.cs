@@ -21,6 +21,11 @@ namespace Menhely_Projekt.Models
 
         }
 
+        public Udvar()
+        {
+            
+        }
+
         public override string ToString()
         {
             return nev;

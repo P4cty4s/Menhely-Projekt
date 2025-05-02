@@ -89,7 +89,6 @@ namespace Menhely_Projekt
                     {
                         reader.Read();
                         target = new Kutya(reader);
-
                     }
 
                 }

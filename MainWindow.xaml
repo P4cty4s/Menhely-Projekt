@@ -17,7 +17,7 @@
         <Label Foreground="White" Content="Felhasználó név:" FontSize="22" HorizontalAlignment="Left" Margin="50,90,0,0"/>
         <TextBox x:Name="tb_name" Width="200" Height="50" HorizontalAlignment="Left" Margin="50,147,0,387"/>
         <Label Foreground="White" Content="Jelszó:" FontSize="22" HorizontalAlignment="Left" Margin="50,219,0,-69"/>
-        <TextBox x:Name="tb_password" Width="200" Height="50" HorizontalAlignment="Left" Margin="50,267,0,267"/>
+        <PasswordBox x:Name="tb_password" Width="200" Height="50" HorizontalAlignment="Left" Margin="50,267,0,267"/>
         <Button Name="btn_login" Width="200" Height="50" Margin="0,300,0,0" Content="Bejelentkezés" Click="btn_login_Click"/>
         <Button x:Name="Config_btn" Width="100" Height="25" VerticalAlignment="Bottom" Margin="0,0,0,20" Background="Wheat" Content="Config" Click="OpenConfig"/>
     </Grid>

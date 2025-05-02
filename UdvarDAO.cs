@@ -16,10 +16,9 @@ namespace Menhely_Projekt
         private static string connectionString = MainWindow._ConnectionString;
 
         //Egy udvar lekérdezése
-        public static Udvar GetUdvar(string _id)
+        public static Udvar GetUdvar(int _id)
         {
-            Udvar result = null;
-
+            Udvar result = new Udvar();
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 string query = "SELECT * FROM udvar WHERE id = @value";
@@ -35,9 +34,7 @@ namespace Menhely_Projekt
                         if (reader.HasRows)
                         {
                             reader.Read();
-                            result.Id = int.Parse(reader[0].ToString());
-                            result.nev = reader[1].ToString();
-
+                            result = new Udvar(reader);
                         }
                     }
 

@@ -90,8 +90,6 @@
             </StackPanel>
 
             <!-- Kennel -->
-            <Label Content="Kennel:" />
-            <ComboBox x:Name="kennel_cb" Margin="0,5,0,10" FontSize="16" Background="LightBlue" />
 
             <!-- Látható e a weboldalon -->
             <Label Content="Láthatóság:" FontSize="14" />

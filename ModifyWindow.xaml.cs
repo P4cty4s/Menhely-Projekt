@@ -86,10 +86,11 @@ namespace Menhely_Projekt
             bekerules_dp.Text = target.bekerules.ToString();
 
             telephely_cb.Items.Clear();
-            foreach (var item in Kutya.kutyak.Select(q => q.telephely).Distinct())
+            foreach (string item in telephelyDAO.AllTelephely())
             {
-                telephely_cb.Items.Add(item.ToString());
+                telephely_cb.Items.Add(item);
             }
+
             telephely_cb.SelectedItem = target.telephely.ToString();
 
             profilePicture.Source = new BitmapImage();
@@ -112,13 +113,6 @@ namespace Menhely_Projekt
             {
                 ivaros_cb.SelectedItem = "ivartalan";
             }
-
-            kennel_cb.Items.Clear();
-            foreach (var item in Kutya.kutyak.Select(q => q.kennel).Distinct())
-            {
-                kennel_cb.Items.Add(item.ToString());
-            }
-            kennel_cb.SelectedItem = target.kennel.ToString();
 
             if (target.visible)
             {
@@ -190,8 +184,6 @@ namespace Menhely_Projekt
 
             alany.foglalt = foglalt_rb.IsChecked == true;
 
-            alany.kennel = int.Parse(kennel_cb.Text);
-
             alany.visible = visible_rb.IsChecked == true;
 
             alany.status = Status_cb.SelectedItem.ToString();
@@ -252,6 +244,8 @@ namespace Menhely_Projekt
                         alany.kepek.Add(new KutyaKep(_kepInfo, KutyaDAO.GetModelImage(_kepInfo.nev)));
                         currentPic = alany.kepek.Count - 1;
                         reloadImages(currentPic);
+
+                        IndexKep_cb.Items.Add(_kepInfo.nev);
                     }
                 }
                 catch (Exception ex)
@@ -270,6 +264,7 @@ namespace Menhely_Projekt
         {
             if (alany.kepek.Count() > 0)
             {
+                IndexKep_cb.Items.Remove(alany.kepek[currentPic].Info.nev);
                 KutyaDAO.DelDbImage(alany.kepek[currentPic].Info.ID);
                 KutyaDAO.DelFTPImage(alany.kepek[currentPic].Info.nev);
                 alany.kepek.Remove(alany.kepek[currentPic]);

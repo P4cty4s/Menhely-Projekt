@@ -49,17 +49,18 @@ namespace Menhely_Projekt
                 CreateConfig _creator = new CreateConfig();
                 _creator.ShowDialog();
             }
-            this.ShowDialog();
         }
 
         //Elérhető e az adatbázis
-        private static bool DBActive()
+        private bool DBActive()
         {
+            ConfigCheck();
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(_ConnectionString))
                 {
                     conn.Open();
+                    conn.Close();
                     return true;
                 }
             }
@@ -74,11 +75,9 @@ namespace Menhely_Projekt
         {
             if (DBActive())
             {
-#if DEBUG
-                tb_name.Text = "admin";
-                tb_password.Text = "0";
-#endif
-                ID = UserDAO.login(tb_name.Text, tb_password.Text);
+                ConfigCheck();
+
+                ID = UserDAO.login(tb_name.Text, tb_password.Password);
                 if (ID == -1)
                 {
                     MessageBox.Show("Hibás felhasználónév vagy jelszó");

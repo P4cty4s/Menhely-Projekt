@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Menhely_Projekt.Models;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace Menhely_Projekt
 {
@@ -60,6 +61,33 @@ namespace Menhely_Projekt
 
             return result;
         } 
+
+        //egy kennel lekérdezése
+        public static Kennel GetKennel(int _id)
+        {
+            Kennel result = new Kennel();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM kennel WHERE id = @value";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@value", _id);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        reader.Read();
+                        result = new Kennel(reader);
+
+                    }
+
+                }
+                connection.Close();
+            }
+
+            return result;
+        }
 
         //Kennel létrehozása
         public static void CreateKennel(Kennel target)
@@ -134,6 +162,13 @@ namespace Menhely_Projekt
 
                                 await command.ExecuteNonQueryAsync();
                             }
+
+                            foreach (Kutya kutyus in item.Kutyak)
+                            {
+                                kutyus.kennel = item.Id;
+                                KutyaDAO.updateKutya(kutyus);
+                            }
+
                         }
 
                         await transaction.CommitAsync();
@@ -168,6 +203,7 @@ namespace Menhely_Projekt
 
                         if (affectedRows > 0)
                         {
+                            ChangelogDAO.CreateChangelog($"kitörölt egy kennelt({LatestID()})", new string[] { "kennel", "törölve" });
                         }
                         else
                         {
