@@ -2,4 +2,4 @@ IP cím: 127.0.0.1
 username: Menhely_Projekt
 password: admin
 
-a root mappába kell egy "uploads" nevű mappa ahova a képek fognak töltődni.
+a root mappába kellenek "Kutya_kepek/uploads" nevű mappák ahova a képek fognak töltődni.
